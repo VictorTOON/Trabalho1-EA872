@@ -1,0 +1,296 @@
+The system is: Darwin - 19.6.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/victortoon/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/3.18.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-std=c++14;-fmessage-length=0;-isystem;/Users/victortoon/miniconda3/include
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/3.18.4/CompilerIdCXX/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/victortoon/miniconda3/bin/make cmTC_5f6b5/fast && /Users/victortoon/miniconda3/bin/make  -f CMakeFiles/cmTC_5f6b5.dir/build.make CMakeFiles/cmTC_5f6b5.dir/build
+make[1]: Entering directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/victortoon/miniconda3/bin
+clang-10: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/victortoon/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15.6 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/victortoon/miniconda3/lib/clang/10.0.0 -isystem /Users/victortoon/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/victortoon/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -fdebug-compilation-dir /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/victortoon/miniconda3/include
+ /Users/victortoon/miniconda3/lib/clang/10.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_5f6b5
+/usr/local/Cellar/cmake/3.18.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f6b5.dir/link.txt --verbose=1
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/victortoon/miniconda3/lib -L/Users/victortoon/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -o cmTC_5f6b5 
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/victortoon/miniconda3/bin
+ "/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/victortoon/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_5f6b5 -L/Users/victortoon/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/victortoon/miniconda3/lib -v CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -lSystem /Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 02:41:06 May 15 2020
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/victortoon/miniconda3/lib
+	/Users/victortoon/miniconda3/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
+make[1]: Leaving directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Users/victortoon/miniconda3/include]
+    add: [/Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+    add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Users/victortoon/miniconda3/include] ==> [/Users/victortoon/miniconda3/include]
+  collapse include dir [/Users/victortoon/miniconda3/lib/clang/10.0.0/include] ==> [/Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+  collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Users/victortoon/miniconda3/include;/Users/victortoon/miniconda3/lib/clang/10.0.0/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(x86_64-apple-darwin13\.4\.0-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/Users/victortoon/miniconda3/bin/make cmTC_5f6b5/fast && /Users/victortoon/miniconda3/bin/make  -f CMakeFiles/cmTC_5f6b5.dir/build.make CMakeFiles/cmTC_5f6b5.dir/build]
+  ignore line: [make[1]: Entering directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/victortoon/miniconda3/bin]
+  ignore line: [clang-10: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/Users/victortoon/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15.6 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/victortoon/miniconda3/lib/clang/10.0.0 -isystem /Users/victortoon/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/victortoon/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -fdebug-compilation-dir /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Users/victortoon/miniconda3/include]
+  ignore line: [ /Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_5f6b5]
+  ignore line: [/usr/local/Cellar/cmake/3.18.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f6b5.dir/link.txt --verbose=1]
+  ignore line: [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/victortoon/miniconda3/lib -L/Users/victortoon/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -o cmTC_5f6b5 ]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/victortoon/miniconda3/bin]
+  link line: [ "/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/victortoon/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_5f6b5 -L/Users/victortoon/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/victortoon/miniconda3/lib -v CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o -lSystem /Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Users/victortoon/miniconda3/lib/libLTO.10.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_5f6b5] ==> ignore
+    arg [-L/Users/victortoon/miniconda3/lib] ==> dir [/Users/victortoon/miniconda3/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dead_strip_dylibs] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/Users/victortoon/miniconda3/lib] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_5f6b5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/victortoon/miniconda3/lib;/Users/victortoon/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/Users/victortoon/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/victortoon/miniconda3/bin/make cmTC_c4a70/fast && /Users/victortoon/miniconda3/bin/make  -f CMakeFiles/cmTC_c4a70.dir/build.make CMakeFiles/cmTC_c4a70.dir/build
+make[1]: Entering directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/victortoon/miniconda3/bin
+clang-10: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/victortoon/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15.6 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/victortoon/miniconda3/lib/clang/10.0.0 -isystem /Users/victortoon/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Users/victortoon/miniconda3/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/victortoon/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -std=c++14 -fdeprecated-macro -fdebug-compilation-dir /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/victortoon/miniconda3/include
+ /Users/victortoon/miniconda3/bin/../include/c++/v1
+ /Users/victortoon/miniconda3/lib/clang/10.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_c4a70
+/usr/local/Cellar/cmake/3.18.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4a70.dir/link.txt --verbose=1
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/victortoon/miniconda3/lib -L/Users/victortoon/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c4a70 
+clang version 10.0.0 
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/victortoon/miniconda3/bin
+ "/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/victortoon/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_c4a70 -L/Users/victortoon/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/victortoon/miniconda3/lib -v CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-450.3
+BUILD 02:41:06 May 15 2020
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/victortoon/miniconda3/lib
+	/Users/victortoon/miniconda3/lib
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
+make[1]: Leaving directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Users/victortoon/miniconda3/include]
+    add: [/Users/victortoon/miniconda3/bin/../include/c++/v1]
+    add: [/Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+    add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Users/victortoon/miniconda3/include] ==> [/Users/victortoon/miniconda3/include]
+  collapse include dir [/Users/victortoon/miniconda3/bin/../include/c++/v1] ==> [/Users/victortoon/miniconda3/include/c++/v1]
+  collapse include dir [/Users/victortoon/miniconda3/lib/clang/10.0.0/include] ==> [/Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+  collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Users/victortoon/miniconda3/include;/Users/victortoon/miniconda3/include/c++/v1;/Users/victortoon/miniconda3/lib/clang/10.0.0/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(x86_64-apple-darwin13\.4\.0-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/Users/victortoon/miniconda3/bin/make cmTC_c4a70/fast && /Users/victortoon/miniconda3/bin/make  -f CMakeFiles/cmTC_c4a70.dir/build.make CMakeFiles/cmTC_c4a70.dir/build]
+  ignore line: [make[1]: Entering directory '/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/victortoon/miniconda3/bin]
+  ignore line: [clang-10: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ (in-process)]
+  ignore line: [ "/Users/victortoon/miniconda3/bin/clang-10" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mframe-pointer=all -fno-rounding-math -masm-verbose -munwind-tables -target-sdk-version=10.15.6 -target-cpu core2 -target-feature +ssse3 -dwarf-column-info -debugger-tuning=lldb -target-linker-version 241.9 -v -resource-dir /Users/victortoon/miniconda3/lib/clang/10.0.0 -isystem /Users/victortoon/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Users/victortoon/miniconda3/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include -internal-isystem /Users/victortoon/miniconda3/lib/clang/10.0.0/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -O2 -std=c++14 -fdeprecated-macro -fdebug-compilation-dir /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.18.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 10.0.0 based upon LLVM 10.0.0 default target x86_64-apple-darwin19.6.0]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Users/victortoon/miniconda3/include]
+  ignore line: [ /Users/victortoon/miniconda3/bin/../include/c++/v1]
+  ignore line: [ /Users/victortoon/miniconda3/lib/clang/10.0.0/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_c4a70]
+  ignore line: [/usr/local/Cellar/cmake/3.18.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4a70.dir/link.txt --verbose=1]
+  ignore line: [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/victortoon/miniconda3/include  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/victortoon/miniconda3/lib -L/Users/victortoon/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c4a70 ]
+  ignore line: [clang version 10.0.0 ]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Users/victortoon/miniconda3/bin]
+  link line: [ "/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/victortoon/miniconda3/lib/libLTO.10.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -pie -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -o cmTC_c4a70 -L/Users/victortoon/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/victortoon/miniconda3/lib -v CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Users/victortoon/miniconda3/lib/libLTO.10.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_c4a70] ==> ignore
+    arg [-L/Users/victortoon/miniconda3/lib] ==> dir [/Users/victortoon/miniconda3/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dead_strip_dylibs] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/Users/victortoon/miniconda3/lib] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_c4a70.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/victortoon/miniconda3/lib;/Users/victortoon/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Users/victortoon/miniconda3/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Users/victortoon/miniconda3/lib] ==> [/Users/victortoon/miniconda3/lib]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+  implicit libs: [c++]
+  implicit dirs: [/Users/victortoon/miniconda3/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks]
+
+
