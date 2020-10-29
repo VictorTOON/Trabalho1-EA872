@@ -76,27 +76,27 @@ include CMakeFiles/MeuJogo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MeuJogo.dir/flags.make
 
-CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o: CMakeFiles/MeuJogo.dir/flags.make
-CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o: ../src/tutorial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o -c /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/tutorial.cpp
+CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o: CMakeFiles/MeuJogo.dir/flags.make
+CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o: /Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o -c /Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp
 
-CMakeFiles/MeuJogo.dir/src/tutorial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MeuJogo.dir/src/tutorial.cpp.i"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/tutorial.cpp > CMakeFiles/MeuJogo.dir/src/tutorial.cpp.i
+CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp > CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i
 
-CMakeFiles/MeuJogo.dir/src/tutorial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MeuJogo.dir/src/tutorial.cpp.s"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/tutorial.cpp -o CMakeFiles/MeuJogo.dir/src/tutorial.cpp.s
+CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp -o CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s
 
 # Object files for target MeuJogo
 MeuJogo_OBJECTS = \
-"CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o"
+"CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o"
 
 # External object files for target MeuJogo
 MeuJogo_EXTERNAL_OBJECTS =
 
-MeuJogo: CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o
+MeuJogo: CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o
 MeuJogo: CMakeFiles/MeuJogo.dir/build.make
 MeuJogo: libfunc.a
 MeuJogo: /usr/local/lib/libSDL2.dylib

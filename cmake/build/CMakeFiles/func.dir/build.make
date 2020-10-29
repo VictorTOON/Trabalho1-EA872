@@ -76,27 +76,27 @@ include CMakeFiles/func.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/func.dir/flags.make
 
-CMakeFiles/func.dir/src/func.cpp.o: CMakeFiles/func.dir/flags.make
-CMakeFiles/func.dir/src/func.cpp.o: ../src/func.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/func.dir/src/func.cpp.o"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/func.dir/src/func.cpp.o -c /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.cpp
+CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o: CMakeFiles/func.dir/flags.make
+CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o: /Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o -c /Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp
 
-CMakeFiles/func.dir/src/func.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/func.dir/src/func.cpp.i"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.cpp > CMakeFiles/func.dir/src/func.cpp.i
+CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp > CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i
 
-CMakeFiles/func.dir/src/func.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/func.dir/src/func.cpp.s"
-	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.cpp -o CMakeFiles/func.dir/src/func.cpp.s
+CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s"
+	/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp -o CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s
 
 # Object files for target func
 func_OBJECTS = \
-"CMakeFiles/func.dir/src/func.cpp.o"
+"CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o"
 
 # External object files for target func
 func_EXTERNAL_OBJECTS =
 
-libfunc.a: CMakeFiles/func.dir/src/func.cpp.o
+libfunc.a: CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o
 libfunc.a: CMakeFiles/func.dir/build.make
 libfunc.a: CMakeFiles/func.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfunc.a"

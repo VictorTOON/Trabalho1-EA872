@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../include/func.h
+../../include/func.h
 
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/tutorial.cpp
+/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp
 SDL2/SDL.h
 -
 SDL2/SDL_image.h
@@ -16,7 +16,7 @@ SDL2/SDL_image.h
 iostream
 -
 func.h
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.h
+/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.h
 
 /usr/local/include/SDL2/SDL.h
 SDL_main.h

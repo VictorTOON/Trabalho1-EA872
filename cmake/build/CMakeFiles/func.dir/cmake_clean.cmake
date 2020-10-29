@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/func.dir/src/func.cpp.o"
+  "CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o"
   "libfunc.a"
   "libfunc.pdb"
 )

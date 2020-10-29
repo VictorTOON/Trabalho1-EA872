@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../include/func.h
+../../include/func.h
 
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.cpp
+/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp
 func.h
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.h
+/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.h
 iostream
 -
 

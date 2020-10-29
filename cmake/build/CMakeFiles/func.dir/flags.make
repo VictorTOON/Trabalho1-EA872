@@ -4,7 +4,7 @@
 # compile CXX with /Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/include -I/usr/local/include/SDL2 -I/usr/local/include
+CXX_INCLUDES = -I/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/../include -I/usr/local/include/SDL2 -I/usr/local/include
 
 CXX_FLAGS = -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -std=c++14 -fmessage-length=0 -isystem /Users/victortoon/miniconda3/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 

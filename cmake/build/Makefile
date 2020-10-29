@@ -155,59 +155,59 @@ MeuJogo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/build
 .PHONY : MeuJogo/fast
 
-src/func.o: src/func.cpp.o
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.o: Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o
 
-.PHONY : src/func.o
-
-# target to build an object file
-src/func.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/src/func.cpp.o
-.PHONY : src/func.cpp.o
-
-src/func.i: src/func.cpp.i
-
-.PHONY : src/func.i
-
-# target to preprocess a source file
-src/func.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/src/func.cpp.i
-.PHONY : src/func.cpp.i
-
-src/func.s: src/func.cpp.s
-
-.PHONY : src/func.s
-
-# target to generate assembly for a file
-src/func.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/src/func.cpp.s
-.PHONY : src/func.cpp.s
-
-src/tutorial.o: src/tutorial.cpp.o
-
-.PHONY : src/tutorial.o
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.o
 
 # target to build an object file
-src/tutorial.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/src/tutorial.cpp.o
-.PHONY : src/tutorial.cpp.o
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o
 
-src/tutorial.i: src/tutorial.cpp.i
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.i: Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i
 
-.PHONY : src/tutorial.i
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.i
 
 # target to preprocess a source file
-src/tutorial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/src/tutorial.cpp.i
-.PHONY : src/tutorial.cpp.i
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.i
 
-src/tutorial.s: src/tutorial.cpp.s
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.s: Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s
 
-.PHONY : src/tutorial.s
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.s
 
 # target to generate assembly for a file
-src/tutorial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/src/tutorial.cpp.s
-.PHONY : src/tutorial.cpp.s
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/func.dir/build.make CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.s
+
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.o: Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o
+
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.o
+
+# target to build an object file
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.o
+
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.i: Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i
+
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.i
+
+# target to preprocess a source file
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.i
+
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.s: Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s
+
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.s
+
+# target to generate assembly for a file
+Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MeuJogo.dir/build.make CMakeFiles/MeuJogo.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s
+.PHONY : Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.cpp.s
 
 # Help Target
 help:
@@ -219,12 +219,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... MeuJogo"
 	@echo "... func"
-	@echo "... src/func.o"
-	@echo "... src/func.i"
-	@echo "... src/func.s"
-	@echo "... src/tutorial.o"
-	@echo "... src/tutorial.i"
-	@echo "... src/tutorial.s"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.o"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.i"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.s"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.o"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.i"
+	@echo "... Users/victortoon/HelloTeam/Trabalho1-EA872/src/tutorial.s"
 .PHONY : help
 
 

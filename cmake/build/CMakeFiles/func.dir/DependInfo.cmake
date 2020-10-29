@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/src/func.cpp" "/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/func.dir/src/func.cpp.o"
+  "/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp" "/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include"
+  "../../include"
   "/usr/local/include/SDL2"
   "/usr/local/include"
   )
