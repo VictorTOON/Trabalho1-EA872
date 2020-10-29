@@ -1,4 +1,0 @@
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/rebuild_cache.dir
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/edit_cache.dir
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/func.dir
-/Users/victortoon/HelloTeam/Trabalho1-EA872/cmake/build/CMakeFiles/MeuJogo.dir

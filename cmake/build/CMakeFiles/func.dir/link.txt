@@ -1,2 +1,0 @@
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libfunc.a CMakeFiles/func.dir/Users/victortoon/HelloTeam/Trabalho1-EA872/src/func.cpp.o
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libfunc.a
