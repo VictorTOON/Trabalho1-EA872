@@ -30,6 +30,7 @@ GameView::GameView(PersonagemView personagemView){
 			-1,
 			SDL_RENDERER_ACCELERATED
 			);
+	this->personagemView->set_render(renderer);
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
 		std::cout << SDL_GetError();
@@ -53,8 +54,6 @@ int GameView::draw(){
 		}	
 	}
 //	this->block_view.y = pixel_pos;
-	SDL_SetRenderDrawColor(this->renderer, 0, 255, 0, 255);
-	SDL_RenderClear(this->renderer);
 	personagemView->draw();
 //	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
 //	SDL_RenderFillRect(this->renderer, &(this->block_view));
