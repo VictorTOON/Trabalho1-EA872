@@ -19,4 +19,5 @@ class GameView{
 		~GameView();
 		int draw();
         void setBackground();
+        void drawBackground();
 };

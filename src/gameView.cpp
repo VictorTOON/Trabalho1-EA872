@@ -31,6 +31,7 @@ GameView::GameView(PersonagemView personagemView){
 			SDL_RENDERER_ACCELERATED
 			);
 	this->personagemView->set_render(renderer);
+    this->drawBackground();
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
 		std::cout << SDL_GetError();
@@ -48,6 +49,8 @@ GameView::~GameView(){
 
 void GameView::setBackground(){
     SDL_Texture *backgroundTexture = IMG_LoadTexture(renderer, "../assets/background.jpg");
+}
+void GameView::drawBackground(){
     SDL_RenderCopy(renderer, backgroundTexture, nullptr, nullptr);
 }
 
@@ -60,7 +63,7 @@ int GameView::draw(){
 	}
 //	this->block_view.y = pixel_pos;
 //	personagemView->draw();
-    this->setBackground();
+    this->drawBackground();
 //	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
 //	SDL_RenderFillRect(this->renderer, &(this->block_view));
 	SDL_RenderPresent(this->renderer);
