@@ -9,6 +9,7 @@
 
 class GameView{
 	private:
+        SDL_Texture *backgroundTexture;
 		std::unique_ptr<PersonagemView> personagemView;
 		SDL_Window *window;
 		SDL_Renderer* renderer;
@@ -17,5 +18,5 @@ class GameView{
 		GameView(PersonagemView personagemView);
 		~GameView();
 		int draw();
-
+        void setBackground();
 };

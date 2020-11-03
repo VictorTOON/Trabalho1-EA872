@@ -42,9 +42,14 @@ GameView::GameView(PersonagemView personagemView){
 GameView::~GameView(){
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
+    SDL_DestroyTexture(backgroundTexture);
 	SDL_Quit();
 }
 
+void GameView::setBackground(){
+    SDL_Texture *backgroundTexture = IMG_LoadTexture(renderer, "../assets/background.jpg");
+    SDL_RenderCopy(renderer, backgroundTexture, nullptr, nullptr);
+}
 
 int GameView::draw(){
 	SDL_PumpEvents();
@@ -54,7 +59,8 @@ int GameView::draw(){
 		}	
 	}
 //	this->block_view.y = pixel_pos;
-	personagemView->draw();
+//	personagemView->draw();
+    this->setBackground();
 //	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
 //	SDL_RenderFillRect(this->renderer, &(this->block_view));
 	SDL_RenderPresent(this->renderer);

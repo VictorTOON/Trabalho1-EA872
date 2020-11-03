@@ -9,5 +9,6 @@ class GameView{
 		GameView();
 		~GameView();
 		drawGame();
+        setBackground();
 
 }
