@@ -59,8 +59,8 @@ int GameView::draw(){
 		}	
 	}
 //	this->block_view.y = pixel_pos;
-//	personagemView->draw();
-    this->setBackground();
+	this->setBackground();
+	personagemView->draw();
 //	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
 //	SDL_RenderFillRect(this->renderer, &(this->block_view));
 	SDL_RenderPresent(this->renderer);

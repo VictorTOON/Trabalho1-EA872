@@ -16,20 +16,15 @@ PersonagemView::PersonagemView(int h, int w, float angle, int color[3]){
 
 void PersonagemView::set_render(SDL_Renderer *renderer){
 	this->renderer = renderer;
-	this->texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, h, w);
+	this->texture = IMG_LoadTexture(renderer, "../assets/tree-character.png");
 }
 
 void PersonagemView::update(int x, int y, float angle, int color[3]){
-
 }
 
 void PersonagemView::draw(){
-	
-	std::cout << this->h << this-> w << std::endl; 
-	SDL_SetRenderTarget(this->renderer, this->texture);
-        SDL_SetRenderDrawColor(this->renderer, this->color[0], this->color[1], this->color[1], 255);
-	//SDL_RenderClear(this->renderer);
-	SDL_RenderCopy(this->renderer, this->texture, NULL, NULL);
+	static float i = 0;
+	SDL_RenderCopyEx(renderer, this->texture, nullptr, nullptr, 45.0f + i++, nullptr, SDL_FLIP_NONE);
 
 }
 
