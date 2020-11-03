@@ -3,7 +3,8 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-GameView::GameView(){
+GameView::GameView(PersonagemView personagemView){
+	this->personagemView = std::unique_ptr<PersonagemView>(new PersonagemView(personagemView));
 	if (SDL_Init (SDL_INIT_VIDEO) < 0){
 		std::cout << SDL_GetError();
 		return;
@@ -44,19 +45,19 @@ GameView::~GameView(){
 }
 
 
-void GameView::draw(){
+int GameView::draw(){
 	SDL_PumpEvents();
 	while (SDL_PollEvent(&(this->event))){
 		if (this->event.type == SDL_QUIT){
 			return -1;
 		}	
 	}
-	this->block_view.y = pixel_pos;
+//	this->block_view.y = pixel_pos;
 	SDL_SetRenderDrawColor(this->renderer, 0, 255, 0, 255);
 	SDL_RenderClear(this->renderer);
-	personagemView.draw();
-	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
-	SDL_RenderFillRect(this->renderer, &(this->block_view));
+	personagemView->draw();
+//	SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
+//	SDL_RenderFillRect(this->renderer, &(this->block_view));
 	SDL_RenderPresent(this->renderer);
 	SDL_Delay(10);
 	return 0;

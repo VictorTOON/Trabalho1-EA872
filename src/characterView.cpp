@@ -7,7 +7,9 @@ PersonagemView::PersonagemView(int x, int y, float angle, int color[3]){
 	this->x = x;
 	this->y = y;
 	this->angle = angle;
-	this->color = color;
+	this->color[0] = color[0];
+	this->color[1] = color[1];
+	this->color[2] = color[2];
 	
 }
 
