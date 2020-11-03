@@ -4,8 +4,8 @@
 #include <iomanip>
 #include "characterView.h"
 
-#define SCREEN_WIDTH 400
-#define SCREEN_HEIGHT 400
+#define SCREEN_WIDTH 1600
+#define SCREEN_HEIGHT 900
 
 class GameView{
 	private:
