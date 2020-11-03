@@ -6,8 +6,10 @@ int main(){
 	PersonagemView p(40,40, -1, x);
 
 	GameView gameView(p);
-
-	while (gameView.draw() == 0);
+	SDL_Keyboard_Handler keyboardHandler();
+	while (gameView.draw() == 0){
+			
+	}
 	
 	return 0;
 }
