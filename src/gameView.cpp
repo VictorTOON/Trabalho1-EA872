@@ -15,8 +15,9 @@ GameView::GameView(PersonagemView personagemView){
 			SDL_WINDOWPOS_UNDEFINED,
 			SCREEN_WIDTH,
 			SCREEN_HEIGHT,
-			SDL_WINDOW_SHOWN
+			SDL_WINDOW_FULLSCREEN_DESKTOP
 			);
+
 	if (window == nullptr){
 		SDL_DestroyWindow(window);
 		std::cout << SDL_GetError();
@@ -31,7 +32,7 @@ GameView::GameView(PersonagemView personagemView){
 			SDL_RENDERER_ACCELERATED
 			);
 	this->personagemView->set_render(renderer);
-    	this->setBackground();
+    this->setBackground();
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
 		std::cout << SDL_GetError();
