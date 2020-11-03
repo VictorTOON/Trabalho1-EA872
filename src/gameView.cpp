@@ -44,7 +44,7 @@ GameView::~GameView(){
 }
 
 
-void GameView::drawGame(){
+void GameView::draw(){
 	SDL_PumpEvents();
 	while (SDL_PollEvent(&(this->event))){
 		if (this->event.type == SDL_QUIT){

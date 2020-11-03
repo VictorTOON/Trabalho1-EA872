@@ -3,15 +3,19 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-PersonagemView::PersonagemView(int x, int y, float angle, int[3] color){
+PersonagemView::PersonagemView(int x, int y, float angle, int color[3]){
+	this->x = x;
+	this->y = y;
+	this->angle = angle;
+	this->color = color;
 	
 }
 
-void Personagem::update(int x, int y, float angle, int[3] color){
+void PersonagemView::update(int x, int y, float angle, int color[3]){
 
 }
 
-void Personagem::draw(){
+void PersonagemView::draw(){
 
 }
 

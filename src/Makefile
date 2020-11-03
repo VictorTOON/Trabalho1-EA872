@@ -14,3 +14,4 @@ characterView.o : characterView.cpp characterView.h
 	g++ -c characterView.cpp -ocharacterView.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 clean:
 	rm *.o
+	rm main
