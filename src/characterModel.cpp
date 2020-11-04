@@ -58,10 +58,10 @@ void Personagem::handle_keyboard(int entry){
 			if (this->y < 0) this->y = 0;
 	}
 	if (entry & (1 << KEYBOARD_LEFT)){
-			this->teta += PASSO_TETA; 
+			this->teta -= PASSO_TETA; 
 	}
 	if (entry & (1 << KEYBOARD_RIGHT)){
-			this->teta -= PASSO_TETA; 
+			this->teta += PASSO_TETA; 
 	}
 }
 
