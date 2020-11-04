@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#define CHARACTER_SIZE 50
+#define CHARACTER_SIZE 150
 
 class PersonagemView{
 	private:
