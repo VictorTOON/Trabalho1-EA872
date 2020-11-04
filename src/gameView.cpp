@@ -3,8 +3,9 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-GameView::GameView(std::shared_ptr<PersonagemView> personagemView){
+GameView::GameView(std::shared_ptr<PersonagemView> personagemView, std::shared_ptr<ZumbiView> zumbiView){
 	this->personagemView = personagemView;
+	this->zumbiView = zumbiView;
 	if (SDL_Init (SDL_INIT_VIDEO) < 0){
 		std::cout << SDL_GetError();
 		return;
@@ -32,6 +33,7 @@ GameView::GameView(std::shared_ptr<PersonagemView> personagemView){
 			SDL_RENDERER_ACCELERATED
 			);
 	this->personagemView->set_render(renderer);
+	this->zumbiView->set_render(renderer);
 	this->setBackground();
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
@@ -67,6 +69,7 @@ int GameView::draw(){
 	this->drawBackground();
 
 	personagemView->draw();
+	zumbiView->draw();
 
 	SDL_RenderPresent(this->renderer);
 	SDL_Delay(30);
