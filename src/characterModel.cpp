@@ -44,27 +44,24 @@ void Personagem::set_health(int novo_health){
 
 #define GRAD_TO_RAD (3.14159265/180)
 void Personagem::handle_keyboard(int entry){
-	switch (entry) {
-		case KEYBOARD_UP:
+	
+	if (entry & (1 << KEYBOARD_UP)){
 			this->x += PASSO * cos(teta * (GRAD_TO_RAD));
 			this->y += PASSO * sin(teta * (GRAD_TO_RAD)); 
 			if (this->x < 0) this->x = 0;
 			if (this->y < 0) this->y = 0;
-			break;
-		case KEYBOARD_DOWN:
+	}
+	if (entry & (1 << KEYBOARD_DOWN)){
 			this->x -= PASSO * cos(teta * (GRAD_TO_RAD));
 			this->y -= PASSO * sin(teta * (GRAD_TO_RAD)); 
 			if (this->x < 0) this->x = 0;
 			if (this->y < 0) this->y = 0;
-			break;
-		case KEYBOARD_LEFT:
+	}
+	if (entry & (1 << KEYBOARD_LEFT)){
 			this->teta += PASSO_TETA; 
-			break;
-		case KEYBOARD_RIGHT:
+	}
+	if (entry & (1 << KEYBOARD_RIGHT)){
 			this->teta -= PASSO_TETA; 
-			break;
-		default:
-			break;
 	}
 }
 

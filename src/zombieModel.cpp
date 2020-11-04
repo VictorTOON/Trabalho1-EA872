@@ -43,7 +43,7 @@ void Zumbi::set_health(int novo_health){
 }
 
 #define GRAD_TO_RAD (3.14159265/180)
-#define CONST_SPIN 0.05
+#define CONST_SPIN 0.1
 void Zumbi::followPersonagem(Personagem p){
 	if (this->x < p.get_x()){
 		this->x += PASSO * CONST_SPIN;
