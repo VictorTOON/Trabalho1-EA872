@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
+#include <memory> 
 #include <SDL2/SDL_image.h>
 
 #define ZOMBIE_SIZE 150

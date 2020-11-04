@@ -4,7 +4,7 @@
 #include <iomanip>
 #include "characterView.h"
 #include "zombieView.h"
-
+#include <memory>
 #define SCREEN_WIDTH 1600
 #define SCREEN_HEIGHT 900
 

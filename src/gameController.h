@@ -9,6 +9,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <memory>
 
 class GameController {
 	private:
