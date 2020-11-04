@@ -3,6 +3,11 @@
 
 #define KEYBOARD_FORCE 10
 
+#define KEYBOARD_UP 1
+#define KEYBOARD_DOWN 2
+#define KEYBOARD_LEFT 4
+#define KEYBOARD_RIGHT 3
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
@@ -12,7 +17,7 @@ class SDL_Keyboard_Handler{
 	       	const Uint8* state;
 	public:
 		SDL_Keyboard_Handler();
-		float HandleForceResponse();
+		int getInput();
 };
 
 #endif 

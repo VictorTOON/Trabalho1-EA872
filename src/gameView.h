@@ -9,15 +9,15 @@
 
 class GameView{
 	private:
-        SDL_Texture *backgroundTexture;
-		std::unique_ptr<PersonagemView> personagemView;
+		SDL_Texture *backgroundTexture;
+		std::shared_ptr<PersonagemView> personagemView;
 		SDL_Window *window;
 		SDL_Renderer* renderer;
 		SDL_Event event;
 	public:
-		GameView(PersonagemView personagemView);
+		GameView(std::shared_ptr<PersonagemView> personagemView);
 		~GameView();
 		int draw();
-        void setBackground();
-        void drawBackground();
+		void setBackground();
+		void drawBackground();
 };

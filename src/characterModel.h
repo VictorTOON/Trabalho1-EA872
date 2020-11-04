@@ -1,13 +1,19 @@
+#pragma once
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include "sdl_keyboard_handler.h"
+#include <cmath>
+
+#define PASSO 10
+#define PASSO_TETA 10
 
 class Personagem{
     private:
         int x, y, health;
         float teta;
     public:
-        Personagem();
+        Personagem(int x, int y, float teta);
         int get_x();
         void set_x(int);
         int get_y();
@@ -16,4 +22,6 @@ class Personagem{
         void set_teta(float);
         int get_health();
         void set_health(int);
+	void handle_keyboard(int); 
+	void update_teta(float);
 };

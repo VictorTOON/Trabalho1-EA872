@@ -4,13 +4,19 @@ SDL_Keyboard_Handler::SDL_Keyboard_Handler(){
 	state = SDL_GetKeyboardState(nullptr);
 }
 
-float SDL_Keyboard_Handler::HandleForceResponse(){
+int SDL_Keyboard_Handler::getInput(){
 	SDL_PumpEvents();
 	if (this->state[SDL_SCANCODE_DOWN]){
-		return -KEYBOARD_FORCE;
+		return KEYBOARD_DOWN;
+	}
+	if (this->state[SDL_SCANCODE_LEFT]){
+		return KEYBOARD_LEFT;
+	}
+	if (this->state[SDL_SCANCODE_RIGHT]){
+		return KEYBOARD_RIGHT;
 	}
 	if (this->state[SDL_SCANCODE_UP]){
-		return KEYBOARD_FORCE;
+		return KEYBOARD_UP;
 	}
 	return 0;
 }

@@ -10,12 +10,14 @@
 
 class GameController {
 	private:
-		unique_ptr<Personagem> personagem;
-		unique_ptr<GameView> gameView;
-		unique_ptr<PersonagemView> personagemView;
+		std::unique_ptr<Personagem> personagem;
+		std::unique_ptr<GameView> gameView;
+		std::shared_ptr<PersonagemView> personagemView;
+		SDL_Keyboard_Handler keyboardHandler;
 		void updatePersonagemView();
 	public:
-		GameController();
+		GameController(Personagem personagem);
+		void personagem_updateViewByModel();
 		void start();
-		void iterate();
+		int iterate();
 };

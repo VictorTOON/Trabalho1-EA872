@@ -1,18 +1,20 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
+#define CHARACTER_SIZE 50
+
 class PersonagemView{
 	private:
 	       	SDL_Rect personagem;
-		int h, w;
 		int x,  y;
 		float angle;
-		int color[3];
 		SDL_Renderer *renderer;
 		SDL_Texture *texture;
+		SDL_Rect rect;
 	public:
-		PersonagemView(int x, int y, float angle, int color[3]);
-		void update(int x, int y, float angle, int color[3]);
-		void set_render(SDL_Renderer *render);
+		PersonagemView(int h, int w, float angle);
+		void update(int x, int y, float angle);
+		void set_render(SDL_Renderer *renderer);
 		void draw();
 };

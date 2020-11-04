@@ -1,11 +1,5 @@
 #include "characterModel.h"
 
-Personagem::Personagem(int x, int y, float teta){
-	this->x = x;
-	this->y = y;
-	this->teta = teta;
-}
-
 int Personagem::get_x(){
     return x;
 }
@@ -47,23 +41,16 @@ void Personagem::handle_keyboard(int entry){
 	switch (entry) {
 		case KEYBOARD_UP:
 			this->x += PASSO * cos(teta * (GRAD_TO_RAD));
-			this->y += PASSO * sin(teta * (GRAD_TO_RAD)); 
-			if (this->x < 0) this->x = 0;
-			if (this->y < 0) this->y = 0;
+			this->y = 
 			break;
 		case KEYBOARD_DOWN:
-			this->x -= PASSO * cos(teta * (GRAD_TO_RAD));
-			this->y -= PASSO * sin(teta * (GRAD_TO_RAD)); 
-			if (this->x < 0) this->x = 0;
-			if (this->y < 0) this->y = 0;
+			this->
 			break;
 		case KEYBOARD_LEFT:
-			this->teta += PASSO_TETA; 
 			break;
 		case KEYBOARD_RIGHT:
-			this->teta -= PASSO_TETA; 
 			break;
-		default:
+		case default:
 			break;
 	}
 }

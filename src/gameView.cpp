@@ -3,14 +3,14 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-GameView::GameView(PersonagemView personagemView){
-	this->personagemView = std::unique_ptr<PersonagemView>(new PersonagemView(personagemView));
+GameView::GameView(std::shared_ptr<PersonagemView> personagemView){
+	this->personagemView = personagemView;
 	if (SDL_Init (SDL_INIT_VIDEO) < 0){
 		std::cout << SDL_GetError();
 		return;
 	}
 	window = nullptr;
-	window = SDL_CreateWindow("Sistema massa-mola",
+	window = SDL_CreateWindow("MASSACRE DAS ARVORES PARTE 2",
 			SDL_WINDOWPOS_UNDEFINED,
 			SDL_WINDOWPOS_UNDEFINED,
 			SCREEN_WIDTH,
@@ -32,7 +32,7 @@ GameView::GameView(PersonagemView personagemView){
 			SDL_RENDERER_ACCELERATED
 			);
 	this->personagemView->set_render(renderer);
-    this->setBackground();
+	this->setBackground();
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
 		std::cout << SDL_GetError();
@@ -69,6 +69,6 @@ int GameView::draw(){
 	personagemView->draw();
 
 	SDL_RenderPresent(this->renderer);
-	SDL_Delay(10);
+	SDL_Delay(30);
 	return 0;
 }

@@ -1,16 +1,11 @@
 #include "gameView.h"
 #include "characterModel.h"
 #include "sdl_keyboard_handler.h"
+#include "gameController.h"
 
 int main(){
-	int x[] = {255,255,255};
-	PersonagemView p(40,40, -1, x);
-
-	GameView gameView(p);
-	SDL_Keyboard_Handler keyboardHandler;
-	while (gameView.draw() == 0){
-			
-	}
-	
+	Personagem p(300,300, 0);
+	GameController gameController(p);
+	gameController.start();
 	return 0;
 }
