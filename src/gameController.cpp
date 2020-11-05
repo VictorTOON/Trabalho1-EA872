@@ -6,7 +6,7 @@ GameController::GameController(Personagem personagem, Zumbi zumbi){
 	this->personagem = std::unique_ptr<Personagem>(new Personagem(personagem));
 	this->zumbi = std::unique_ptr<Zumbi>(new Zumbi(zumbi));
 	this->zumbiView = std::shared_ptr<ZumbiView>(new ZumbiView(CHARACTER_SIZE, CHARACTER_SIZE, this->zumbi->get_teta()));
-	this->personagemView = std::shared_ptr<PersonagemView>(new PersonagemView(CHARACTER_SIZE, CHARACTER_SIZE, this->personagem->get_teta()));
+	this->personagemView = std::shared_ptr<PersonagemView>(new PersonagemView(CHARACTER_SIZE, CHARACTER_SIZE, this->personagem->get_teta(), "../assets/tree-character.png"));
 	this->gameView = std::unique_ptr<GameView>(new GameView(this->personagemView, this->zumbiView));
 }
 
