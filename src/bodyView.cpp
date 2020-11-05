@@ -3,11 +3,13 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include <cstring>
 
-CorpoView::CorpoView(int h, int w, float angle){
+CorpoView::CorpoView(int h, int w, float angle, char src_asset[100]){
 	this->angle = angle;
 	this->rect.h = h;
 	this->rect.w = w;
+	std::strcpy(this->src_asset, src_asset);
 	
 }
 

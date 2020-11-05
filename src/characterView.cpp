@@ -5,7 +5,7 @@
 #include <iostream>
 
 PersonagemView::PersonagemView(int h, int w, float angle, char src_asset[100]):
-	CorpoView(h, w, angle, src_asset);
+	CorpoView(h, w, angle, src_asset)
 {
 	
 }
