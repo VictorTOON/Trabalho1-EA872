@@ -4,24 +4,10 @@
 #include <iostream>
 #include "sdl_keyboard_handler.h"
 #include <cmath>
+#include "bodyModel.h"
 
-#define PASSO 10
-#define PASSO_TETA 10
-
-class Personagem{
-    private:
-        int x, y, health;
-        float teta;
+class Personagem: public Corpo{
     public:
         Personagem(int x, int y, float teta);
-        int get_x();
-        void set_x(int);
-        int get_y();
-        void set_y(int);
-        float get_teta();
-        void set_teta(float);
-        int get_health();
-        void set_health(int);
 	void handle_keyboard(int); 
-	void update_teta(float);
 };

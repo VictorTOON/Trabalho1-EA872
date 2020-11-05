@@ -2,8 +2,8 @@ LDFLAGS = -framework SDL2  -I
 
 all : main
 
-main: main.o gameController.o zombieView.o zombieModel.o characterModel.o characterView.o gameView.o sdl_keyboard_handler.o
-	g++ -o main main.o gameController.o zombieView.o zombieModel.o characterModel.o gameView.o characterView.o sdl_keyboard_handler.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+main: main.o gameController.o zombieView.o zombieModel.o characterModel.o characterView.o bodyModel.o gameView.o sdl_keyboard_handler.o
+	g++ -o main main.o gameController.o zombieView.o zombieModel.o characterModel.o gameView.o bodyModel.o characterView.o sdl_keyboard_handler.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 main.o: main.cpp
 	g++ -c main.cpp -o main.o -std=c++11
 
@@ -12,6 +12,10 @@ characterModel.o: characterModel.cpp characterModel.h
 
 characterView.o : characterView.cpp characterView.h
 	g++ -c characterView.cpp -ocharacterView.o -I/usr/local/include # -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+
+bodyModel.o: bodyModel.cpp bodyModel.h
+	g++ -c bodyModel.cpp -obodyModel.o 
+
 
 zombieModel.o: zombieModel.cpp zombieModel.h
 	g++ -c zombieModel.cpp -ozombieModel.o 
