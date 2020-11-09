@@ -2,14 +2,19 @@
 
 #include <iostream>
 
-GameController::GameController(Personagem personagem, Zumbi zumbi, Axe axe){
+GameController::GameController(Personagem personagem, std::vector<Zumbi> zumbis){
 	this->personagem = std::unique_ptr<Personagem>(new Personagem(personagem));
-	this->zumbi = std::unique_ptr<Zumbi>(new Zumbi(zumbi));
-    this->axe = std::unique_ptr<Axe> (new Axe(axe);
-    this->axeView = std::shared_ptr<AxeView>(new AxeView(CHARACTER_SIZE/2, CHARACTER_SIZE/2, this->axe->get_teta(), "../assets/axe.png"));
-	this->zumbiView = std::shared_ptr<ZumbiView>(new ZumbiView(CHARACTER_SIZE, CHARACTER_SIZE, this->zumbi->get_teta(), "../assets/zombie.png"));
+	this->zumbis = zumbis;
+	this->zumbiViews = std::vector<ZumbiView>();
+	for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z) {
+		this->zumbiViews.push_back(ZumbiView(CHARACTER_SIZE, CHARACTER_SIZE, z->get_teta(), "../assets/zombie.png"));
+	} 
 	this->personagemView = std::shared_ptr<PersonagemView>(new PersonagemView(CHARACTER_SIZE, CHARACTER_SIZE, this->personagem->get_teta(), "../assets/tree-character.png"));
-	this->gameView = std::unique_ptr<GameView>(new GameView(this->personagemView, this->zumbiView));
+	this->gameView = std::unique_ptr<GameView>(new GameView(this->personagemView, this->zumbiViews));
+}
+
+void GameController::addZumbi(Zumbi zumbi){
+	this->zumbis.push_back(zumbi);
 }
 
 void GameController::start(){
@@ -17,7 +22,10 @@ void GameController::start(){
 }
 
 void GameController::zumbi_updateViewByModel(){
-	this->zumbiView->update(this->zumbi->get_x(), this->zumbi->get_y(), this->zumbi->get_teta());
+	for (int i = 0; i < this->zumbiViews.size(); ++i){
+		std::cout << this->zumbis.at(i).get_x() << "  " << this->zumbis.at(i).get_y() << std::endl;
+		this->gameView->changeZumbi(i, this->zumbis.at(i).get_x(), this->zumbis.at(i).get_y(), this->zumbis.at(i).get_teta());
+	} 
 }
 void GameController::axe_updateViewByModel(){
     this->axeView->update(this->axe->get_x(), this->axe->get_y())
@@ -29,10 +37,9 @@ void GameController::personagem_updateViewByModel(){
 int GameController::iterate(){
     tempo = SDL_GetTicks()
 	this->personagem->handle_keyboard((this->keyboardHandler.getInput()));
-	this->zumbi->followPersonagem(*(this->personagem));
-    this->axe->update_xy(float tempo_passado, float tempo
-	std::cout<<this->personagem->get_x()<<std::endl;
-	std::cout<<this->personagem->get_y()<<std::endl;
+	for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
+		z->followPersonagem(*(this->personagem));
+	}
 	personagem_updateViewByModel();
 	zumbi_updateViewByModel();
     axe_updateViewByModel()
