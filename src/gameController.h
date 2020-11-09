@@ -10,20 +10,22 @@
 #include <iomanip>
 #include <iostream>
 #include <memory>
+#include <vector>
 
 class GameController {
 	private:
 		std::unique_ptr<Personagem> personagem;
-		std::unique_ptr<Zumbi> zumbi;
+		std::vector<Zumbi> zumbis;
 		std::unique_ptr<GameView> gameView;
 		std::shared_ptr<PersonagemView> personagemView;
-		std::shared_ptr<ZumbiView> zumbiView;
+		std::vector<ZumbiView> zumbiViews;
 		SDL_Keyboard_Handler keyboardHandler;
 		void updatePersonagemView();
 	public:
-		GameController(Personagem personagem, Zumbi zumbi);
+		GameController(Personagem personagem, std::vector<Zumbi> zumbis);
 		void personagem_updateViewByModel();
 		void zumbi_updateViewByModel();
+		void addZumbi(Zumbi zumbi);
 		void start();
 		int iterate();
 };
