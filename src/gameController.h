@@ -3,8 +3,12 @@
 #include "gameView.h"
 #include "characterView.h"
 #include "characterModel.h"
+#include "projectileView.h"
+#include "projectileModel.h"
 #include "zombieView.h"
 #include "zombieModel.h"
+#include "axeView.h"
+#include "axeModel.h"
 #include "sdl_keyboard_handler.h"
 
 #include <iomanip>
@@ -15,6 +19,7 @@ class GameController {
 	private:
 		std::unique_ptr<Personagem> personagem;
 		std::unique_ptr<Zumbi> zumbi;
+        std::unique_ptr<Axe> Axe;
 		std::unique_ptr<GameView> gameView;
 		std::shared_ptr<PersonagemView> personagemView;
 		std::shared_ptr<ZumbiView> zumbiView;

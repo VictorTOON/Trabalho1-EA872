@@ -7,6 +7,7 @@
 #define KEYBOARD_DOWN 2
 #define KEYBOARD_LEFT 4
 #define KEYBOARD_RIGHT 3
+#define KEYBOARD_SPACE 5
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
