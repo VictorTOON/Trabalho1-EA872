@@ -25,5 +25,12 @@ void PersonagemModel::handle_keyboard(int entry){
 	if (entry & (1 << KEYBOARD_RIGHT)){
 			this->update_teta(PASSO_TETA); 
 	}
+    if (entry & (1 << KEYBOARD_SPACE)){
+			this->createNewAxe(this->get_x(), this->get_y(), this->get_teta());
+	}
+}
+
+void PersonagemModel::createNewAxe(int x, int y, float teta){
+    this->axeControllers.push_back(AxeController(x,y,teta));
 }
 

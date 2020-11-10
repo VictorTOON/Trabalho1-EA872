@@ -14,10 +14,10 @@
 
 class AxeController{
     private:
-        std::shared_ptr<axeModel> axeModel;
-        std::shared_ptr<axeView> axeView;
-		std::unique_ptr<PersonagemView>
+        std::shared_ptr<AxeModel> axeModel;
+        std::shared_ptr<AxeView> axeView;
     public:
+        AxeController(int x, int y, float teta);
         void updateModelPosition(float tempo_pass, float tempo_atual);
         void updateViewPosition();
 };
