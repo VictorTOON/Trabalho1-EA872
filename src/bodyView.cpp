@@ -24,9 +24,11 @@ void CorpoView::update(int x, int y, float angle){
 	this->rect.y = ((y>0)?y:0);
 }
 
+virtual void drawCast(){}
+
 void CorpoView::draw(){
 	SDL_RenderCopyEx(renderer, this->texture, nullptr, &(this->rect), this->angle, nullptr, SDL_FLIP_NONE);
-
+    drawCast();
 }
 
 

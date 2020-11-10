@@ -4,6 +4,7 @@
 #include <iomanip>
 #include "characterView.h"
 #include "zombieView.h"
+#include "axeView.h"
 #include <memory>
 #include <vector>
 #define SCREEN_WIDTH 1600
@@ -14,6 +15,7 @@ class GameView{
 		SDL_Texture *backgroundTexture;
 		std::shared_ptr<PersonagemView> personagemView;
 		std::vector<ZumbiView> zumbiViews;
+        std::vector<AxeView> axeViews;
 		SDL_Window *window;
 		SDL_Renderer* renderer;
 		SDL_Event event;

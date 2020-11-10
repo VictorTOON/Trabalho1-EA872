@@ -19,8 +19,7 @@
 class GameController {
 	private:
 		std::unique_ptr<Personagem> personagem;
-        std::unique_ptr<Axe> Axe;
-		std::vector<Zumbi> zumbis;
+        std::vector<Axe> axes;
 		std::unique_ptr<GameView> gameView;
 		std::shared_ptr<PersonagemView> personagemView;
 		std::vector<ZumbiView> zumbiViews;
@@ -30,6 +29,7 @@ class GameController {
 		GameController(Personagem personagem, std::vector<Zumbi> zumbis);
 		void personagem_updateViewByModel();
 		void zumbi_updateViewByModel();
+        void axe_updateViewByModel();
 		void addZumbi(Zumbi zumbi);
 		void start();
 		int iterate();

@@ -26,7 +26,11 @@ void Personagem::handle_keyboard(int entry){
 			this->update_teta(PASSO_TETA); 
 	}
     if (entry & (1 << KEYBOARD_SPACE)){
-			
+		adicionaMachado();
 	}
+}
+
+void Personagem::adicionaMachado(){
+    this->axes.push_back(Axe(this->get_x, this->get_y, this->get_teta, speed))
 }
 
