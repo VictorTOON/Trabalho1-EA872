@@ -8,4 +8,5 @@
 class PersonagemView: public CorpoView{
 	public:
 		PersonagemView(int h, int w, float angle, const char* src_asset);
+		virtual void drawCast();
 };

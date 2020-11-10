@@ -9,4 +9,5 @@
 class ZumbiView: public CorpoView{
 	public:
 		ZumbiView(int h, int w, float angle, const char* src_asset);
+		virtual void drawCast();
 };

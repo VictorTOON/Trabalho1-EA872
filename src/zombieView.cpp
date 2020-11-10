@@ -11,3 +11,7 @@ ZumbiView::ZumbiView(int h, int w, float angle, const char* src_asset):
 	
 }
 
+void ZumbiView::drawCast(){
+
+}
+

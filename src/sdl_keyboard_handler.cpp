@@ -19,5 +19,8 @@ int SDL_Keyboard_Handler::getInput(){
 	if (this->state[SDL_SCANCODE_W]){
 		ret |= (1<<KEYBOARD_UP);
 	}
+    if (this->state[SDL_SCANCODE_SPACE]){
+		ret |= (1<<KEYBOARD_SPACE);
+	}
 	return ret;
 }
