@@ -1,12 +1,12 @@
 #include "zombieModel.h"
 
-Zumbi::Zumbi(int x, int y, float teta):Corpo(x, y, teta){
+ZumbiModel::ZumbiModel(int x, int y, float teta):CorpoModel(x, y, teta){
 }
 
 
 #define GRAD_TO_RAD (3.14159265/180)
 #define CONST_SPIN 0.1
-void Zumbi::followPersonagem(Personagem p){
+void ZumbiModel::follow(PersonagemModel p){
 	if (this->get_x() < p.get_x()){
 		this->set_x(this->get_x() + PASSO * CONST_SPIN);
 	} else if (this->get_x() > p.get_x()){

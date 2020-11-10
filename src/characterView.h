@@ -7,5 +7,5 @@
 
 class PersonagemView: public CorpoView{
 	public:
-		PersonagemView(int h, int w, float angle, char src_asset[100]);
+		PersonagemView(int h, int w, float angle, const char* src_asset);
 };

@@ -1,10 +1,8 @@
 #pragma once
 
 #include "gameView.h"
-#include "characterView.h"
-#include "characterModel.h"
-#include "zombieView.h"
-#include "zombieModel.h"
+#include "characterController.h"
+#include "zombieController.h"
 #include "sdl_keyboard_handler.h"
 
 #include <iomanip>
@@ -14,18 +12,14 @@
 
 class GameController {
 	private:
-		std::unique_ptr<Personagem> personagem;
-		std::vector<Zumbi> zumbis;
+		std::unique_ptr<PersonagemController> personagem;
+		std::vector<ZumbiController> zumbis;
 		std::unique_ptr<GameView> gameView;
-		std::shared_ptr<PersonagemView> personagemView;
 		std::vector<ZumbiView> zumbiViews;
-		SDL_Keyboard_Handler keyboardHandler;
 		void updatePersonagemView();
 	public:
-		GameController(Personagem personagem, std::vector<Zumbi> zumbis);
-		void personagem_updateViewByModel();
-		void zumbi_updateViewByModel();
-		void addZumbi(Zumbi zumbi);
+		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
+		void addZumbi(ZumbiModel zumbi);
 		void start();
 		int iterate();
 };

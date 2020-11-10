@@ -9,8 +9,8 @@
 
 #define PASSO_ZUMBI 10
 
-class Zumbi: public Corpo{
+class ZumbiModel: public CorpoModel{
     public:
-        Zumbi(int x, int y, float teta);
-	void followPersonagem(Personagem);
+        ZumbiModel(int x, int y, float teta);
+	void follow(PersonagemModel);
 };

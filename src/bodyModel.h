@@ -9,12 +9,12 @@
 #define PASSO 10
 #define PASSO_TETA 10
 
-class Corpo{
+class CorpoModel{
     private:
         int x, y, health;
         float teta;
     public:
-        Corpo(int x, int y, float teta);
+        CorpoModel(int x, int y, float teta);
         int get_x();
         void set_x(int);
         int get_y();

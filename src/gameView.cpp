@@ -3,9 +3,7 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-GameView::GameView(std::shared_ptr<PersonagemView> personagemView, std::vector<ZumbiView> zumbiViews){
-	this->personagemView = personagemView;
-	this->zumbiViews = zumbiViews;
+GameView::GameView(){
 	if (SDL_Init (SDL_INIT_VIDEO) < 0){
 		std::cout << SDL_GetError();
 		return;
@@ -32,11 +30,7 @@ GameView::GameView(std::shared_ptr<PersonagemView> personagemView, std::vector<Z
 			-1,
 			SDL_RENDERER_ACCELERATED
 			);
-	this->personagemView->set_render(renderer);
-	for (auto it = begin(this->zumbiViews); it != end(this->zumbiViews); ++it){
-		it->set_render(renderer);
 	
-	}
 	this->setBackground();
 	if (renderer == nullptr){
 		SDL_DestroyWindow(window);
@@ -44,6 +38,14 @@ GameView::GameView(std::shared_ptr<PersonagemView> personagemView, std::vector<Z
 		SDL_Quit();
 		return;
 	}
+}
+
+void GameView::addPersonagem(std::shared_ptr<PersonagemView> personagem){
+	personagem->set_render(renderer);
+}
+
+void GameView::addZumbi(std::shared_ptr<ZumbiView> zumbi){
+	zumbi->set_render(renderer);
 }
 
 GameView::~GameView(){
@@ -60,10 +62,6 @@ void GameView::drawBackground(){
     SDL_RenderCopy(renderer, backgroundTexture, nullptr, nullptr);
 }
 
-void GameView::changeZumbi(int position, int x, int y, float angle){
-	this->zumbiViews.at(position).update(x, y, angle);
-}
-
 int GameView::draw(){
 	SDL_PumpEvents();
 	while (SDL_PollEvent(&(this->event))){
@@ -75,12 +73,10 @@ int GameView::draw(){
 
 	this->drawBackground();
 
-	personagemView->draw();
-	for (auto it = begin(this->zumbiViews); it != end(this->zumbiViews); ++it){
-		it->draw();
-	
-	}
+	return 0;
+}
+
+void GameView::finishDraw(){
 	SDL_RenderPresent(this->renderer);
 	SDL_Delay(30);
-	return 0;
 }

@@ -3,10 +3,15 @@ CFLAGS= -std=c++11
 
 all : main
 
-main: main.o gameController.o zombieView.o zombieModel.o characterModel.o characterView.o bodyModel.o gameView.o bodyView.o sdl_keyboard_handler.o
-	g++ -o main main.o gameController.o zombieView.o zombieModel.o characterModel.o gameView.o bodyView.o bodyModel.o characterView.o sdl_keyboard_handler.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+main: main.o gameController.o zombieController.o zombieView.o zombieModel.o characterController.o characterModel.o characterView.o bodyModel.o gameView.o bodyView.o sdl_keyboard_handler.o
+	g++ -o main main.o gameController.o zombieController.o zombieView.o zombieModel.o characterController.o characterModel.o gameView.o bodyView.o bodyModel.o characterView.o sdl_keyboard_handler.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 main.o: main.cpp
 	g++ -c main.cpp -o main.o $(CFLAGS)
+
+zombieController.o: zombieController.cpp zombieController.h
+	g++ -c zombieController.cpp -ozombieController.o $(CFLAGS)
+characterController.o: characterController.cpp characterController.h
+	g++ -c characterController.cpp -ocharacterController.o $(CFLAGS)
 
 characterModel.o: characterModel.cpp characterModel.h
 	g++ -c characterModel.cpp -ocharacterModel.o $(CFLAGS)

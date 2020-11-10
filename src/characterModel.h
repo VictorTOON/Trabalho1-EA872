@@ -6,8 +6,8 @@
 #include <cmath>
 #include "bodyModel.h"
 
-class Personagem: public Corpo{
+class PersonagemModel: public CorpoModel{
     public:
-        Personagem(int x, int y, float teta);
+        PersonagemModel(int x, int y, float teta);
 	void handle_keyboard(int); 
 };

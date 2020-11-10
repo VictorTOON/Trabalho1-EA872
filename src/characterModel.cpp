@@ -1,11 +1,11 @@
 #include "characterModel.h"
 
-Personagem::Personagem(int x, int y, float teta): Corpo(x, y, teta){
+PersonagemModel::PersonagemModel(int x, int y, float teta): CorpoModel(x, y, teta){
 }
 
 
 #define GRAD_TO_RAD (3.14159265/180)
-void Personagem::handle_keyboard(int entry){
+void PersonagemModel::handle_keyboard(int entry){
 	
 	if (entry & (1 << KEYBOARD_UP)){
 			this->set_x(this->get_x()+PASSO * cos(this->get_teta() * (GRAD_TO_RAD)));
