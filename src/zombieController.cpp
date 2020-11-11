@@ -10,6 +10,9 @@ void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
 	if (this->model.get_x() != p->get_x()){
 		arc = (this->model.get_y() - p->get_y())/(this->model.get_x() - p->get_x());
 		angle = (atan (arc) * (180/3.14159265));
+		if (this->model.get_x() > p->get_x()){
+			angle = -angle;
+		}
 	}else{
 		angle = 0;	
 	}
