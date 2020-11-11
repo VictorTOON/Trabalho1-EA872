@@ -8,5 +8,5 @@
 
 class AxeModel: public ProjectileModel{
     public:
-        AxeModel(int x, int y, float teta, float speed);
+        AxeModel(int x, int y, float teta, int h, int w, float speed);
 };

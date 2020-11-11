@@ -13,8 +13,9 @@ class ProjectileModel{
     private:
         int x, y;
         float teta, speed;
+        SDL_Rect rect;
     public:
-        ProjectileModel(int x, int y, float teta, float speed);
+        ProjectileModel(int x, int y, float teta, int h, int w, float speed);
         int get_x();
         void set_x(int);
         int get_y();

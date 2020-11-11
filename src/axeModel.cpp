@@ -1,5 +1,5 @@
 #include "axeModel.h"
 
-AxeModel::AxeModel(int x, int y, float teta, float speed): ProjectileModel(x, y, teta, speed){
+AxeModel::AxeModel(int x, int y, float teta, int h, int w, float speed): ProjectileModel(x, y, teta, h, w, speed){
 }
 
