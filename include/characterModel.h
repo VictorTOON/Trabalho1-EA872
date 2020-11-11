@@ -1,19 +1,27 @@
+#pragma once
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include "sdl_keyboard_handler.h"
+#include <cmath>
+#include "bodyModel.h"
+#include "axeController.h"
 
-class Personagem{
-    private:
-        int x, y, health;
-        float teta;
-    public:
-        Personagem();
-        int get_x();
-        void set_x(int);
-        int get_y();
-        void set_y(int);
-        float get_teta();
-        void set_teta(float);
-        int get_health();
-        void set_health(int);
+/*! \brief Enumerator com os valores retornados pela handle_keyboard
+ * Esses valores podem ser interpretados pelo PersonagemController para fazer alguma acao no jogo
+ * */
+typedef enum {
+	CriaMachado,
+	Default
+} RetornoHandle;
+
+class PersonagemModel: public CorpoModel{
+	private:
+		std::vector<AxeController> axeControllers;
+		unsigned int tempo;
+		unsigned int tempoComparado;
+	public:
+		PersonagemModel(int x, int y, int h, int w, float teta);
+		RetornoHandle handle_keyboard(int);
+		bool isDead();
 };

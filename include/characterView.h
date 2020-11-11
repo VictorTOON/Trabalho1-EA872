@@ -1,14 +1,12 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-class PersonagemView{
-	private:
-	       	SDL_Rect personagem;
-		int x,  y;
-		float angle;
-		int[3] color;
+
+#include "bodyView.h"
+#define CHARACTER_SIZE 150
+
+class PersonagemView: public CorpoView{
 	public:
-		PersonagemView(int x, int y, float angle, int[3] color);
-		void update(int x, int y, float angle, int[3] color);
-		void draw();
+		PersonagemView(int h, int w, float angle, const char* src_asset);
+		virtual void drawCast();
 };

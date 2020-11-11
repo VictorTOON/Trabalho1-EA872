@@ -1,0 +1,141 @@
+\hypertarget{class_corpo_view}{}\doxysection{Corpo\+View Class Reference}
+\label{class_corpo_view}\index{CorpoView@{CorpoView}}
+
+
+{\ttfamily \#include $<$body\+View.\+h$>$}
+
+Inheritance diagram for Corpo\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_corpo_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}{Corpo\+View}} (int h, int w, float \mbox{\hyperlink{class_corpo_view_a4430d43df8836de0dbecf665600dd522}{angle}}, const char $\ast$\mbox{\hyperlink{class_corpo_view_adb170e53b11198796cac14e53abbdfde}{src\+\_\+asset}})
+\item 
+void \mbox{\hyperlink{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}{update}} (int \mbox{\hyperlink{class_corpo_view_a6b982a37c6ef02092740c05af881f9a1}{x}}, int \mbox{\hyperlink{class_corpo_view_a41ca3cfe6e97a56fa44305b4e0940182}{y}}, float \mbox{\hyperlink{class_corpo_view_a4430d43df8836de0dbecf665600dd522}{angle}})
+\item 
+void \mbox{\hyperlink{class_corpo_view_a19fccb9f476522e6b609ba5cd3d7b80d}{set\+\_\+render}} (S\+D\+L\+\_\+\+Renderer $\ast$\mbox{\hyperlink{class_corpo_view_a202d550daebafd32aff8874ad7904e3b}{renderer}})
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{class_corpo_view_a4ca54dce2bf0fe548c714cc2d9edf57d}{get\+\_\+render}} ()
+\item 
+virtual void \mbox{\hyperlink{class_corpo_view_a23a51a940147ac1ad5756fbdc9efdd45}{draw\+Cast}} ()=0
+\item 
+void \mbox{\hyperlink{class_corpo_view_a122c2bb562b3ab158cb4e63dcdb35397}{draw}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_corpo_view_a6b982a37c6ef02092740c05af881f9a1}{x}}
+\item 
+int \mbox{\hyperlink{class_corpo_view_a41ca3cfe6e97a56fa44305b4e0940182}{y}}
+\item 
+float \mbox{\hyperlink{class_corpo_view_a4430d43df8836de0dbecf665600dd522}{angle}}
+\item 
+char $\ast$ \mbox{\hyperlink{class_corpo_view_adb170e53b11198796cac14e53abbdfde}{src\+\_\+asset}}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{class_corpo_view_a202d550daebafd32aff8874ad7904e3b}{renderer}}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_corpo_view_a8f0512519d532c74089423eec8569504}{texture}}
+\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_corpo_view_a800e641462946960eac54efd5c9689e0}{rect}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}\label{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}} 
+\index{CorpoView@{CorpoView}!CorpoView@{CorpoView}}
+\index{CorpoView@{CorpoView}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{CorpoView()}{CorpoView()}}
+{\footnotesize\ttfamily Corpo\+View\+::\+Corpo\+View (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{w,  }\item[{float}]{angle,  }\item[{const char $\ast$}]{src\+\_\+asset }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_corpo_view_a122c2bb562b3ab158cb4e63dcdb35397}\label{class_corpo_view_a122c2bb562b3ab158cb4e63dcdb35397}} 
+\index{CorpoView@{CorpoView}!draw@{draw}}
+\index{draw@{draw}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Corpo\+View\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_corpo_view_a23a51a940147ac1ad5756fbdc9efdd45}\label{class_corpo_view_a23a51a940147ac1ad5756fbdc9efdd45}} 
+\index{CorpoView@{CorpoView}!drawCast@{drawCast}}
+\index{drawCast@{drawCast}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{drawCast()}{drawCast()}}
+{\footnotesize\ttfamily virtual void Corpo\+View\+::draw\+Cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_zumbi_view_a5ec42728d99f2f5de04a2e8dc9814955}{Zumbi\+View}}, and \mbox{\hyperlink{class_personagem_view_a9b73775c182582486ad1dce0016d2827}{Personagem\+View}}.
+
+\mbox{\Hypertarget{class_corpo_view_a4ca54dce2bf0fe548c714cc2d9edf57d}\label{class_corpo_view_a4ca54dce2bf0fe548c714cc2d9edf57d}} 
+\index{CorpoView@{CorpoView}!get\_render@{get\_render}}
+\index{get\_render@{get\_render}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{get\_render()}{get\_render()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer $\ast$ Corpo\+View\+::get\+\_\+render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_corpo_view_a19fccb9f476522e6b609ba5cd3d7b80d}\label{class_corpo_view_a19fccb9f476522e6b609ba5cd3d7b80d}} 
+\index{CorpoView@{CorpoView}!set\_render@{set\_render}}
+\index{set\_render@{set\_render}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{set\_render()}{set\_render()}}
+{\footnotesize\ttfamily void Corpo\+View\+::set\+\_\+render (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}\label{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}} 
+\index{CorpoView@{CorpoView}!update@{update}}
+\index{update@{update}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Corpo\+View\+::update (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_corpo_view_a4430d43df8836de0dbecf665600dd522}\label{class_corpo_view_a4430d43df8836de0dbecf665600dd522}} 
+\index{CorpoView@{CorpoView}!angle@{angle}}
+\index{angle@{angle}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily float Corpo\+View\+::angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_a800e641462946960eac54efd5c9689e0}\label{class_corpo_view_a800e641462946960eac54efd5c9689e0}} 
+\index{CorpoView@{CorpoView}!rect@{rect}}
+\index{rect@{rect}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect Corpo\+View\+::rect\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_a202d550daebafd32aff8874ad7904e3b}\label{class_corpo_view_a202d550daebafd32aff8874ad7904e3b}} 
+\index{CorpoView@{CorpoView}!renderer@{renderer}}
+\index{renderer@{renderer}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ Corpo\+View\+::renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_adb170e53b11198796cac14e53abbdfde}\label{class_corpo_view_adb170e53b11198796cac14e53abbdfde}} 
+\index{CorpoView@{CorpoView}!src\_asset@{src\_asset}}
+\index{src\_asset@{src\_asset}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{src\_asset}{src\_asset}}
+{\footnotesize\ttfamily char$\ast$ Corpo\+View\+::src\+\_\+asset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_a8f0512519d532c74089423eec8569504}\label{class_corpo_view_a8f0512519d532c74089423eec8569504}} 
+\index{CorpoView@{CorpoView}!texture@{texture}}
+\index{texture@{texture}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ Corpo\+View\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_a6b982a37c6ef02092740c05af881f9a1}\label{class_corpo_view_a6b982a37c6ef02092740c05af881f9a1}} 
+\index{CorpoView@{CorpoView}!x@{x}}
+\index{x@{x}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Corpo\+View\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_corpo_view_a41ca3cfe6e97a56fa44305b4e0940182}\label{class_corpo_view_a41ca3cfe6e97a56fa44305b4e0940182}} 
+\index{CorpoView@{CorpoView}!y@{y}}
+\index{y@{y}!CorpoView@{CorpoView}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Corpo\+View\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{body_view_8h}{body\+View.\+h}}\item 
+src/\mbox{\hyperlink{body_view_8cpp}{body\+View.\+cpp}}\end{DoxyCompactItemize}

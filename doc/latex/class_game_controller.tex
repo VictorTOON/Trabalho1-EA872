@@ -1,0 +1,126 @@
+\hypertarget{class_game_controller}{}\doxysection{Game\+Controller Class Reference}
+\label{class_game_controller}\index{GameController@{GameController}}
+
+
+{\ttfamily \#include $<$game\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_controller_a13435e5eab7d440dbb9db43909eafcb1}{Game\+Controller}} (\mbox{\hyperlink{class_personagem_controller}{Personagem\+Controller}} \mbox{\hyperlink{class_game_controller_a6060a4b27e51e75832ac60f2ea367668}{personagem}}, std\+::vector$<$ \mbox{\hyperlink{class_zumbi_controller}{Zumbi\+Controller}} $>$ \mbox{\hyperlink{class_game_controller_a529b0612c6dfc0a4715e35ce83897348}{zumbis}})
+\item 
+void \mbox{\hyperlink{class_game_controller_a24e092237a3a8b19dbdf9ac345a99acf}{add\+Zumbi}} (\mbox{\hyperlink{class_zumbi_model}{Zumbi\+Model}} zumbi)
+\item 
+void \mbox{\hyperlink{class_game_controller_af365cd7a71dd76730a0bc92adc092103}{start}} ()
+\item 
+int \mbox{\hyperlink{class_game_controller_a1dcaa8ccc611a07166ec85d9b2ce4480}{iterate}} ()
+\item 
+void \mbox{\hyperlink{class_game_controller_ad1913e16f1332cb49a9bf4593f9bf790}{spawn\+Zombie}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_controller_aedb704191f888332a9e68cb78da8709f}{update\+Personagem\+View}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_game_model}{Game\+Model}} $>$ \mbox{\hyperlink{class_game_controller_a552559f31de3b9f72a58eba58feee3e7}{game\+Model}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_controller}{Personagem\+Controller}} $>$ \mbox{\hyperlink{class_game_controller_a6060a4b27e51e75832ac60f2ea367668}{personagem}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_zumbi_controller}{Zumbi\+Controller}} $>$ \mbox{\hyperlink{class_game_controller_a529b0612c6dfc0a4715e35ce83897348}{zumbis}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_game_view}{Game\+View}} $>$ \mbox{\hyperlink{class_game_controller_a66ba54b6ef4d8e7ca548c822d80d6c96}{game\+View}}
+\item 
+\mbox{\hyperlink{class_s_d_l___keyboard___handler}{S\+D\+L\+\_\+\+Keyboard\+\_\+\+Handler}} \mbox{\hyperlink{class_game_controller_aab250d2edc3cbcd015e618c933725cf7}{keyboard\+Handler}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_zumbi_view}{Zumbi\+View}} $>$ \mbox{\hyperlink{class_game_controller_a702350412d57ccc9f1fc9cb68e1f440a}{zumbi\+Views}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_controller_a13435e5eab7d440dbb9db43909eafcb1}\label{class_game_controller_a13435e5eab7d440dbb9db43909eafcb1}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personagem_controller}{Personagem\+Controller}}}]{personagem,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_zumbi_controller}{Zumbi\+Controller}} $>$}]{zumbis }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_controller_a24e092237a3a8b19dbdf9ac345a99acf}\label{class_game_controller_a24e092237a3a8b19dbdf9ac345a99acf}} 
+\index{GameController@{GameController}!addZumbi@{addZumbi}}
+\index{addZumbi@{addZumbi}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{addZumbi()}{addZumbi()}}
+{\footnotesize\ttfamily void Game\+Controller\+::add\+Zumbi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zumbi_model}{Zumbi\+Model}}}]{zumbi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_controller_a1dcaa8ccc611a07166ec85d9b2ce4480}\label{class_game_controller_a1dcaa8ccc611a07166ec85d9b2ce4480}} 
+\index{GameController@{GameController}!iterate@{iterate}}
+\index{iterate@{iterate}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{iterate()}{iterate()}}
+{\footnotesize\ttfamily int Game\+Controller\+::iterate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_controller_ad1913e16f1332cb49a9bf4593f9bf790}\label{class_game_controller_ad1913e16f1332cb49a9bf4593f9bf790}} 
+\index{GameController@{GameController}!spawnZombie@{spawnZombie}}
+\index{spawnZombie@{spawnZombie}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{spawnZombie()}{spawnZombie()}}
+{\footnotesize\ttfamily void Game\+Controller\+::spawn\+Zombie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_controller_af365cd7a71dd76730a0bc92adc092103}\label{class_game_controller_af365cd7a71dd76730a0bc92adc092103}} 
+\index{GameController@{GameController}!start@{start}}
+\index{start@{start}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Game\+Controller\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game_controller_aedb704191f888332a9e68cb78da8709f}\label{class_game_controller_aedb704191f888332a9e68cb78da8709f}} 
+\index{GameController@{GameController}!updatePersonagemView@{updatePersonagemView}}
+\index{updatePersonagemView@{updatePersonagemView}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{updatePersonagemView()}{updatePersonagemView()}}
+{\footnotesize\ttfamily void Game\+Controller\+::update\+Personagem\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_controller_a552559f31de3b9f72a58eba58feee3e7}\label{class_game_controller_a552559f31de3b9f72a58eba58feee3e7}} 
+\index{GameController@{GameController}!gameModel@{gameModel}}
+\index{gameModel@{gameModel}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{gameModel}{gameModel}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_game_model}{Game\+Model}}$>$ Game\+Controller\+::game\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_controller_a66ba54b6ef4d8e7ca548c822d80d6c96}\label{class_game_controller_a66ba54b6ef4d8e7ca548c822d80d6c96}} 
+\index{GameController@{GameController}!gameView@{gameView}}
+\index{gameView@{gameView}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{gameView}{gameView}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_game_view}{Game\+View}}$>$ Game\+Controller\+::game\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_controller_aab250d2edc3cbcd015e618c933725cf7}\label{class_game_controller_aab250d2edc3cbcd015e618c933725cf7}} 
+\index{GameController@{GameController}!keyboardHandler@{keyboardHandler}}
+\index{keyboardHandler@{keyboardHandler}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{keyboardHandler}{keyboardHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_d_l___keyboard___handler}{S\+D\+L\+\_\+\+Keyboard\+\_\+\+Handler}} Game\+Controller\+::keyboard\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_controller_a6060a4b27e51e75832ac60f2ea367668}\label{class_game_controller_a6060a4b27e51e75832ac60f2ea367668}} 
+\index{GameController@{GameController}!personagem@{personagem}}
+\index{personagem@{personagem}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{personagem}{personagem}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_personagem_controller}{Personagem\+Controller}}$>$ Game\+Controller\+::personagem\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_controller_a529b0612c6dfc0a4715e35ce83897348}\label{class_game_controller_a529b0612c6dfc0a4715e35ce83897348}} 
+\index{GameController@{GameController}!zumbis@{zumbis}}
+\index{zumbis@{zumbis}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{zumbis}{zumbis}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_zumbi_controller}{Zumbi\+Controller}}$>$ Game\+Controller\+::zumbis\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_game_controller_a702350412d57ccc9f1fc9cb68e1f440a}\label{class_game_controller_a702350412d57ccc9f1fc9cb68e1f440a}} 
+\index{GameController@{GameController}!zumbiViews@{zumbiViews}}
+\index{zumbiViews@{zumbiViews}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{zumbiViews}{zumbiViews}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_zumbi_view}{Zumbi\+View}}$>$ Game\+Controller\+::zumbi\+Views\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{game_controller_8h}{game\+Controller.\+h}}\item 
+src/\mbox{\hyperlink{game_controller_8cpp}{game\+Controller.\+cpp}}\end{DoxyCompactItemize}
