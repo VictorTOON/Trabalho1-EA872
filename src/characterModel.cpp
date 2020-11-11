@@ -1,11 +1,9 @@
 #include "characterModel.h"
 
-PersonagemModel::PersonagemModel(int x, int y, float teta): CorpoModel(x, y, teta){
+PersonagemModel::PersonagemModel(int x, int y, int h, int w, float teta): CorpoModel(x, y, h, w, teta){
     this->tempo = 0;
     this->tempoComparado = SDL_GetTicks();
 }
-
-
 
 #define GRAD_TO_RAD (3.14159265/180)
 RetornoHandle PersonagemModel::handle_keyboard(int entry){
@@ -28,11 +26,11 @@ RetornoHandle PersonagemModel::handle_keyboard(int entry){
 		this->update_teta(PASSO_TETA); 
 	}
 	if (entry & (1 << KEYBOARD_SPACE)){
-        this->tempoComparado = SDL_GetTicks();
-        if (tempoComparado - tempo > 400){
-            this->tempo = SDL_GetTicks();
-            return CriaMachado;
-        }
+		this->tempoComparado = SDL_GetTicks();
+		if (tempoComparado - tempo > 400){
+		    this->tempo = SDL_GetTicks();
+		    return CriaMachado;
+		}
 	}
 	return Default;
 }

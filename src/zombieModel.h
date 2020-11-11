@@ -9,8 +9,14 @@
 
 #define PASSO_ZUMBI 10
 
+typedef enum {
+	CollisionPersonagem,
+	CollisionZumbi, 
+	DefaultFollow
+} ZumbiFollowReturn;  
+
 class ZumbiModel: public CorpoModel{
     public:
-        ZumbiModel(int x, int y, float teta);
-	void follow(PersonagemModel);
+        ZumbiModel(int x, int y, int h, int w, float teta);
+	ZumbiFollowReturn follow(PersonagemModel);
 };

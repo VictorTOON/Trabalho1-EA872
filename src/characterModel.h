@@ -13,6 +13,6 @@ class PersonagemModel: public CorpoModel{
         unsigned int tempo;
         unsigned int tempoComparado;
     public:
-        PersonagemModel(int x, int y, float teta);
+        PersonagemModel(int x, int y, int h, int w, float teta);
 	RetornoHandle handle_keyboard(int);
 };

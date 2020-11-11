@@ -1,6 +1,6 @@
 #include "zombieController.h"
 
-ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,teta) {
+ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
 	this->view = std::shared_ptr<ZumbiView>(new ZumbiView(h, w, teta, "../assets/zombie.png"));
 }
 
