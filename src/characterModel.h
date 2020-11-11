@@ -7,14 +7,11 @@
 #include "bodyModel.h"
 #include "axeController.h"
 
-typedef enum {
-	CriaMachado,
-	Default
-} RetornoHandle;
-
 class PersonagemModel: public CorpoModel{
     private:
         std::vector<AxeController> axeControllers;
+        unsigned int tempo;
+        unsigned int tempoComparado;
     public:
         PersonagemModel(int x, int y, float teta);
 	RetornoHandle handle_keyboard(int);

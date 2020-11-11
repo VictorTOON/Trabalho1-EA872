@@ -1,6 +1,8 @@
 #include "characterModel.h"
 
 PersonagemModel::PersonagemModel(int x, int y, float teta): CorpoModel(x, y, teta){
+    this->tempo = 0;
+    this->tempoComparado = SDL_GetTicks();
 }
 
 
@@ -20,13 +22,17 @@ RetornoHandle PersonagemModel::handle_keyboard(int entry){
 			if (this->get_y() < 0) this->set_y(0);
 	}
 	if (entry & (1 << KEYBOARD_LEFT)){
-			this->update_teta(-PASSO_TETA); 
+		this->update_teta(-PASSO_TETA); 
 	}
 	if (entry & (1 << KEYBOARD_RIGHT)){
-			this->update_teta(PASSO_TETA); 
+		this->update_teta(PASSO_TETA); 
 	}
 	if (entry & (1 << KEYBOARD_SPACE)){
-			return CriaMachado;
+        this->tempoComparado = SDL_GetTicks();
+        if (tempoComparado - tempo > 400){
+            this->tempo = SDL_GetTicks();
+            return CriaMachado;
+        }
 	}
 	return Default;
 }
