@@ -2,6 +2,7 @@
 #include "characterModel.h"
 #include "characterView.h"
 #include "sdl_keyboard_handler.h"
+#include "axeController.h"
 
 
 class PersonagemController {
@@ -9,6 +10,7 @@ class PersonagemController {
 		PersonagemModel model;
 		std::shared_ptr<PersonagemView> view;
 		SDL_Keyboard_Handler keyboardHandler;
+		std::vector<AxeController> axeControllers;
 	public: 
 		PersonagemController(int x, int y, int h, int w, float teta);
 		void updateView();

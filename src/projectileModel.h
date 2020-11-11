@@ -9,12 +9,12 @@
 #define PASSO 10
 #define PASSO_TETA 10
 
-class Projectile{
+class ProjectileModel{
     private:
         int x, y;
         float teta, speed;
     public:
-        Projectile(int x, int y, float teta);
+        ProjectileModel(int x, int y, float teta, float speed);
         int get_x();
         void set_x(int);
         int get_y();
@@ -22,6 +22,6 @@ class Projectile{
         float get_teta();
         void set_teta(float);
         float get_speed();
-        float set_speed();
-	void update_xy();
+        void set_speed(float);
+	void update_xy(float, float);
 };

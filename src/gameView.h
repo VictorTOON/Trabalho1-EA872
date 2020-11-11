@@ -4,6 +4,7 @@
 #include <iomanip>
 #include "characterView.h"
 #include "zombieView.h"
+#include "axeView.h"
 #include <memory>
 #include <vector>
 #define SCREEN_WIDTH 1600
@@ -21,6 +22,7 @@ class GameView{
 		int draw();
 		void finishDraw();
 		void setBackground();
+		void addAxe(std::shared_ptr<AxeView> axe);
 		void addZumbi(std::shared_ptr<ZumbiView> z);
 		void addPersonagem(std::shared_ptr<PersonagemView> p);
 		void drawBackground();

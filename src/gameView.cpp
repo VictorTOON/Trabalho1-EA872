@@ -44,6 +44,10 @@ void GameView::addPersonagem(std::shared_ptr<PersonagemView> personagem){
 	personagem->set_render(renderer);
 }
 
+void GameView::addAxe(std::shared_ptr<AxeView> axe){
+	axe->set_render(renderer);
+}
+
 void GameView::addZumbi(std::shared_ptr<ZumbiView> zumbi){
 	zumbi->set_render(renderer);
 }

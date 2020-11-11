@@ -6,7 +6,7 @@
 #include <cmath>
 #include "projectileModel.h"
 
-class AxeModel: public Projectile{
+class AxeModel: public ProjectileModel{
     public:
         AxeModel(int x, int y, float teta, float speed);
 };

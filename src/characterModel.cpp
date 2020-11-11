@@ -4,8 +4,9 @@ PersonagemModel::PersonagemModel(int x, int y, float teta): CorpoModel(x, y, tet
 }
 
 
+
 #define GRAD_TO_RAD (3.14159265/180)
-void PersonagemModel::handle_keyboard(int entry){
+RetornoHandle PersonagemModel::handle_keyboard(int entry){
 	
 	if (entry & (1 << KEYBOARD_UP)){
 			this->set_x(this->get_x()+PASSO * cos(this->get_teta() * (GRAD_TO_RAD)));
@@ -25,12 +26,10 @@ void PersonagemModel::handle_keyboard(int entry){
 	if (entry & (1 << KEYBOARD_RIGHT)){
 			this->update_teta(PASSO_TETA); 
 	}
-    if (entry & (1 << KEYBOARD_SPACE)){
-			this->createNewAxe(this->get_x(), this->get_y(), this->get_teta());
+	if (entry & (1 << KEYBOARD_SPACE)){
+			return CriaMachado;
 	}
+	return Default;
 }
 
-void PersonagemModel::createNewAxe(int x, int y, float teta){
-    this->axeControllers.push_back(AxeController(x,y,teta));
-}
 

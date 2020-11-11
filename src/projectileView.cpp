@@ -5,12 +5,13 @@
 #include <iostream>
 #include <cstring>
 
-ProjectileView::ProjectileView(int h, int w, float angle, char src_asset[100]){
+ProjectileView::ProjectileView(int h, int w, float angle, const char* src_asset){
 	this->angle = angle;
 	this->rect.h = h;
 	this->rect.w = w;
-	std::strcpy(this->src_asset, src_asset);
-	
+	this->src_asset = (char*) malloc(sizeof(char)*strlen(src_asset));
+	strcpy(this->src_asset, src_asset);
+		
 }
 
 void ProjectileView::set_render(SDL_Renderer *renderer){

@@ -1,21 +1,46 @@
 LDFLAGS = -framework SDL2  -I 
 CFLAGS= -std=c++11
 
+main=main.o
+game=gameController.o gameView.o
+zombie=zombieController.o zombieView.o zombieModel.o
+character=characterController.o characterView.o characterModel.o
+body=bodyView.o bodyModel.o
+projectile=projectileView.o projectileModel.o
+axe=axeController.o axeModel.o axeView.o
+keyboard=sdl_keyboard_handler.o
+
 all : main
 
-main: main.o gameController.o zombieController.o zombieView.o zombieModel.o characterController.o characterModel.o characterView.o bodyModel.o gameView.o bodyView.o sdl_keyboard_handler.o
-	g++ -o main main.o gameController.o zombieController.o zombieView.o zombieModel.o characterController.o characterModel.o gameView.o bodyView.o bodyModel.o characterView.o sdl_keyboard_handler.o -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+main: $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard)
+	g++ -o main $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard) -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 main.o: main.cpp
 	g++ -c main.cpp -o main.o $(CFLAGS)
 
 zombieController.o: zombieController.cpp zombieController.h
 	g++ -c zombieController.cpp -ozombieController.o $(CFLAGS)
+
+axeController.o: axeController.cpp axeController.h
+	g++ -c axeController.cpp -oaxeController.o $(CFLAGS)
+axeModel.o: axeModel.cpp axeModel.h
+	g++ -c axeModel.cpp -oaxeModel.o $(CFLAGS)
+
+axeView.o : axeView.cpp axeView.h
+	g++ -c axeView.cpp -oaxeView.o -I/usr/local/include $(CFLAGS) # -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+
+projectileController.o: projectileController.cpp projectileController.h
+	g++ -c projectileController.cpp -oprojectileController.o $(CFLAGS)
+
+projectileModel.o: projectileModel.cpp projectileModel.h
+	g++ -c projectileModel.cpp -oprojectileModel.o $(CFLAGS)
+
+projectileView.o : projectileView.cpp projectileView.h
+	g++ -c projectileView.cpp -oprojectileView.o -I/usr/local/include $(CFLAGS) # -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+
 characterController.o: characterController.cpp characterController.h
 	g++ -c characterController.cpp -ocharacterController.o $(CFLAGS)
-
 characterModel.o: characterModel.cpp characterModel.h
 	g++ -c characterModel.cpp -ocharacterModel.o $(CFLAGS)
-
 characterView.o : characterView.cpp characterView.h
 	g++ -c characterView.cpp -ocharacterView.o -I/usr/local/include $(CFLAGS) # -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 
@@ -23,7 +48,6 @@ bodyView.o: bodyView.cpp bodyView.h
 	g++ -c bodyView.cpp -obodyView.o $(CFLAGS)
 bodyModel.o: bodyModel.cpp bodyModel.h
 	g++ -c bodyModel.cpp -obodyModel.o $(CFLAGS)
-
 
 zombieModel.o: zombieModel.cpp zombieModel.h
 	g++ -c zombieModel.cpp -ozombieModel.o $(CFLAGS)

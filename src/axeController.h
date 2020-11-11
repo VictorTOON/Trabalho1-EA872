@@ -18,6 +18,7 @@ class AxeController{
         std::shared_ptr<AxeView> axeView;
     public:
         AxeController(int x, int y, float teta);
-        void updateModelPosition(float tempo_pass, float tempo_atual);
-        void updateViewPosition();
+        void updateModel(float tempo_pass, float tempo_atual);
+        void updateView();
+	std::shared_ptr<AxeView> getView();
 };

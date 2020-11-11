@@ -8,5 +8,5 @@
 
 class AxeView: public ProjectileView{
 	public:
-		AxeView(int h, int w, float angle, char src_asset[100]);
+		AxeView(int h, int w, float angle, const char* src_asset);
 };

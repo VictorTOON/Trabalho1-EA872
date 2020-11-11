@@ -20,6 +20,10 @@ void CorpoView::set_render(SDL_Renderer *renderer){
 	this->texture = IMG_LoadTexture(renderer, src_asset);
 }
 
+SDL_Renderer* CorpoView::get_render(){
+	return this->renderer;
+}
+
 void CorpoView::update(int x, int y, float angle){
 	this->angle = angle;
 	this->rect.x = ((x>0)?x:0);

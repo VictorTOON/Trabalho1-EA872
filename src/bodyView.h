@@ -14,6 +14,7 @@ class CorpoView{
 		CorpoView(int h, int w, float angle, const char* src_asset);
 		void update(int x, int y, float angle);
 		void set_render(SDL_Renderer *renderer);
+		SDL_Renderer *get_render();
 		virtual void drawCast() = 0;
 		void draw();
 };

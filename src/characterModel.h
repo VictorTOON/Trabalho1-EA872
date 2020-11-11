@@ -7,11 +7,15 @@
 #include "bodyModel.h"
 #include "axeController.h"
 
+typedef enum {
+	CriaMachado,
+	Default
+} RetornoHandle;
+
 class PersonagemModel: public CorpoModel{
     private:
         std::vector<AxeController> axeControllers;
     public:
         PersonagemModel(int x, int y, float teta);
-	    void handle_keyboard(int);
-        void createNewAxe(int x, int y, float teta);
+	RetornoHandle handle_keyboard(int);
 };
