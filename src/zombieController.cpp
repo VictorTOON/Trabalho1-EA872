@@ -11,7 +11,8 @@ void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
 		arc = (this->model.get_y() - p->get_y())/(this->model.get_x() - p->get_x());
 		angle = (atan (arc) * (180/3.14159265));
 		if (this->model.get_x() > p->get_x()){
-			angle = -angle;
+			std::cout<<"Ta teoricamente invertendo"<<std::endl;
+			angle = angle + 180;
 		}
 	}else{
 		angle = 0;	
