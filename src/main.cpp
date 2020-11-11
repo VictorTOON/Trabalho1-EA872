@@ -4,7 +4,7 @@
 #include "zombieController.hpp"
 #include <vector>
 int main(){
-	PersonagemController p(300,300,150, 150, 0);
+	PersonagemController p(300,300,130, 130, 0);
 	AxeController n(10,12,0.5);
 	std::vector<ZumbiController> zs; 
 	for (int i = 6; i < 9; i++){

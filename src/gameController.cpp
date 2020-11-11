@@ -50,7 +50,7 @@ void GameController::spawnZombie(){
             int randomX = rand() % 1600 + 0;
             int randomY = rand() % 900 + 0;
             if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
-                ZumbiController zumbi_novo(randomX, randomY,150,150, 0);
+                ZumbiController zumbi_novo(randomX, randomY,100,100, 0);
                 this->gameView->addZumbi(zumbi_novo.getView());
                 this->zumbis.push_back(zumbi_novo);
             }
