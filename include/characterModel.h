@@ -7,6 +7,14 @@
 #include "bodyModel.h"
 #include "axeController.h"
 
+/*! \brief Enumerator com os valores retornados pela handle_keyboard
+ * Esses valores podem ser interpretados pelo PersonagemController para fazer alguma acao no jogo
+ * */
+typedef enum {
+	CriaMachado,
+	Default
+} RetornoHandle;
+
 class PersonagemModel: public CorpoModel{
 	private:
 		std::vector<AxeController> axeControllers;
