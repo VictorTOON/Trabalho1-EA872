@@ -24,5 +24,6 @@ class ProjectileModel{
         void set_teta(float);
         float get_speed();
         void set_speed(float);
-	void update_xy(float, float);
+	    void update_xy(float, float);
+        const SDL_Rect* get_rect();
 };

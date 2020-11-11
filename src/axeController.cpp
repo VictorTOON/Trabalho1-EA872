@@ -28,3 +28,7 @@ void AxeController::updateView(){
     this->axeView->updateAngle(12);
     this->axeView->draw();
 }
+
+std::shared_ptr<AxeModel> AxeController::get_axeModel(){
+    return axeModel;
+}

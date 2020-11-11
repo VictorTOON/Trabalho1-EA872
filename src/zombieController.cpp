@@ -26,3 +26,7 @@ void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 	this->updateModel(p);
 	this->updateView();
 }
+
+ZumbiModel ZumbiController::get_model(){
+    return model;
+}

@@ -15,4 +15,5 @@ class ZumbiController {
 		std::shared_ptr<ZumbiView> getView();
 		ZumbiModel getModel();
 		void iterate(std::shared_ptr<PersonagemModel> p);
+        ZumbiModel get_model();
 };

@@ -46,3 +46,7 @@ void PersonagemController::iterate(){
 	this->updateModel();
 	this->updateView();
 }
+
+std::vector<AxeController> PersonagemController::get_axeControllers(){
+    return axeControllers;
+}
