@@ -1,4 +1,4 @@
-#include "projectileModel.h"
+#include "projectileModel.hpp"
 #include <cmath>
 
 ProjectileModel::ProjectileModel(int x, int y, float teta, int h, int w, float speed){

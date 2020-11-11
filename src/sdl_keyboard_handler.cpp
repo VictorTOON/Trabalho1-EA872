@@ -1,4 +1,4 @@
-#include "sdl_keyboard_handler.h"
+#include "sdl_keyboard_handler.hpp"
 
 SDL_Keyboard_Handler::SDL_Keyboard_Handler(){
 	state = SDL_GetKeyboardState(nullptr);

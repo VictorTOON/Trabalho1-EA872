@@ -1,7 +1,7 @@
-#include "gameView.h"
-#include "characterController.h"
-#include "gameController.h"
-#include "zombieController.h"
+#include "gameView.hpp"
+#include "characterController.hpp"
+#include "gameController.hpp"
+#include "zombieController.hpp"
 #include <vector>
 int main(){
 	PersonagemController p(300,300,150, 150, 0);

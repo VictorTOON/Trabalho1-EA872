@@ -1,4 +1,4 @@
-#include "characterController.h"
+#include "characterController.hpp"
 
 PersonagemController::PersonagemController(int x, int y, int h, int w, float teta){
 	this->view = std::shared_ptr<PersonagemView>(new PersonagemView(h, w, teta, "../assets/tree-character.png"));

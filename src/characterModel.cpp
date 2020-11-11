@@ -1,4 +1,4 @@
-#include "characterModel.h"
+#include "characterModel.hpp"
 
 PersonagemModel::PersonagemModel(int x, int y, int h, int w, float teta): CorpoModel(x, y, h, w, teta){
 	this->tempo = 0;

@@ -1,4 +1,4 @@
-#include "zombieModel.h"
+#include "zombieModel.hpp"
 
 ZumbiModel::ZumbiModel(int x, int y, int h, int w, float teta):CorpoModel(x, y, h, w, teta){
 }

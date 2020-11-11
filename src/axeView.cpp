@@ -1,4 +1,4 @@
-#include "axeView.h"
+#include "axeView.hpp"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>

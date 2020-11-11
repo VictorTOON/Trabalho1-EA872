@@ -1,4 +1,4 @@
-#include "bodyModel.h"
+#include "bodyModel.hpp"
 
 #define START_HEALTH 3
 

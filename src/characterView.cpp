@@ -1,4 +1,4 @@
-#include "characterView.h"
+#include "characterView.hpp"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
