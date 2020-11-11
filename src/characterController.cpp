@@ -15,12 +15,13 @@ void PersonagemController::updateView(){
 void PersonagemController::updateModel(){
 	RetornoHandle ret = this->model.handle_keyboard(this->keyboardHandler.getInput());
 	if (ret == CriaMachado){
-		AxeController axe(50, 50, this->model.get_teta());
-		axe.getView()->set_render(this->getView()->get_render());
-		this->axeControllers.push_back(axe);		
-		
+		AxeController axeController(this->model.get_x(), this->model.get_y(), this->model.get_teta());
+		axeController.getView()->set_render(this->getView()->get_render());
+		this->axeControllers.push_back(axeController);		
 	}
-
+	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
+		axeController->updateModel(0, .5);
+	}
 }
 
 std::shared_ptr<PersonagemView> PersonagemController::getView(){

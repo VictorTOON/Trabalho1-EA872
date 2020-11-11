@@ -1,6 +1,6 @@
 #include "axeController.h"
 #include <iostream>
-#define speed 50
+#define speed 20
 
 AxeController::AxeController(int x, int y, float teta){
     this->axeModel = std::shared_ptr<AxeModel>(new AxeModel(x, y, teta, speed));
