@@ -1,9 +1,13 @@
 #include "projectileModel.h"
 #include <cmath>
 
-ProjectileModel::ProjectileModel(int x, int y, float teta, float speed){
+ProjectileModel::ProjectileModel(int x, int y, float teta, int h, int w, float speed){
 	this->x = x;
 	this->y = y;
+    this->rect.x = x;
+    this->rect.y = y;
+    this->rect.h = h;
+	this->rect.w = w;
 	this->teta = teta;
 	this->speed = speed;
 }
@@ -36,6 +40,8 @@ void ProjectileModel::set_teta(float novo_teta){
 void ProjectileModel::update_xy(float tempo_pass, float tempo_atual){
 	this->x = (int) this->speed*cos(this->teta*GRAD_TO_RAD)*(tempo_atual - tempo_pass) + this->x;
 	this->y = (int) (this->speed*sin(this->teta*GRAD_TO_RAD)*(tempo_atual - tempo_pass) + this->y);
+    this->rect.x = this->x;
+    this->rect.y = this->y;
 }
 
 float ProjectileModel::get_speed(){

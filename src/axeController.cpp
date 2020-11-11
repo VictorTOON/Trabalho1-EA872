@@ -5,7 +5,7 @@
 
 
 AxeController::AxeController(int x, int y, float teta){
-    this->axeModel = std::shared_ptr<AxeModel>(new AxeModel(x, y, teta, speed));
+    this->axeModel = std::shared_ptr<AxeModel>(new AxeModel(x, y, teta, 50, 50, speed));
     this->axeView = std::shared_ptr<AxeView>(new AxeView(50, 50, teta, (const char*) "../assets/axe.png"));
     this->tempoVida = 0;
 }
