@@ -1,5 +1,7 @@
 #include "bodyModel.h"
 
+#define START_HEALTH 3
+
 CorpoModel::CorpoModel(int x, int y, int h, int w, float teta){
 	this->x = x;
 	this->y = y;
@@ -8,6 +10,7 @@ CorpoModel::CorpoModel(int x, int y, int h, int w, float teta){
 	this->rect.y = y;
 	this->rect.h = h;
 	this->rect.w = w;
+	this->health = START_HEALTH;
 }
 
 int CorpoModel::get_x(){

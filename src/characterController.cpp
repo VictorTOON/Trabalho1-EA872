@@ -15,6 +15,10 @@ void PersonagemController::updateView(){
 
 void PersonagemController::updateModel(){
 	RetornoHandle ret = this->model->handle_keyboard(this->keyboardHandler.getInput());
+	if (this->model->get_health() <= 0) {
+				
+		return;
+	}
 	if (ret == CriaMachado){
 		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
 		axeController.getView()->set_render(this->getView()->get_render());
@@ -22,10 +26,10 @@ void PersonagemController::updateModel(){
 	}
 	for (int i=0; i < axeControllers.size(); i++){
 		retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
-        if (retornoUpdate == Destruir){
-            this->axeControllers.erase(axeControllers.begin() + i);
-            i--;
-        }
+		if (retornoUpdate == Destruir){
+		    this->axeControllers.erase(axeControllers.begin() + i);
+		    i--;
+		}
 	}
 }
 
