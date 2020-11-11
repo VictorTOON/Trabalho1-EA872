@@ -15,6 +15,15 @@ class ProjectileModel{
         float teta, speed;
         SDL_Rect rect;
     public:
+        /* \brief Contrutor do model
+            *
+            * \param x posição em x
+            * \param y posição em y
+            * \param teta angulo do personagem
+            * \param h altura do frame do machado
+            * \param w largura do frame do machado
+            * \param speed velocidade do machado (constante)
+            * */
         ProjectileModel(int x, int y, float teta, int h, int w, float speed);
         int get_x();
         void set_x(int);
@@ -24,6 +33,19 @@ class ProjectileModel{
         void set_teta(float);
         float get_speed();
         void set_speed(float);
+        /* \brief Contrutor do model
+            *
+            * atualiza a posicao do projetil com base no tempo que passou
+            * 
+            * \param 1 tempo de referencia inicial
+            * \param 2 temp de referencia final
+            * */
 	    void update_xy(float, float);
+        /* \brief Contrutor do model
+            *
+            * Retorna um ponteiro para o .rect da classe
+            *
+            * \return ponteiro para o SDL_Rect() do projéticl
+            * */
         const SDL_Rect* get_rect();
 };
