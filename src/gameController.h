@@ -25,4 +25,5 @@ class GameController {
 		void addZumbi(ZumbiModel zumbi);
 		void start();
 		int iterate();
+        void spawnZombie();
 };
