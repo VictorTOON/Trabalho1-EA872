@@ -25,6 +25,6 @@ class CorpoModel{
         void set_teta(float);
         int get_health();
         void set_health(int);
-	const SDL_Rect* get_rect();
-	void update_teta(float);
+	    const SDL_Rect* get_rect();
+	    void update_teta(float);
 };
