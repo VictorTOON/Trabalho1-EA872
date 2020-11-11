@@ -1,0 +1,145 @@
+\hypertarget{class_projectile_view}{}\doxysection{Projectile\+View Class Reference}
+\label{class_projectile_view}\index{ProjectileView@{ProjectileView}}
+
+
+{\ttfamily \#include $<$projectile\+View.\+h$>$}
+
+Inheritance diagram for Projectile\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_projectile_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_view_ad1d541ad95cc73306fb7a313f1d91705}{Projectile\+View}} (int h, int w, float \mbox{\hyperlink{class_projectile_view_a4ac70d88d03a5b59ec3a49f17bdab3d1}{angle}}, const char $\ast$\mbox{\hyperlink{class_projectile_view_ab7a8bba19a7d7de33954b724b523d744}{src\+\_\+asset}})
+\item 
+\mbox{\hyperlink{class_projectile_view_a7ef088b8d8b3c71e8be2272eab08093d}{$\sim$\+Projectile\+View}} ()
+\item 
+void \mbox{\hyperlink{class_projectile_view_a38fe412e208fc9542407ec34b4567b4f}{update}} (int \mbox{\hyperlink{class_projectile_view_ac659ecdf32669918101c41633ae569b2}{x}}, int \mbox{\hyperlink{class_projectile_view_a198c75847e6c049bc555c5e86eeeb2e5}{y}}, float \mbox{\hyperlink{class_projectile_view_a4ac70d88d03a5b59ec3a49f17bdab3d1}{angle}})
+\item 
+void \mbox{\hyperlink{class_projectile_view_a4ce58eb938a9716a4e10e7cc74942326}{set\+\_\+render}} (S\+D\+L\+\_\+\+Renderer $\ast$\mbox{\hyperlink{class_projectile_view_a05ebbc6e2b176db8cdb5eb9f118876f5}{renderer}})
+\item 
+void \mbox{\hyperlink{class_projectile_view_adb75b4ca2371112a04969f14940a51d5}{draw}} ()
+\item 
+void \mbox{\hyperlink{class_projectile_view_a7a31ba4f50288b2cad2dc70ce172c135}{update\+Angle}} (float)
+\item 
+float \mbox{\hyperlink{class_projectile_view_a320c1d98a894e3be761b80035422c13a}{get\+\_\+angle}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_projectile_view_ac659ecdf32669918101c41633ae569b2}{x}}
+\item 
+int \mbox{\hyperlink{class_projectile_view_a198c75847e6c049bc555c5e86eeeb2e5}{y}}
+\item 
+float \mbox{\hyperlink{class_projectile_view_a4ac70d88d03a5b59ec3a49f17bdab3d1}{angle}}
+\item 
+char $\ast$ \mbox{\hyperlink{class_projectile_view_ab7a8bba19a7d7de33954b724b523d744}{src\+\_\+asset}}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{class_projectile_view_a05ebbc6e2b176db8cdb5eb9f118876f5}{renderer}}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_projectile_view_a8bf3b7f456db0b2912cbe6406514a4af}{texture}}
+\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_projectile_view_acc78cec3079fdbb413828d66812f78e9}{rect}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_projectile_view_ad1d541ad95cc73306fb7a313f1d91705}\label{class_projectile_view_ad1d541ad95cc73306fb7a313f1d91705}} 
+\index{ProjectileView@{ProjectileView}!ProjectileView@{ProjectileView}}
+\index{ProjectileView@{ProjectileView}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{ProjectileView()}{ProjectileView()}}
+{\footnotesize\ttfamily Projectile\+View\+::\+Projectile\+View (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{w,  }\item[{float}]{angle,  }\item[{const char $\ast$}]{src\+\_\+asset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_projectile_view_a7ef088b8d8b3c71e8be2272eab08093d}\label{class_projectile_view_a7ef088b8d8b3c71e8be2272eab08093d}} 
+\index{ProjectileView@{ProjectileView}!````~ProjectileView@{$\sim$ProjectileView}}
+\index{````~ProjectileView@{$\sim$ProjectileView}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{$\sim$ProjectileView()}{~ProjectileView()}}
+{\footnotesize\ttfamily Projectile\+View\+::$\sim$\+Projectile\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_projectile_view_adb75b4ca2371112a04969f14940a51d5}\label{class_projectile_view_adb75b4ca2371112a04969f14940a51d5}} 
+\index{ProjectileView@{ProjectileView}!draw@{draw}}
+\index{draw@{draw}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Projectile\+View\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_projectile_view_a320c1d98a894e3be761b80035422c13a}\label{class_projectile_view_a320c1d98a894e3be761b80035422c13a}} 
+\index{ProjectileView@{ProjectileView}!get\_angle@{get\_angle}}
+\index{get\_angle@{get\_angle}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{get\_angle()}{get\_angle()}}
+{\footnotesize\ttfamily float Projectile\+View\+::get\+\_\+angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_projectile_view_a4ce58eb938a9716a4e10e7cc74942326}\label{class_projectile_view_a4ce58eb938a9716a4e10e7cc74942326}} 
+\index{ProjectileView@{ProjectileView}!set\_render@{set\_render}}
+\index{set\_render@{set\_render}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{set\_render()}{set\_render()}}
+{\footnotesize\ttfamily void Projectile\+View\+::set\+\_\+render (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_projectile_view_a38fe412e208fc9542407ec34b4567b4f}\label{class_projectile_view_a38fe412e208fc9542407ec34b4567b4f}} 
+\index{ProjectileView@{ProjectileView}!update@{update}}
+\index{update@{update}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Projectile\+View\+::update (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_projectile_view_a7a31ba4f50288b2cad2dc70ce172c135}\label{class_projectile_view_a7a31ba4f50288b2cad2dc70ce172c135}} 
+\index{ProjectileView@{ProjectileView}!updateAngle@{updateAngle}}
+\index{updateAngle@{updateAngle}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{updateAngle()}{updateAngle()}}
+{\footnotesize\ttfamily void Projectile\+View\+::update\+Angle (\begin{DoxyParamCaption}\item[{float}]{delta\+\_\+angle }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_projectile_view_a4ac70d88d03a5b59ec3a49f17bdab3d1}\label{class_projectile_view_a4ac70d88d03a5b59ec3a49f17bdab3d1}} 
+\index{ProjectileView@{ProjectileView}!angle@{angle}}
+\index{angle@{angle}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily float Projectile\+View\+::angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_acc78cec3079fdbb413828d66812f78e9}\label{class_projectile_view_acc78cec3079fdbb413828d66812f78e9}} 
+\index{ProjectileView@{ProjectileView}!rect@{rect}}
+\index{rect@{rect}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect Projectile\+View\+::rect\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_a05ebbc6e2b176db8cdb5eb9f118876f5}\label{class_projectile_view_a05ebbc6e2b176db8cdb5eb9f118876f5}} 
+\index{ProjectileView@{ProjectileView}!renderer@{renderer}}
+\index{renderer@{renderer}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{renderer}{renderer}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ Projectile\+View\+::renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_ab7a8bba19a7d7de33954b724b523d744}\label{class_projectile_view_ab7a8bba19a7d7de33954b724b523d744}} 
+\index{ProjectileView@{ProjectileView}!src\_asset@{src\_asset}}
+\index{src\_asset@{src\_asset}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{src\_asset}{src\_asset}}
+{\footnotesize\ttfamily char$\ast$ Projectile\+View\+::src\+\_\+asset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_a8bf3b7f456db0b2912cbe6406514a4af}\label{class_projectile_view_a8bf3b7f456db0b2912cbe6406514a4af}} 
+\index{ProjectileView@{ProjectileView}!texture@{texture}}
+\index{texture@{texture}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ Projectile\+View\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_ac659ecdf32669918101c41633ae569b2}\label{class_projectile_view_ac659ecdf32669918101c41633ae569b2}} 
+\index{ProjectileView@{ProjectileView}!x@{x}}
+\index{x@{x}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Projectile\+View\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_projectile_view_a198c75847e6c049bc555c5e86eeeb2e5}\label{class_projectile_view_a198c75847e6c049bc555c5e86eeeb2e5}} 
+\index{ProjectileView@{ProjectileView}!y@{y}}
+\index{y@{y}!ProjectileView@{ProjectileView}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Projectile\+View\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{projectile_view_8h}{projectile\+View.\+h}}\item 
+src/\mbox{\hyperlink{projectile_view_8cpp}{projectile\+View.\+cpp}}\end{DoxyCompactItemize}

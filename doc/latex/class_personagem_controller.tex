@@ -1,0 +1,115 @@
+\hypertarget{class_personagem_controller}{}\doxysection{Personagem\+Controller Class Reference}
+\label{class_personagem_controller}\index{PersonagemController@{PersonagemController}}
+
+
+{\ttfamily \#include $<$character\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_personagem_controller_a66fb00a5d348716d813ca9c3b2f154e1}{Personagem\+Controller}} (int x, int y, int h, int w, float teta)
+\item 
+void \mbox{\hyperlink{class_personagem_controller_a98ab6dea7df4187e8693dea783216be6}{update\+View}} ()
+\item 
+void \mbox{\hyperlink{class_personagem_controller_ab8b7656aed19d2b22f6088acfbc94af6}{update\+Model}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_view}{Personagem\+View}} $>$ \mbox{\hyperlink{class_personagem_controller_a6b887147bd3cc8fa8d992ffc1b3735c2}{get\+View}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_model}{Personagem\+Model}} $>$ \mbox{\hyperlink{class_personagem_controller_aba2b8f8e4877b27dbf9b999b9d67c83c}{get\+Model}} ()
+\item 
+void \mbox{\hyperlink{class_personagem_controller_a215a1c5147f1ec011b8ee5bb5940a53f}{iterate}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_axe_controller}{Axe\+Controller}} $>$ \mbox{\hyperlink{class_personagem_controller_a5bd4166c3a4320882b6e4a338094a145}{get\+\_\+axe\+Controllers}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_model}{Personagem\+Model}} $>$ \mbox{\hyperlink{class_personagem_controller_a16565ed20a50c951dd07f438269fe3e9}{model}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_view}{Personagem\+View}} $>$ \mbox{\hyperlink{class_personagem_controller_adf13240aa8e984660081d023bf3732f1}{view}}
+\item 
+\mbox{\hyperlink{class_s_d_l___keyboard___handler}{S\+D\+L\+\_\+\+Keyboard\+\_\+\+Handler}} \mbox{\hyperlink{class_personagem_controller_a454acfb6eac6e073bac89de017d7b674}{keyboard\+Handler}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_axe_controller}{Axe\+Controller}} $>$ \mbox{\hyperlink{class_personagem_controller_ac07ad685443d46d89c4bcb581c094a53}{axe\+Controllers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_personagem_controller_a66fb00a5d348716d813ca9c3b2f154e1}\label{class_personagem_controller_a66fb00a5d348716d813ca9c3b2f154e1}} 
+\index{PersonagemController@{PersonagemController}!PersonagemController@{PersonagemController}}
+\index{PersonagemController@{PersonagemController}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{PersonagemController()}{PersonagemController()}}
+{\footnotesize\ttfamily Personagem\+Controller\+::\+Personagem\+Controller (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{h,  }\item[{int}]{w,  }\item[{float}]{teta }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_personagem_controller_a5bd4166c3a4320882b6e4a338094a145}\label{class_personagem_controller_a5bd4166c3a4320882b6e4a338094a145}} 
+\index{PersonagemController@{PersonagemController}!get\_axeControllers@{get\_axeControllers}}
+\index{get\_axeControllers@{get\_axeControllers}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{get\_axeControllers()}{get\_axeControllers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_axe_controller}{Axe\+Controller}} $>$ Personagem\+Controller\+::get\+\_\+axe\+Controllers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_personagem_controller_aba2b8f8e4877b27dbf9b999b9d67c83c}\label{class_personagem_controller_aba2b8f8e4877b27dbf9b999b9d67c83c}} 
+\index{PersonagemController@{PersonagemController}!getModel@{getModel}}
+\index{getModel@{getModel}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{getModel()}{getModel()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_model}{Personagem\+Model}} $>$ Personagem\+Controller\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_personagem_controller_a6b887147bd3cc8fa8d992ffc1b3735c2}\label{class_personagem_controller_a6b887147bd3cc8fa8d992ffc1b3735c2}} 
+\index{PersonagemController@{PersonagemController}!getView@{getView}}
+\index{getView@{getView}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{getView()}{getView()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_personagem_view}{Personagem\+View}} $>$ Personagem\+Controller\+::get\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_personagem_controller_a215a1c5147f1ec011b8ee5bb5940a53f}\label{class_personagem_controller_a215a1c5147f1ec011b8ee5bb5940a53f}} 
+\index{PersonagemController@{PersonagemController}!iterate@{iterate}}
+\index{iterate@{iterate}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{iterate()}{iterate()}}
+{\footnotesize\ttfamily void Personagem\+Controller\+::iterate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_personagem_controller_ab8b7656aed19d2b22f6088acfbc94af6}\label{class_personagem_controller_ab8b7656aed19d2b22f6088acfbc94af6}} 
+\index{PersonagemController@{PersonagemController}!updateModel@{updateModel}}
+\index{updateModel@{updateModel}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{updateModel()}{updateModel()}}
+{\footnotesize\ttfamily void Personagem\+Controller\+::update\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_personagem_controller_a98ab6dea7df4187e8693dea783216be6}\label{class_personagem_controller_a98ab6dea7df4187e8693dea783216be6}} 
+\index{PersonagemController@{PersonagemController}!updateView@{updateView}}
+\index{updateView@{updateView}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{updateView()}{updateView()}}
+{\footnotesize\ttfamily void Personagem\+Controller\+::update\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_personagem_controller_ac07ad685443d46d89c4bcb581c094a53}\label{class_personagem_controller_ac07ad685443d46d89c4bcb581c094a53}} 
+\index{PersonagemController@{PersonagemController}!axeControllers@{axeControllers}}
+\index{axeControllers@{axeControllers}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{axeControllers}{axeControllers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_axe_controller}{Axe\+Controller}}$>$ Personagem\+Controller\+::axe\+Controllers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_personagem_controller_a454acfb6eac6e073bac89de017d7b674}\label{class_personagem_controller_a454acfb6eac6e073bac89de017d7b674}} 
+\index{PersonagemController@{PersonagemController}!keyboardHandler@{keyboardHandler}}
+\index{keyboardHandler@{keyboardHandler}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{keyboardHandler}{keyboardHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_d_l___keyboard___handler}{S\+D\+L\+\_\+\+Keyboard\+\_\+\+Handler}} Personagem\+Controller\+::keyboard\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_personagem_controller_a16565ed20a50c951dd07f438269fe3e9}\label{class_personagem_controller_a16565ed20a50c951dd07f438269fe3e9}} 
+\index{PersonagemController@{PersonagemController}!model@{model}}
+\index{model@{model}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_personagem_model}{Personagem\+Model}}$>$ Personagem\+Controller\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_personagem_controller_adf13240aa8e984660081d023bf3732f1}\label{class_personagem_controller_adf13240aa8e984660081d023bf3732f1}} 
+\index{PersonagemController@{PersonagemController}!view@{view}}
+\index{view@{view}!PersonagemController@{PersonagemController}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_personagem_view}{Personagem\+View}}$>$ Personagem\+Controller\+::view\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{character_controller_8h}{character\+Controller.\+h}}\item 
+src/\mbox{\hyperlink{character_controller_8cpp}{character\+Controller.\+cpp}}\end{DoxyCompactItemize}
