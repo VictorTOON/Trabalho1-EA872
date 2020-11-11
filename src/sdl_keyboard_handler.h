@@ -8,6 +8,12 @@
 #define KEYBOARD_LEFT 4
 #define KEYBOARD_RIGHT 3
 #define KEYBOARD_SPACE 5
+#define KEYBOARD_ZERO 6
+
+typedef enum {
+	CriaMachado,
+	Default
+} RetornoHandle;
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>

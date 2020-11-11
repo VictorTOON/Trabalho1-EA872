@@ -4,6 +4,7 @@
 
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
+    this->keyboardHandler = SDL_Keyboard_Handler();
 	this->zumbis = zumbis;
 	this->gameView = std::unique_ptr<GameView>(new GameView());
 	this->gameView->addPersonagem(this->personagem->getView());
@@ -20,6 +21,10 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
+    int ret = this->keyboardHandler.getInput();
+    if (ret & (1 << KEYBOARD_ZERO)){
+        return -1;
+    }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){

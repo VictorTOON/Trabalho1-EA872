@@ -15,6 +15,7 @@ class GameController {
 		std::unique_ptr<PersonagemController> personagem;
 		std::vector<ZumbiController> zumbis;
 		std::unique_ptr<GameView> gameView;
+        SDL_Keyboard_Handler keyboardHandler;
 		std::vector<ZumbiView> zumbiViews;
 		void updatePersonagemView();
 	public:
