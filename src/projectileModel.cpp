@@ -34,7 +34,6 @@ void ProjectileModel::set_teta(float novo_teta){
 
 #define GRAD_TO_RAD (3.14159265/180)
 void ProjectileModel::update_xy(float tempo_pass, float tempo_atual){
-	std::cout<<"Boleto; "<<this->teta<<std::endl;
 	this->x = (int) this->speed*cos(this->teta*GRAD_TO_RAD)*(tempo_atual - tempo_pass) + this->x;
 	this->y = (int) (this->speed*sin(this->teta*GRAD_TO_RAD)*(tempo_atual - tempo_pass) + this->y);
 }

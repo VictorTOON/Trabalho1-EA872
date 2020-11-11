@@ -7,9 +7,6 @@ PersonagemModel::PersonagemModel(int x, int y, float teta): CorpoModel(x, y, tet
 
 #define GRAD_TO_RAD (3.14159265/180)
 RetornoHandle PersonagemModel::handle_keyboard(int entry){
-	
-	std::cout<<"16; "<<this->get_teta()<<std::endl;
-	std::cout<<"x "<<this->get_x()<<"; y "<<this->get_y()<<std::endl;
 	if (entry & (1 << KEYBOARD_UP)){
 			this->set_x(this->get_x()+PASSO * cos(this->get_teta() * (GRAD_TO_RAD)));
 			this->set_y(this->get_y()+PASSO * sin(this->get_teta() * (GRAD_TO_RAD))); 

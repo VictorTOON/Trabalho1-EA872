@@ -19,8 +19,12 @@ void PersonagemController::updateModel(){
 		axeController.getView()->set_render(this->getView()->get_render());
 		this->axeControllers.push_back(axeController);		
 	}
-	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
-		axeController->updateModel(0, .5);
+	for (int i=0; i < axeControllers.size(); i++){
+		retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
+        if (retornoUpdate == Destruir){
+            this->axeControllers.erase(axeControllers.begin() + i);
+            i--;
+        }
 	}
 }
 

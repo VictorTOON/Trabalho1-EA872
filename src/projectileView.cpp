@@ -30,4 +30,7 @@ void ProjectileView::draw(){
 
 }
 
+ProjectileView::~ProjectileView(){
+    SDL_DestroyTexture(this->texture);
+}
 
