@@ -1,6 +1,6 @@
 #include "axeController.h"
 #include <iostream>
-#define speed 20
+#define speed 30
 #define vida 20
 
 

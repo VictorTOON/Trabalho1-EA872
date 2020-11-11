@@ -17,7 +17,7 @@ void PersonagemController::updateModel(){
 	if (ret == CriaMachado){
 		AxeController axeController(this->model.get_x(), this->model.get_y(), this->model.get_teta());
 		axeController.getView()->set_render(this->getView()->get_render());
-		this->axeControllers.push_back(axeController);		
+		this->axeControllers.push_back(axeController);
 	}
 	for (int i=0; i < axeControllers.size(); i++){
 		retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
