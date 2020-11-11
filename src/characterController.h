@@ -18,4 +18,5 @@ class PersonagemController {
 		std::shared_ptr<PersonagemView> getView();
 		std::shared_ptr<PersonagemModel> getModel();
 		void iterate();
+        std::vector<AxeController> get_axeControllers();
 };

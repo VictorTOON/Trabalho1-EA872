@@ -51,3 +51,7 @@ float ProjectileModel::get_speed(){
 void ProjectileModel::set_speed(float novo_speed){
     this->speed = novo_speed;
 }
+
+const SDL_Rect* ProjectileModel::get_rect(){
+    return &(this->rect);
+}

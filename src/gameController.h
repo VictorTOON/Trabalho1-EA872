@@ -4,6 +4,7 @@
 #include "characterController.h"
 #include "zombieController.h"
 #include "sdl_keyboard_handler.h"
+#include "gameModel.h"
 
 #include <iomanip>
 #include <iostream>
@@ -12,6 +13,7 @@
 
 class GameController {
 	private:
+        std::unique_ptr<GameModel> gameModel;
 		std::unique_ptr<PersonagemController> personagem;
 		std::vector<ZumbiController> zumbis;
 		std::unique_ptr<GameView> gameView;

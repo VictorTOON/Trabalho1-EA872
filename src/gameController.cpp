@@ -4,6 +4,7 @@
 
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
+    this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->keyboardHandler = SDL_Keyboard_Handler();
 	this->zumbis = zumbis;
 	this->gameView = std::unique_ptr<GameView>(new GameView());
@@ -27,8 +28,16 @@ int GameController::iterate(){
     }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
-	for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
-		z->iterate(this->personagem->getModel());
+	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
+    for (int k = 0; k < this->zumbis.size(); k++){
+		zumbis[k].iterate(this->personagem->getModel());
+        for (int i=0; i < this->personagem->get_axeControllers().size(); i++){
+            if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
+                this->zumbis.erase(zumbis.begin() + k);
+                k--;
+                break;
+            }
+        }
 	}
 	this->gameView->finishDraw();
 	return returnDraw;
