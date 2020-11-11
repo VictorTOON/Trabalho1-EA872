@@ -24,6 +24,7 @@ std::shared_ptr<AxeView> AxeController::getView(){
 }
 
 void AxeController::updateView(){
-    this->axeView->update(this->axeModel->get_x(), this->axeModel->get_y(), this->axeModel->get_teta());
+    this->axeView->update(this->axeModel->get_x(), this->axeModel->get_y(), this->axeView->get_angle());
+    this->axeView->updateAngle(12);
     this->axeView->draw();
 }

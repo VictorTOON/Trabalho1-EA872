@@ -25,6 +25,15 @@ void ProjectileView::update(int x, int y, float angle){
 	this->rect.y = ((y>0)?y:0);
 }
 
+void ProjectileView::updateAngle(float delta_angle){
+	this->angle += delta_angle;
+}
+
+float ProjectileView::get_angle(){
+	return this->angle;
+
+}
+
 void ProjectileView::draw(){
 	SDL_RenderCopyEx(renderer, this->texture, nullptr, &(this->rect), this->angle, nullptr, SDL_FLIP_NONE);
 

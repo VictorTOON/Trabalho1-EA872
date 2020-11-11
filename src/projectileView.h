@@ -14,8 +14,10 @@ class ProjectileView{
 		SDL_Rect rect;
 	public:
 		ProjectileView(int h, int w, float angle, const char* src_asset);
-        ~ProjectileView();
+		~ProjectileView();
 		void update(int x, int y, float angle);
 		void set_render(SDL_Renderer *renderer);
 		void draw();
+		void updateAngle(float);
+		float get_angle();
 };

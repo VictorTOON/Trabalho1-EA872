@@ -8,3 +8,4 @@ AxeView::AxeView(int h, int w, float angle, const char* src_asset):
 	ProjectileView(h, w, angle, src_asset){
 	
 }
+
