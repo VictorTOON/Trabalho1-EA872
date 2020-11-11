@@ -35,10 +35,28 @@ int GameController::iterate(){
             if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
                 this->zumbis.erase(zumbis.begin() + k);
                 k--;
+                spawnZombie();
                 break;
             }
         }
 	}
 	this->gameView->finishDraw();
 	return returnDraw;
+}
+
+void GameController::spawnZombie(){
+    for (int a = 0; a < rand() % 3 + 1; a++){
+        if(this->zumbis.size() < 20){
+            int randomX = rand() % 1600 + 0;
+            int randomY = rand() % 900 + 0;
+            if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
+                ZumbiController zumbi_novo(randomX, randomY,150,150, 0);
+                this->gameView->addZumbi(zumbi_novo.getView());
+                this->zumbis.push_back(zumbi_novo);
+            }
+            else{
+                a--;
+            }
+        }
+    }
 }
