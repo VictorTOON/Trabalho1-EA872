@@ -1,11 +1,19 @@
-#include "zombieController.hpp"
+#include "zombieController.h"
 
 ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
 	this->view = std::shared_ptr<ZumbiView>(new ZumbiView(h, w, teta, "../assets/zombie.png"));
 }
 
-void ZumbiController::updateView(){
-	this->view->update(this->model.get_x(), this->model.get_y(), this->model.get_teta());
+void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
+	float arc = 0;
+	float angle = 0;
+	if (this->model.get_x() != p->get_x()){
+		arc = (this->model.get_y() - p->get_y())/(this->model.get_x() - p->get_x());
+		angle = (atan (arc) * (180/3.14159265));
+	}else{
+		angle = 0;	
+	}
+	this->view->update(this->model.get_x(), this->model.get_y(), angle);
 	this->view->draw();
 }
 
@@ -24,7 +32,7 @@ ZumbiModel ZumbiController::getModel(){
 
 void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 	this->updateModel(p);
-	this->updateView();
+	this->updateView(p);
 }
 
 ZumbiModel ZumbiController::get_model(){
