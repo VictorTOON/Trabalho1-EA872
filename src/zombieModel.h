@@ -18,5 +18,5 @@ typedef enum {
 class ZumbiModel: public CorpoModel{
     public:
         ZumbiModel(int x, int y, int h, int w, float teta);
-	ZumbiFollowReturn follow(PersonagemModel);
+	ZumbiFollowReturn follow(std::shared_ptr<PersonagemModel> p);
 };

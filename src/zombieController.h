@@ -11,8 +11,8 @@ class ZumbiController {
 	public: 
 		ZumbiController(int x, int y, int h, int w, float teta);
 		void updateView();
-		void updateModel(PersonagemModel p);
+		void updateModel(std::shared_ptr<PersonagemModel> p);
 		std::shared_ptr<ZumbiView> getView();
 		ZumbiModel getModel();
-		void iterate(PersonagemModel p);
+		void iterate(std::shared_ptr<PersonagemModel> p);
 };

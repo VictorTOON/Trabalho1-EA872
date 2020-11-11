@@ -4,7 +4,7 @@
 
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
-    this->keyboardHandler = SDL_Keyboard_Handler();
+	this->keyboardHandler = SDL_Keyboard_Handler();
 	this->zumbis = zumbis;
 	this->gameView = std::unique_ptr<GameView>(new GameView());
 	this->gameView->addPersonagem(this->personagem->getView());

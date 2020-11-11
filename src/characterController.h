@@ -7,7 +7,7 @@
 
 class PersonagemController {
 	private:
-		PersonagemModel model;
+		std::shared_ptr<PersonagemModel> model;
 		std::shared_ptr<PersonagemView> view;
 		SDL_Keyboard_Handler keyboardHandler;
 		std::vector<AxeController> axeControllers;
@@ -16,6 +16,6 @@ class PersonagemController {
 		void updateView();
 		void updateModel();
 		std::shared_ptr<PersonagemView> getView();
-		PersonagemModel getModel();
+		std::shared_ptr<PersonagemModel> getModel();
 		void iterate();
 };

@@ -9,7 +9,7 @@ void ZumbiController::updateView(){
 	this->view->draw();
 }
 
-void ZumbiController::updateModel(PersonagemModel p){
+void ZumbiController::updateModel(std::shared_ptr<PersonagemModel> p){
 	this->model.follow(p);
 }
 
@@ -22,7 +22,7 @@ ZumbiModel ZumbiController::getModel(){
 }
 
 
-void ZumbiController::iterate(PersonagemModel p){
+void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 	this->updateModel(p);
 	this->updateView();
 }

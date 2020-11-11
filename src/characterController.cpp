@@ -1,11 +1,12 @@
 #include "characterController.h"
 
-PersonagemController::PersonagemController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
+PersonagemController::PersonagemController(int x, int y, int h, int w, float teta){
 	this->view = std::shared_ptr<PersonagemView>(new PersonagemView(h, w, teta, "../assets/tree-character.png"));
+	this->model = std::shared_ptr<PersonagemModel>(new PersonagemModel(x, y, h, w, teta));
 }
 
 void PersonagemController::updateView(){
-	this->view->update(this->model.get_x(), this->model.get_y(), this->model.get_teta());
+	this->view->update(this->model->get_x(), this->model->get_y(), this->model->get_teta());
 	this->view->draw();
 	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
 		axeController->updateView();
@@ -13,9 +14,9 @@ void PersonagemController::updateView(){
 }
 
 void PersonagemController::updateModel(){
-	RetornoHandle ret = this->model.handle_keyboard(this->keyboardHandler.getInput());
+	RetornoHandle ret = this->model->handle_keyboard(this->keyboardHandler.getInput());
 	if (ret == CriaMachado){
-		AxeController axeController(this->model.get_x(), this->model.get_y(), this->model.get_teta());
+		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
 		axeController.getView()->set_render(this->getView()->get_render());
 		this->axeControllers.push_back(axeController);
 	}
@@ -32,7 +33,7 @@ std::shared_ptr<PersonagemView> PersonagemController::getView(){
 	return this->view;
 }
 
-PersonagemModel PersonagemController::getModel(){
+std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
 }
 
