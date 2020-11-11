@@ -1,7 +1,7 @@
 #pragma once
-#include "zombieModel.h"
-#include "zombieView.h"
-#include "characterModel.h"
+#include "zombieModel.hpp"
+#include "zombieView.hpp"
+#include "characterModel.hpp"
 
 class ZumbiController {
 	private:

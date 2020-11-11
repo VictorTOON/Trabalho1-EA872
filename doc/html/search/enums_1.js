@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['statuszumbi_302',['statusZumbi',['../game_model_8h.html#a380e85369cc30c4d1045aac70c2bf759',1,'gameModel.h']]]
+  ['retornohandle_302',['RetornoHandle',['../character_model_8h.html#ad965e1990f45693e58f33cf6c1ed5f74',1,'characterModel.h']]],
+  ['retornoupdateaxecontroller_303',['retornoUpdateAxeController',['../axe_controller_8h.html#a8feca0b9cdfe3c7963348dda9fefa30b',1,'axeController.h']]]
 ];

@@ -39,5 +39,7 @@ class CorpoView{
 		void set_render(SDL_Renderer *renderer);
 		SDL_Renderer *get_render();
 		virtual void drawCast() = 0;
+		/*! \brief Renderiza o corpo para o SDL
+		 * */
 		void draw();
 };

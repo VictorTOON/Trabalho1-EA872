@@ -1,10 +1,10 @@
 #pragma once
 
-#include "gameView.h"
-#include "characterController.h"
-#include "zombieController.h"
-#include "sdl_keyboard_handler.h"
-#include "gameModel.h"
+#include "gameView.hpp"
+#include "characterController.hpp"
+#include "zombieController.hpp"
+#include "sdl_keyboard_handler.hpp"
+#include "gameModel.hpp"
 
 #include <iomanip>
 #include <iostream>

@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-#include "sdl_keyboard_handler.h"
+#include "sdl_keyboard_handler.hpp"
 #include <cmath>
 
 #define GRAD_TO_RAD (3.14159265/180)

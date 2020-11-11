@@ -2,9 +2,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iomanip>
-#include "characterView.h"
-#include "zombieView.h"
-#include "axeView.h"
+#include "characterView.hpp"
+#include "zombieView.hpp"
+#include "axeView.hpp"
 #include <memory>
 #include <vector>
 #define SCREEN_WIDTH 1600

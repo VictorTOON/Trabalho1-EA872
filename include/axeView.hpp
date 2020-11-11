@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <memory> 
 #include <SDL2/SDL_image.h>
-#include "projectileView.h"
+#include "projectileView.hpp"
 
 #define AXE_SIZE 50
 

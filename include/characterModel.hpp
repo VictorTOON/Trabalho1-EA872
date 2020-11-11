@@ -2,10 +2,10 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-#include "sdl_keyboard_handler.h"
+#include "sdl_keyboard_handler.hpp"
 #include <cmath>
-#include "bodyModel.h"
-#include "axeController.h"
+#include "bodyModel.hpp"
+#include "axeController.hpp"
 
 /*! \brief Enumerator com os valores retornados pela handle_keyboard
  * Esses valores podem ser interpretados pelo PersonagemController para fazer alguma acao no jogo

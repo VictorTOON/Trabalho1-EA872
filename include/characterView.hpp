@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include "bodyView.h"
+#include "bodyView.hpp"
 #define CHARACTER_SIZE 150
 
 class PersonagemView: public CorpoView{

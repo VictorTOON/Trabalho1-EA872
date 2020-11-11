@@ -2,9 +2,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-#include "sdl_keyboard_handler.h"
+#include "sdl_keyboard_handler.hpp"
 #include <cmath>
-#include "projectileModel.h"
+#include "projectileModel.hpp"
 
 class AxeModel: public ProjectileModel{
     public:

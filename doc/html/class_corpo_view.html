@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe base para o View dos corpos.  
+ <a href="class_corpo_view.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="body_view_8h_source.html">bodyView.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CorpoView:</div>
@@ -85,10 +88,13 @@ Inheritance diagram for CorpoView:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aca07e8e985ac1ffb4705401e7cd9db7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corpo_view.html#aca07e8e985ac1ffb4705401e7cd9db7c">CorpoView</a> (int h, int w, float <a class="el" href="class_corpo_view.html#a4430d43df8836de0dbecf665600dd522">angle</a>, const char *<a class="el" href="class_corpo_view.html#adb170e53b11198796cac14e53abbdfde">src_asset</a>)</td></tr>
+<tr class="memdesc:aca07e8e985ac1ffb4705401e7cd9db7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe.  <a href="class_corpo_view.html#aca07e8e985ac1ffb4705401e7cd9db7c">More...</a><br /></td></tr>
 <tr class="separator:aca07e8e985ac1ffb4705401e7cd9db7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f62a260f1a44244d50e1da4a57e448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corpo_view.html#a90f62a260f1a44244d50e1da4a57e448">update</a> (int <a class="el" href="class_corpo_view.html#a6b982a37c6ef02092740c05af881f9a1">x</a>, int <a class="el" href="class_corpo_view.html#a41ca3cfe6e97a56fa44305b4e0940182">y</a>, float <a class="el" href="class_corpo_view.html#a4430d43df8836de0dbecf665600dd522">angle</a>)</td></tr>
+<tr class="memdesc:a90f62a260f1a44244d50e1da4a57e448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que atualiza a textura.  <a href="class_corpo_view.html#a90f62a260f1a44244d50e1da4a57e448">More...</a><br /></td></tr>
 <tr class="separator:a90f62a260f1a44244d50e1da4a57e448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19fccb9f476522e6b609ba5cd3d7b80d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corpo_view.html#a19fccb9f476522e6b609ba5cd3d7b80d">set_render</a> (SDL_Renderer *<a class="el" href="class_corpo_view.html#a202d550daebafd32aff8874ad7904e3b">renderer</a>)</td></tr>
+<tr class="memdesc:a19fccb9f476522e6b609ba5cd3d7b80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que seta o render.  <a href="class_corpo_view.html#a19fccb9f476522e6b609ba5cd3d7b80d">More...</a><br /></td></tr>
 <tr class="separator:a19fccb9f476522e6b609ba5cd3d7b80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca54dce2bf0fe548c714cc2d9edf57d"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corpo_view.html#a4ca54dce2bf0fe548c714cc2d9edf57d">get_render</a> ()</td></tr>
 <tr class="separator:a4ca54dce2bf0fe548c714cc2d9edf57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,7 +120,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a800e641462946960eac54efd5c9689e0"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corpo_view.html#a800e641462946960eac54efd5c9689e0">rect</a></td></tr>
 <tr class="separator:a800e641462946960eac54efd5c9689e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe base para o View dos corpos. </p>
+<p>Classe base para o View de um corpo, possui a posicao, o angulo, O source da imagem da textura, o render que a textura vai se ligar E o SDL_Rect para a posicao </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aca07e8e985ac1ffb4705401e7cd9db7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca07e8e985ac1ffb4705401e7cd9db7c">&#9670;&nbsp;</a></span>CorpoView()</h2>
 
@@ -152,6 +161,17 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construtor da classe. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Altura da imagem </td></tr>
+    <tr><td class="paramname">w</td><td>Largura da imagem </td></tr>
+    <tr><td class="paramname">angle</td><td>Angulo da imagem </td></tr>
+    <tr><td class="paramname">src_asset</td><td>Source path da imagem </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -233,6 +253,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Funcao que seta o render. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">render</td><td>Ponteiro do SDL_Renderer do jogo </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a90f62a260f1a44244d50e1da4a57e448"></a>
@@ -266,6 +294,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao que atualiza a textura. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Posicao x da imagem </td></tr>
+    <tr><td class="paramname">y</td><td>Posicao y da image </td></tr>
+    <tr><td class="paramname">angle</td><td>Angulo da imagem </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

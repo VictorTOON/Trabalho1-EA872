@@ -2,6 +2,11 @@
 \label{class_corpo_view}\index{CorpoView@{CorpoView}}
 
 
+Classe base para o View dos corpos.  
+
+
+
+
 {\ttfamily \#include $<$body\+View.\+h$>$}
 
 Inheritance diagram for Corpo\+View\+:\begin{figure}[H]
@@ -14,11 +19,11 @@ Inheritance diagram for Corpo\+View\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}{Corpo\+View}} (int h, int w, float \mbox{\hyperlink{class_corpo_view_a4430d43df8836de0dbecf665600dd522}{angle}}, const char $\ast$\mbox{\hyperlink{class_corpo_view_adb170e53b11198796cac14e53abbdfde}{src\+\_\+asset}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor da classe. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}{update}} (int \mbox{\hyperlink{class_corpo_view_a6b982a37c6ef02092740c05af881f9a1}{x}}, int \mbox{\hyperlink{class_corpo_view_a41ca3cfe6e97a56fa44305b4e0940182}{y}}, float \mbox{\hyperlink{class_corpo_view_a4430d43df8836de0dbecf665600dd522}{angle}})
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que atualiza a textura. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_corpo_view_a19fccb9f476522e6b609ba5cd3d7b80d}{set\+\_\+render}} (S\+D\+L\+\_\+\+Renderer $\ast$\mbox{\hyperlink{class_corpo_view_a202d550daebafd32aff8874ad7904e3b}{renderer}})
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao que seta o render. \end{DoxyCompactList}\item 
 S\+D\+L\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{class_corpo_view_a4ca54dce2bf0fe548c714cc2d9edf57d}{get\+\_\+render}} ()
 \item 
 virtual void \mbox{\hyperlink{class_corpo_view_a23a51a940147ac1ad5756fbdc9efdd45}{draw\+Cast}} ()=0
@@ -44,6 +49,11 @@ S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_corpo_view_a800e641462946960eac54efd5
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Classe base para o View dos corpos. 
+
+Classe base para o View de um corpo, possui a posicao, o angulo, O source da imagem da textura, o render que a textura vai se ligar E o S\+D\+L\+\_\+\+Rect para a posicao 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}\label{class_corpo_view_aca07e8e985ac1ffb4705401e7cd9db7c}} 
 \index{CorpoView@{CorpoView}!CorpoView@{CorpoView}}
@@ -51,6 +61,21 @@ S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_corpo_view_a800e641462946960eac54efd5
 \doxysubsubsection{\texorpdfstring{CorpoView()}{CorpoView()}}
 {\footnotesize\ttfamily Corpo\+View\+::\+Corpo\+View (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{w,  }\item[{float}]{angle,  }\item[{const char $\ast$}]{src\+\_\+asset }\end{DoxyParamCaption})}
 
+
+
+Construtor da classe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Altura da imagem \\
+\hline
+{\em w} & Largura da imagem \\
+\hline
+{\em angle} & Angulo da imagem \\
+\hline
+{\em src\+\_\+asset} & Source path da imagem \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -82,12 +107,34 @@ Implemented in \mbox{\hyperlink{class_zumbi_view_a5ec42728d99f2f5de04a2e8dc98149
 \doxysubsubsection{\texorpdfstring{set\_render()}{set\_render()}}
 {\footnotesize\ttfamily void Corpo\+View\+::set\+\_\+render (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
 
+
+
+Funcao que seta o render. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render} & Ponteiro do S\+D\+L\+\_\+\+Renderer do jogo \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}\label{class_corpo_view_a90f62a260f1a44244d50e1da4a57e448}} 
 \index{CorpoView@{CorpoView}!update@{update}}
 \index{update@{update}!CorpoView@{CorpoView}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void Corpo\+View\+::update (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{float}]{angle }\end{DoxyParamCaption})}
 
+
+
+Funcao que atualiza a textura. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Posicao x da imagem \\
+\hline
+{\em y} & Posicao y da image \\
+\hline
+{\em angle} & Angulo da imagem \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}

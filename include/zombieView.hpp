@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <memory> 
 #include <SDL2/SDL_image.h>
-#include "bodyView.h"
+#include "bodyView.hpp"
 
 #define ZOMBIE_SIZE 150
 

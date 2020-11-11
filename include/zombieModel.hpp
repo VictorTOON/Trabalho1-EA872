@@ -3,8 +3,8 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include <cmath>
-#include "characterModel.h"
-#include "bodyModel.h"
+#include "characterModel.hpp"
+#include "bodyModel.hpp"
 
 
 #define PASSO_ZUMBI 10

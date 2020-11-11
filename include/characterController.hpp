@@ -1,8 +1,8 @@
 #pragma once
-#include "characterModel.h"
-#include "characterView.h"
-#include "sdl_keyboard_handler.h"
-#include "axeController.h"
+#include "characterModel.hpp"
+#include "characterView.hpp"
+#include "sdl_keyboard_handler.hpp"
+#include "axeController.hpp"
 
 
 class PersonagemController {
