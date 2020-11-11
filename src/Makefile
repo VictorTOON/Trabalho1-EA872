@@ -2,7 +2,7 @@ LDFLAGS = -framework SDL2  -I
 CFLAGS= -std=c++11
 
 main=main.o
-game=gameController.o gameView.o
+game=gameController.o gameView.o gameModel.o
 zombie=zombieController.o zombieView.o zombieModel.o
 character=characterController.o characterView.o characterModel.o
 body=bodyView.o bodyModel.o
@@ -58,6 +58,9 @@ zombieView.o : zombieView.cpp zombieView.h
 sdl_keyboard_handler.o : sdl_keyboard_handler.cpp sdl_keyboard_handler.h
 	g++ -c sdl_keyboard_handler.cpp -osdl_keyboard_handler.o $(CFLAGS) #-I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
 
+
+gameModel.o : gameModel.cpp gameModel.h
+	g++ -c gameModel.cpp -ogameModel.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
 
 gameView.o : gameView.cpp gameView.h
 	g++ -c gameView.cpp -ogameView.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
