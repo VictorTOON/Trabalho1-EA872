@@ -1,6 +1,9 @@
 # Versao minima do cmake
 cmake_minimum_required(VERSION 3.0)
 
+#Garantir que usaremos C++11 (ou superior, se preciso)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+
 # Nome do meu projeto
 project(VingancasArvores)
 
