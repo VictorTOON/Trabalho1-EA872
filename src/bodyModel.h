@@ -14,13 +14,13 @@ class CorpoModel{
     private:
         int x, y, h, w, health;
         float teta;
+	unsigned int lastHealthChange;
 	SDL_Rect rect;
     public:
         CorpoModel(int x, int y, int h, int w, float teta);
         int get_x();
         void set_x(int);
-        int get_y();
-        void set_y(int);
+        int get_y();void set_y(int);
         float get_teta();
         void set_teta(float);
         int get_health();

@@ -15,9 +15,9 @@ void PersonagemController::updateView(){
 
 void PersonagemController::updateModel(){
 	RetornoHandle ret = this->model->handle_keyboard(this->keyboardHandler.getInput());
+						
 	if (this->model->get_health() <= 0) {
-				
-		return;
+		//return;
 	}
 	if (ret == CriaMachado){
 		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());

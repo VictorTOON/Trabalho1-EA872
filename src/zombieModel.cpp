@@ -18,7 +18,8 @@ ZumbiFollowReturn ZumbiModel::follow(std::shared_ptr<PersonagemModel> p){
 		this->set_y(this->get_y() - PASSO * CONST_SPIN);
 	}
 	if (SDL_HasIntersection(this->get_rect(), p->get_rect()) == SDL_TRUE){
-		p->set_health(p->get_healt()-1);
+		std::cout<<"Aqui"<<std::endl;
+		p->set_health(p->get_health()-1);
 		return CollisionPersonagem;
 	}
 	return DefaultFollow;

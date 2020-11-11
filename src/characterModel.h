@@ -8,11 +8,12 @@
 #include "axeController.h"
 
 class PersonagemModel: public CorpoModel{
-    private:
-        std::vector<AxeController> axeControllers;
-        unsigned int tempo;
-        unsigned int tempoComparado;
-    public:
-        PersonagemModel(int x, int y, int h, int w, float teta);
-	    RetornoHandle handle_keyboard(int);
+	private:
+		std::vector<AxeController> axeControllers;
+		unsigned int tempo;
+		unsigned int tempoComparado;
+	public:
+		PersonagemModel(int x, int y, int h, int w, float teta);
+		RetornoHandle handle_keyboard(int);
+		bool isDead();
 };
