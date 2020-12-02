@@ -4,7 +4,7 @@
 
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
-    this->gameModel = std::unique_ptr<GameModel> (new GameModel());
+	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->keyboardHandler = SDL_Keyboard_Handler();
 	this->zumbis = zumbis;
 	this->gameView = std::unique_ptr<GameView>(new GameView());
@@ -14,7 +14,17 @@ GameController::GameController(PersonagemController personagem, std::vector<Zumb
 	}
 }
 
-void GameController::addZumbi(ZumbiModel zumbi){
+nlohmann::json getStateJson(){
+	nlohmann::json stateJson;	
+	std::vector<json> zombieJsons;
+	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
+		zombieJsons.push_back(z->getStateJson());
+	}
+	json["zumbis"] = zombieJsons;
+	json["jogador"] = this->personagem->getStateJson();
+
+	return stateJson;
+
 }
 
 void GameController::start(){

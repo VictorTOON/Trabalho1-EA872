@@ -50,3 +50,14 @@ void PersonagemController::iterate(){
 std::vector<AxeController> PersonagemController::get_axeControllers(){
     return axeControllers;
 }
+
+nlohmann::json getStateJson(){
+	nlohmann::json stateJson;
+	std::vector<nlohmann::json> axesJsons;
+	for (auto a = this->axeControllers.begin(); a != this->axeControllers.end(); ++a){
+		axesJsons.push_back(a->getStateJson());
+	}
+	stateJson["base"] = this->baseJson();
+	return stateJson;
+
+}

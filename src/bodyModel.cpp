@@ -58,3 +58,14 @@ void CorpoModel::set_health(int novo_health){
 const SDL_Rect* CorpoModel::get_rect(){
 	return &(this->rect);
 }
+
+nlohmann::json baseJson() {
+	nlohmann::json base;
+	base["x"] = this->x;
+	base["y"] = this->y;
+	base["h"] = this->h;
+	base["w"] = this->w;
+	base["health"] = this->health;
+	base["teta"] = this->teta;
+	return base;
+}

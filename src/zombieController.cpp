@@ -2,6 +2,7 @@
 
 ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
 	this->view = std::shared_ptr<ZumbiView>(new ZumbiView(h, w, teta, "../assets/zombie.png"));
+	this->id = ID_CONTROLLER++;
 }
 
 void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
@@ -41,4 +42,11 @@ void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 
 ZumbiModel ZumbiController::get_model(){
     return model;
+}
+nlohmann::json getStateJson(){
+	nlohmann::json stateJson;
+	stateJson["id"] = this->id;
+	stateJson["base"] = this->baseJson();
+	return stateJson;
+
 }
