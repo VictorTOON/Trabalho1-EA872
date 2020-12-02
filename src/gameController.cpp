@@ -12,6 +12,7 @@ GameController::GameController(PersonagemController personagem, std::vector<Zumb
 	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
 		this->gameView->addZumbi(z->getView());
 	}
+
 }
 
 nlohmann::json GameController::getStateJson(){
@@ -28,7 +29,11 @@ nlohmann::json GameController::getStateJson(){
 }
 
 void GameController::saveStateJson(){
-	std::cout<<this->getStateJson()<<std::endl;
+	this->stateFile.open("state.json");
+	stateFile << this->getStateJson() << std::endl;
+	stateFile.close();
+
+
 }
 
 

@@ -11,6 +11,8 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <fstream>
+#include <sstream>
 
 class GameController {
 	private:
@@ -20,9 +22,11 @@ class GameController {
 		std::unique_ptr<GameView> gameView;
 		SDL_Keyboard_Handler keyboardHandler;
 		std::vector<ZumbiView> zumbiViews;
+		std::ofstream stateFile;
 		void updatePersonagemView();
 	public:
 		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
+		~GameController();
 		void addZumbi(ZumbiModel zumbi);
 		void start();
 		int iterate();
