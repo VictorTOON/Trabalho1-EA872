@@ -12,7 +12,8 @@ typedef enum {
 	KEYBOARD_LEFT,
 	KEYBOARD_RIGHT,
 	KEYBOARD_SPACE,
-	KEYBOARD_ZERO
+	KEYBOARD_ZERO,
+    KEYBORAD_P
 } KeyBoardReturns;
 
 /*! \brief Classe para lidar com as entradas do teclado
