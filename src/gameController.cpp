@@ -27,6 +27,11 @@ nlohmann::json GameController::getStateJson(){
 
 }
 
+void GameController::saveStateJson(){
+	std::cout<<this->getStateJson()<<std::endl;
+}
+
+
 void GameController::start(){
 	while (!(this->iterate()));
 }
