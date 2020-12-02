@@ -59,7 +59,7 @@ const SDL_Rect* CorpoModel::get_rect(){
 	return &(this->rect);
 }
 
-nlohmann::json baseJson() {
+nlohmann::json CorpoModel::baseJson() {
 	nlohmann::json base;
 	base["x"] = this->x;
 	base["y"] = this->y;

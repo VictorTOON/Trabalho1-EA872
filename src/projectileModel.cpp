@@ -56,13 +56,13 @@ const SDL_Rect* ProjectileModel::get_rect(){
 	return &(this->rect);
 }
 
-nlohmann::json baseJson(){
+nlohmann::json ProjectileModel::baseJson(){
 	nlohmann::json base;
 	base["x"] = this->x;
 	base["y"] = this->y;
 	base["teta"] = this->teta;
-	base["h"] = this->h;
-	base["w"] = this->w;
+	base["h"] = this->rect.h;
+	base["w"] = this->rect.w;
 	base["speed"] = this->speed;
 	return base;
 }
