@@ -25,3 +25,10 @@ ZumbiFollowReturn ZumbiModel::follow(std::shared_ptr<PersonagemModel> p){
 
 }
 
+nlohmann::json ZumbiModel::getStateJson(){
+	nlohmann::json stateJson;
+	stateJson["base"] = this->baseJson();
+	return stateJson;
+
+}
+

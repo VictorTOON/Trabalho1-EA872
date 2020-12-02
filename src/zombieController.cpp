@@ -43,10 +43,10 @@ void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 ZumbiModel ZumbiController::get_model(){
     return model;
 }
-nlohmann::json getStateJson(){
+nlohmann::json ZumbiController::getStateJson(){
 	nlohmann::json stateJson;
 	stateJson["id"] = this->id;
-	stateJson["base"] = this->baseJson();
+	stateJson["model"] = this->model.getStateJson();
 	return stateJson;
 
 }

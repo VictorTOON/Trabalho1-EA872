@@ -4,8 +4,7 @@ AxeModel::AxeModel(int x, int y, float teta, int h, int w, float speed): Project
 }
 
 nlohmann::json AxeModel::getStateJson() {
-	nolhmann::json stateJson;
+	nlohmann::json stateJson;
 	stateJson["base"] = this->baseJson();
-	stateJson["angleView"] = this->axeView->get_angle();
 	return stateJson;
 }

@@ -14,14 +14,14 @@ GameController::GameController(PersonagemController personagem, std::vector<Zumb
 	}
 }
 
-nlohmann::json getStateJson(){
+nlohmann::json GameController::getStateJson(){
 	nlohmann::json stateJson;	
-	std::vector<json> zombieJsons;
+	std::vector<nlohmann::json> zombieJsons;
 	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
 		zombieJsons.push_back(z->getStateJson());
 	}
-	json["zumbis"] = zombieJsons;
-	json["jogador"] = this->personagem->getStateJson();
+	stateJson["zumbis"] = zombieJsons;
+	stateJson["jogador"] = this->personagem->getStateJson();
 
 	return stateJson;
 

@@ -33,7 +33,7 @@ std::shared_ptr<AxeModel> AxeController::get_axeModel(){
     return axeModel;
 }
 nlohmann::json AxeController::getStateJson() {
-	nolhmann::json stateJson;
+	nlohmann::json stateJson;
 	stateJson["model"] = this->axeModel->getStateJson();
 	stateJson["angleView"] = this->axeView->get_angle();
 	return stateJson;
