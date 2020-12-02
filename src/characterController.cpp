@@ -54,6 +54,11 @@ std::vector<AxeController> PersonagemController::get_axeControllers(){
 nlohmann::json PersonagemController::getStateJson(){
 	nlohmann::json stateJson;
 	stateJson["model"] = this->model->getStateJson();
+	std::vector<nlohmann::json> axesJsons;
+	for (auto a = this->axeControllers.begin(); a != this->axeControllers.end(); ++a){
+		axesJsons.push_back(a->getStateJson());
+	}
+	stateJson["machados"] = axesJsons;
 	return stateJson;
 
 }

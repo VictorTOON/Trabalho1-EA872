@@ -42,7 +42,7 @@ int GameController::iterate(){
         return -1;
     }
     if (ret & (1 << KEYBORAD_P)){
-        getStateJson();
+        this->saveStateJson();
     }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
