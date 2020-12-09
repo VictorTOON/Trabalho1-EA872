@@ -13,7 +13,7 @@ typedef enum {
 	KEYBOARD_RIGHT,
 	KEYBOARD_SPACE,
 	KEYBOARD_ZERO,
-    KEYBORAD_P,
+    KEYBOARD_P,
     KEYBOARD_O
 } KeyBoardReturns;
 
