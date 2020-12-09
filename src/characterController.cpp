@@ -62,3 +62,7 @@ nlohmann::json PersonagemController::getStateJson(){
 	return stateJson;
 
 }
+
+void PersonagemController::readStateJson(nlohmann::json state) {
+	this->model->readStateJson(state["model"]);
+}

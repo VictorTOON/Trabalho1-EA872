@@ -29,18 +29,18 @@ nlohmann::json GameController::getStateJson(){
 
 void GameController::saveStateJson(){
 	this->stateWriteFile.open("state.json");
-	stateWriteFile << this->getStateJson() << std::endl;
+	stateWriteFile << this->getStateJson();
 	stateWriteFile.close();
 }
 
 void GameController::readStateJson(){
 	nlohmann::json stateJson;
 	this->stateReadFile.open("state.json");
-	if (this->stateReadFile.is_open()){
-		stateReadFile >> stateJson;		
-	}else{
-		return; // Erro de leitura
-	}
+	std::stringstream s;
+	stateReadFile >> stateJson;		
+	std::cout<<stateJson["jogador"]<<std::endl;
+	this->personagem->readStateJson(stateJson["jogador"]);
+	this->stateReadFile.close();
 }
 
 
@@ -49,13 +49,17 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
-	int ret = this->keyboardHandler.getInput();
-	if (ret & (1 << KEYBOARD_ZERO)){
-		return -1;
-	}
-	if (ret & (1 << KEYBORAD_P)){
-		this->saveStateJson();
-	}
+    int ret = this->keyboardHandler.getInput();
+    if (ret & (1 << KEYBOARD_ZERO)){
+        return -1;
+    }
+    if (ret & (1 << KEYBOARD_P)){
+        this->saveStateJson();
+    }
+    if (ret & (1 << KEYBOARD_O)){
+	    this->readStateJson();
+        
+    }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
