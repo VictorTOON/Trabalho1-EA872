@@ -80,9 +80,9 @@ void GameController::receiver(){
     boost::asio::ip::udp::socket my_socket(my_io_service, // io service
                         local_endpoint); // endpoint
     boost::asio::ip::udp::endpoint remote_endpoint;
-    my_socket.receive_from(boost::asio::buffer(j,10000), // Local do buffer
+    my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
                       remote_endpoint); // Confs. do Cliente
-    j = json::parse(v);
+    readServerStateJson(json::parse(v));
 }
 
 void GameController::start(){
