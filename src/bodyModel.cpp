@@ -63,8 +63,8 @@ nlohmann::json CorpoModel::baseJson() {
 	nlohmann::json base;
 	base["x"] = this->x;
 	base["y"] = this->y;
-	base["h"] = this->h;
-	base["w"] = this->w;
+	base["h"] = this->rect.h;
+	base["w"] = this->rect.w;
 	base["health"] = this->health;
 	base["teta"] = this->teta;
 	return base;
