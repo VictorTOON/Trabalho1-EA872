@@ -49,6 +49,9 @@ int GameController::iterate(){
     if (ret & (1 << KEYBORAD_P)){
         this->saveStateJson();
     }
+    if (ret & (1 << KEYBORAD_O)){
+        
+    }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){

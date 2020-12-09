@@ -28,5 +28,8 @@ int SDL_Keyboard_Handler::getInput(){
     if (this-> state[SDL_SCANCODE_P]){
         ret |= (1<<KEYBORAD_P);
     }
+    if (this-> state[SDL_SCANCODE_O]){
+        ret |= (1<<KEYBORAD_O);
+    }
 	return ret;
 }
