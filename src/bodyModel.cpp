@@ -67,5 +67,15 @@ nlohmann::json CorpoModel::baseJson() {
 	base["w"] = this->rect.w;
 	base["health"] = this->health;
 	base["teta"] = this->teta;
+	base["lastHealthChange"] = this->lastHealthChange;
 	return base;
+}
+void CorpoModel::readBaseJson(nlohmann::json base){
+	this->x = base["x"];
+	this->y = base["y"];
+	this->rect.h = base["h"];
+	this->rect.w = base["w"];
+	this->health = base["health"];
+	this->teta = base["teta"];
+	this->lastHealthChange = base["lastHealthChange"];
 }

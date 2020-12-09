@@ -34,8 +34,13 @@ void GameController::saveStateJson(){
 }
 
 void GameController::readStateJson(){
+	nlohmann::json stateJson;
 	this->stateReadFile.open("state.json");
-	
+	if (this->stateReadFile.is_open()){
+		stateReadFile >> stateJson;		
+	}else{
+		return; // Erro de leitura
+	}
 }
 
 
@@ -44,44 +49,44 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
-    int ret = this->keyboardHandler.getInput();
-    if (ret & (1 << KEYBOARD_ZERO)){
-        return -1;
-    }
-    if (ret & (1 << KEYBORAD_P)){
-        this->saveStateJson();
-    }
+	int ret = this->keyboardHandler.getInput();
+	if (ret & (1 << KEYBOARD_ZERO)){
+		return -1;
+	}
+	if (ret & (1 << KEYBORAD_P)){
+		this->saveStateJson();
+	}
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
-    for (int k = 0; k < this->zumbis.size(); k++){
+	for (int k = 0; k < this->zumbis.size(); k++){
 		zumbis[k].iterate(this->personagem->getModel());
-        for (int i=0; i < this->personagem->get_axeControllers().size(); i++){
-            if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
-                this->zumbis.erase(zumbis.begin() + k);
-                k--;
-                spawnZombie();
-                break;
-            }
-        }
+		for (int i=0; i < this->personagem->get_axeControllers().size(); i++){
+			if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
+				this->zumbis.erase(zumbis.begin() + k);
+				k--;
+				spawnZombie();
+				break;
+			}
+		}
 	}
 	this->gameView->finishDraw();
 	return returnDraw;
 }
 
 void GameController::spawnZombie(){
-    for (int a = 0; a < rand() % 3 + 1; a++){
-        if(this->zumbis.size() < 20){
-            int randomX = rand() % 1600 + 0;
-            int randomY = rand() % 900 + 0;
-            if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
-                ZumbiController zumbi_novo(randomX, randomY,100,100, 0);
-                this->gameView->addZumbi(zumbi_novo.getView());
-                this->zumbis.push_back(zumbi_novo);
-            }
-            else{
-                a--;
-            }
-        }
-    }
+	for (int a = 0; a < rand() % 3 + 1; a++){
+		if(this->zumbis.size() < 20){
+			int randomX = rand() % 1600 + 0;
+			int randomY = rand() % 900 + 0;
+			if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
+				ZumbiController zumbi_novo(randomX, randomY,100,100, 0);
+				this->gameView->addZumbi(zumbi_novo.getView());
+				this->zumbis.push_back(zumbi_novo);
+			}
+			else{
+				a--;
+			}
+		}
+	}
 }

@@ -46,5 +46,8 @@ nlohmann::json PersonagemModel::getStateJson(){
 	nlohmann::json stateJson;
 	stateJson["base"] = this->baseJson();
 	return stateJson;
+}
 
+void PersonagemModel::readStateJson(nlohmann::json state){
+	this->readBaseJson(state["base"]);
 }
