@@ -13,7 +13,7 @@ keyboard=sdl_keyboard_handler.o
 all : main
 
 main: $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard)
-	g++ -o main $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard) -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11
+	g++ -o main $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard) -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11 -lpthread
 main.o: main.cpp
 	g++ -c main.cpp -o main.o $(CFLAGS)
 

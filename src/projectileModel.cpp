@@ -66,3 +66,12 @@ nlohmann::json ProjectileModel::baseJson(){
 	base["speed"] = this->speed;
 	return base;
 }
+
+void ProjectileModel::readBaseJson(nlohmann::json base){
+	this->x = base["x"];
+	this->y = base["y"];
+	this->teta = base["teta"];
+	this->rect.h = base["h"];
+	this->rect.w = base["w"];
+	this->speed = base["speed"];
+}

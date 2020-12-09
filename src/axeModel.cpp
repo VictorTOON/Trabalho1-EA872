@@ -8,3 +8,7 @@ nlohmann::json AxeModel::getStateJson() {
 	stateJson["base"] = this->baseJson();
 	return stateJson;
 }
+
+void AxeModel::readStateJson(nlohmann::json state){
+	this->readBaseJson(state["base"]);
+}

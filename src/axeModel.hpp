@@ -19,4 +19,5 @@ class AxeModel: public ProjectileModel{
             * */
         AxeModel(int x, int y, float teta, int h, int w, float speed);
 	nlohmann::json getStateJson();
+	void readStateJson(nlohmann::json state);
 };

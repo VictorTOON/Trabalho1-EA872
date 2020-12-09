@@ -49,5 +49,5 @@ class AxeController{
 	std::shared_ptr<AxeView> getView();
         std::shared_ptr<AxeModel> get_axeModel();
 	nlohmann::json getStateJson();
-	void readStateJson(nlohmann::json stateJson);
+	void readStateJson(nlohmann::json state);
 };

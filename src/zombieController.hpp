@@ -21,6 +21,7 @@ class ZumbiController {
 		void iterate(std::shared_ptr<PersonagemModel> p);
 		ZumbiModel get_model();
 		nlohmann::json getStateJson();
-		void readStateJson();
+		void readStateJson(nlohmann::json state);
 		void saveStateJson();
+		int get_id();
 };

@@ -7,12 +7,14 @@
 #include "gameModel.hpp"
 #include "json.hpp"
 
+
 #include <iomanip>
 #include <iostream>
 #include <memory>
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <boost/asio.hpp>
 
 class GameController {
 	private:
@@ -30,10 +32,13 @@ class GameController {
 		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
+        void sender();
+        void receiver();
 		void start();
 		int iterate();
 		void spawnZombie();
 		nlohmann::json getStateJson();
 		void readStateJson();
 		void saveStateJson();
+		void readServerStateJson(nlohmann::json stateJson);
 };

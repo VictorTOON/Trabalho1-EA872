@@ -32,3 +32,7 @@ nlohmann::json ZumbiModel::getStateJson(){
 
 }
 
+void ZumbiModel::readStateJson(nlohmann::json state){
+	this->readBaseJson(state["base"]);
+}
+

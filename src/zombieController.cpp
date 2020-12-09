@@ -5,6 +5,10 @@ ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(
 	this->id = ID_CONTROLLER++;
 }
 
+int ZumbiController::get_id(){
+	return this->id;
+}
+
 void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
 	float arc = 0;
 	float angle = 0;
@@ -48,4 +52,9 @@ nlohmann::json ZumbiController::getStateJson(){
 	stateJson["model"] = this->model.getStateJson();
 	return stateJson;
 
+}
+void ZumbiController::readStateJson(nlohmann::json state){
+	std::cout<<state<<std::endl;
+	this->id = state["id"];
+	this->model.readStateJson(state["model"]);
 }

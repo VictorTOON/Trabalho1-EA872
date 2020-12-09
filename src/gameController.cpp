@@ -33,6 +33,16 @@ void GameController::saveStateJson(){
 	stateWriteFile.close();
 }
 
+void GameController::readServerStateJson(nlohmann::json stateJson){
+	this->personagem->readStateJson(stateJson["jogador"]);
+	this->zumbis.clear();
+	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
+		ZumbiController z(150, 150, 100, 100, 0);
+		z.readStateJson(stateJson["zumbis"][i_json]);
+		this->gameView->addZumbi(z.getView());
+		this->zumbis.push_back(z);
+	}
+}
 void GameController::readStateJson(){
 	nlohmann::json stateJson;
 	this->stateReadFile.open("state.json");
@@ -40,9 +50,38 @@ void GameController::readStateJson(){
 	stateReadFile >> stateJson;		
 	std::cout<<stateJson["jogador"]<<std::endl;
 	this->personagem->readStateJson(stateJson["jogador"]);
+	this->zumbis.clear();
+	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
+		ZumbiController z(150, 150, 100, 100, 0);
+		z.readStateJson(stateJson["zumbis"][i_json]);
+		this->gameView->addZumbi(z.getView());
+		this->zumbis.push_back(z);
+	}
 	this->stateReadFile.close();
 }
 
+void GameController::sender(){
+    boost::asio::io_service my_io_service; // Conecta com o SO
+    boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
+                                                // conf. da conexao (ip/port)
+    boost::asio::ip::udp::socket my_socket(my_io_service, // io service
+                        local_endpoint); // endpoint
+    boost::asio::ip::udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
+    std::string msg("Recebido! Obrigado, cambio e desligo!");
+    my_socket.send_to(boost::asio::buffer(msg), remote_endpoint);
+}
+
+void GameController::receiver(){
+    boost::asio::io_service my_io_service; // Conecta com o SO
+    boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
+                                                // conf. da conexao (ip/port)
+    boost::asio::ip::udp::socket my_socket(my_io_service, // io service
+                        local_endpoint); // endpoint
+    boost::asio::ip::udp::endpoint remote_endpoint;
+    char v[10000];
+    my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
+                      remote_endpoint); // Confs. do Cliente
+}
 
 void GameController::start(){
 	while (!(this->iterate()));
@@ -60,6 +99,7 @@ int GameController::iterate(){
 	    this->readStateJson();
         
     }
+
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
@@ -94,3 +134,4 @@ void GameController::spawnZombie(){
 		}
 	}
 }
+GameController::~GameController(){}
