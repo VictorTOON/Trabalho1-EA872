@@ -22,7 +22,8 @@ class GameController {
 		std::unique_ptr<GameView> gameView;
 		SDL_Keyboard_Handler keyboardHandler;
 		std::vector<ZumbiView> zumbiViews;
-		std::ofstream stateFile;
+		std::ofstream stateWriteFile;
+		std::fstream stateReadFile;
 		void updatePersonagemView();
 	public:
 		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
