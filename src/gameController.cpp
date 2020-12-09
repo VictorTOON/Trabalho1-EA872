@@ -61,6 +61,7 @@ void GameController::readStateJson(){
 }
 
 void GameController::sender(){
+    j = getStateJson();
     boost::asio::io_service my_io_service; // Conecta com o SO
     boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
                                                 // conf. da conexao (ip/port)
@@ -68,19 +69,20 @@ void GameController::sender(){
                         local_endpoint); // endpoint
     boost::asio::ip::udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
     std::string msg("Recebido! Obrigado, cambio e desligo!");
-    my_socket.send_to(boost::asio::buffer(msg), remote_endpoint);
+    my_socket.send_to(boost::asio::buffer(j.dump()), remote_endpoint);
 }
 
 void GameController::receiver(){
+    char v[10000];
     boost::asio::io_service my_io_service; // Conecta com o SO
     boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
                                                 // conf. da conexao (ip/port)
     boost::asio::ip::udp::socket my_socket(my_io_service, // io service
                         local_endpoint); // endpoint
     boost::asio::ip::udp::endpoint remote_endpoint;
-    char v[10000];
-    my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
+    my_socket.receive_from(boost::asio::buffer(j,10000), // Local do buffer
                       remote_endpoint); // Confs. do Cliente
+    j = json::parse(v);
 }
 
 void GameController::start(){
@@ -99,7 +101,13 @@ int GameController::iterate(){
 	    this->readStateJson();
         
     }
-
+    if (spectator_mode){
+        receiver();
+    }
+    else{
+        sender();
+        receiver();
+    }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
