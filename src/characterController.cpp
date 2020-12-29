@@ -65,4 +65,12 @@ nlohmann::json PersonagemController::getStateJson(){
 
 void PersonagemController::readStateJson(nlohmann::json state) {
 	this->model->readStateJson(state["model"]);
+	this->axeControllers.clear();
+	for (int i_json = 0; i_json < state["machados"].size(); i_json++){
+		AxeController axeController(0, 0, 0);		
+		axeController.getView()->set_render(this->getView()->get_render());
+		axeController.readStateJson(state["machados"][i_json]);
+		this->axeControllers.push_back(axeController);
+	}
 }
+

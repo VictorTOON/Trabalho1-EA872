@@ -61,7 +61,7 @@ void GameController::readStateJson(){
 }
 
 void GameController::sender(){
-    j = getStateJson();
+    nlohmann::json j = getStateJson();
     boost::asio::io_service my_io_service; // Conecta com o SO
     boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
                                                 // conf. da conexao (ip/port)
