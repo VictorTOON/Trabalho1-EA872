@@ -16,7 +16,7 @@ int main() {
 
   // Encontrando IP remoto
   boost::asio::ip::address ip_remoto =
-    boost::asio::ip::address::from_string("127.0.0.1");
+    boost::asio::ip::address::from_string("25.6.123.125");
 
   udp::endpoint remote_endpoint(ip_remoto, 9001);
 
