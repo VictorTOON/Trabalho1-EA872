@@ -32,8 +32,6 @@ class GameController {
 		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
-        static void sender();
-        static void receiver();
 		void start();
 		int iterate();
 		void spawnZombie();

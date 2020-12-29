@@ -9,11 +9,12 @@ body=bodyView.o bodyModel.o
 projectile=projectileView.o projectileModel.o
 axe=axeController.o axeModel.o axeView.o
 keyboard=sdl_keyboard_handler.o
+network=sender.o
 
 all : main
 
-main: $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard)
-	g++ -o main $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard) -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11 -lpthread
+main: $(main) $(game) $(axe) $(projectile) $(character) $(zombie) $(body) $(keyboard) $(network)
+	g++ -o main $(main) $(game) $(axe) $(network) $(projectile) $(character) $(zombie) $(body) $(keyboard) -I/usr/local/include  -L/usr/local/lib -lSDL2 -lSDL2_image -std=c++11 -lpthread
 main.o: main.cpp
 	g++ -c main.cpp -o main.o $(CFLAGS)
 
@@ -66,6 +67,9 @@ gameView.o : gameView.cpp gameView.hpp
 	g++ -c gameView.cpp -ogameView.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
 gameController.o : gameController.cpp gameController.hpp
 	g++ -c gameController.cpp -ogameController.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
+sender.o: sender.cpp sender.hpp
+	g++ -c sender.cpp -osender.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
+
 
 clean:
 	rm *.o

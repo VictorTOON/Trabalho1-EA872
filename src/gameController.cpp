@@ -1,11 +1,8 @@
 #include "gameController.hpp"
 
 #include <iostream>
-#include <thread>
-#include <boost/asio.hpp>
 
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
-    std::thread client (sender);
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
 	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->keyboardHandler = SDL_Keyboard_Handler();
@@ -63,34 +60,6 @@ void GameController::readStateJson(){
 	this->stateReadFile.close();
 }
 
-void GameController::sender(){
-    nlohmann::json j = getStateJson();
-    boost::asio::io_service my_io_service; // Conecta com o SO
-    boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
-                                                // conf. da conexao (ip/port)
-    boost::asio::ip::udp::socket my_socket(my_io_service, // io service
-                        local_endpoint); // endpoint
-      // Encontrando IP remoto
-    boost::asio::ip::address ip_remoto = boost::asio::ip::address::from_string("25.6.123.125");
-
-    boost::asio::ip::udp::endpoint remote_endpoint(ip_remoto, 9001);
-    
-    std::string msg("Recebido! Obrigado, cambio e desligo!");
-    my_socket.send_to(boost::asio::buffer(j.dump()), remote_endpoint);
-}
-
-void GameController::receiver(){
-    char v[10000];
-    boost::asio::io_service my_io_service; // Conecta com o SO
-    boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), 9001); // endpoint: contem
-                                                // conf. da conexao (ip/port)
-    boost::asio::ip::udp::socket my_socket(my_io_service, // io service
-                        local_endpoint); // endpoint
-    boost::asio::ip::udp::endpoint remote_endpoint;
-    my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
-                      remote_endpoint); // Confs. do Cliente
-    readServerStateJson(nlohmann::json::parse(v));
-}
 
 void GameController::start(){
 	while (!(this->iterate()));
@@ -107,13 +76,6 @@ int GameController::iterate(){
     if (ret & (1 << KEYBOARD_O)){
 	    this->readStateJson();
         
-    }
-    if (0){
-        receiver();
-    }
-    else{
-        sender();
-        receiver();
     }
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
