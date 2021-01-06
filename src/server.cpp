@@ -1,29 +1,31 @@
-#include <iostream>
-#include <string>
-#include <boost/asio.hpp>
-#include <boost/bind.hpp>
+#include "receiver.hpp"
 
-using boost::asio::ip::udp;
-
-int main() {
-	while (1){
+void receiver(int port, GameController *gameController) {
+	char clean[10000];
+	int i;
+	for (i = 0; i < 10000; i++){
+		clean = '\0';
+	}
 	char v[10000];
+	while (1){
+		strcpy(v, clean);
 
 		boost::asio::io_service my_io_service; // Conecta com o SO
 
-		udp::endpoint local_endpoint(udp::v4(), 9001); // endpoint: contem
+		boost::asio::ip::udp::endpoint local_endpoint(udp::v4(), port); // endpoint: contem
 							// conf. da conexao (ip/port)
 
-		udp::socket my_socket(my_io_service, // io service
+		boost::asio::ip::udp::socket my_socket(my_io_service, // io service
 				local_endpoint); // endpoint
 
-		udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
+		boost::asio::ip::udp:::endpoint remote_endpoint; // vai conter informacoes de quem conectar
 
 		std::cout << "Esperando mensagem!" << std::endl;
 
 		my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
 			      remote_endpoint); // Confs. do Cliente
 
+		gameController->readServerStateJson(nlohmann::json::parse(v));
 		std::cout << v << std::endl;
 		std::cout << "Fim de mensagem!" << std::endl;
 
@@ -33,5 +35,8 @@ int main() {
 
 		std::cout << "Mensagem de retorno enviada" << std::endl;
 	}
-	return 0;
-}
+
+} 
+
+
+

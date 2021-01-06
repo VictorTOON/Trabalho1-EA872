@@ -3,17 +3,19 @@
 #include "gameController.hpp"
 #include "zombieController.hpp"
 #include "sender.hpp"
+#include "receiver.hpp"
 #include <vector>
 #include <string>
 #include <boost/asio.hpp>
 
-int main(){
+int main(int argc, char *argv[]){
 	PersonagemController p(300,300,130, 130, 0);
 	AxeController n(10,12,0.5);
 	std::vector<ZumbiController> zs; 
 	for (int i = 6; i < 9; i++){
 		zs.push_back(ZumbiController(i*100, i*100,100,100, 0));
 	}
+	
 	GameController gameController(p,zs);
 	std::thread t(sender, "127.0.0.1", 9001, &gameController);
 	gameController.start();
