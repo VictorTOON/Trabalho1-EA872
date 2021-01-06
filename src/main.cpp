@@ -17,7 +17,14 @@ int main(int argc, char *argv[]){
 	}
 	
 	GameController gameController(p,zs);
-	std::thread t(sender, "127.0.0.1", 9001, &gameController);
+	std::thread t;
+	std::cout << argv[0] << std::endl;
+	if (argv[1][0] == 'r'){ 
+		t = std::thread(receiver, 9001, &gameController);
+	}
+	else{
+		t = std::thread(sender, "127.0.0.1", 9001, &gameController);
+	}
 	gameController.start();
 	t.join();
 	return 0;

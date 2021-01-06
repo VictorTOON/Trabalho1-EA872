@@ -7,7 +7,7 @@ void receiver(int port, GameController *gameController) {
 		clean[i] = '\0';
 	}
 	char v[10000];
-	while (1){
+	while (!gameController->stop){
 		strcpy(v, clean);
 
 		boost::asio::io_service my_io_service; // Conecta com o SO
