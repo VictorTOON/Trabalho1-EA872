@@ -4,6 +4,9 @@
 #include "zombieController.hpp"
 #include "sender.hpp"
 #include <vector>
+#include <string>
+#include <boost/asio.hpp>
+
 int main(){
 	PersonagemController p(300,300,130, 130, 0);
 	AxeController n(10,12,0.5);
@@ -12,7 +15,8 @@ int main(){
 		zs.push_back(ZumbiController(i*100, i*100,100,100, 0));
 	}
 	GameController gameController(p,zs);
+	std::thread t(sender, "127.0.0.1", 9001, &gameController);
 	gameController.start();
-	Sender::send("25.59.229.209", 9001, gameController);
+	t.join();
 	return 0;
 }

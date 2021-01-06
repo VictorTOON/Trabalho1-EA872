@@ -39,4 +39,5 @@ class GameController {
 		void readStateJson();
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
+		bool stop;
 };
