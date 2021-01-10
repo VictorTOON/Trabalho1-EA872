@@ -1,8 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
-#include "sdl_keyboard_handler.hpp"
 #include <cmath>
 #include "characterModel.hpp"
 #include "axeModel.hpp"

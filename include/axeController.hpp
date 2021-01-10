@@ -1,12 +1,9 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
-#include "sdl_keyboard_handler.hpp"
 #include <cmath>
 #include "axeModel.hpp"
-#include "axeView.hpp"
-
+#include "json.hpp"
 #include <iomanip>
 #include <iostream>
 #include <memory>
@@ -23,7 +20,6 @@ typedef enum{
 class AxeController{
     private:
         std::shared_ptr<AxeModel> axeModel;
-        std::shared_ptr<AxeView> axeView;
         float tempoVida;
     public:
         /* \brief Contrutor do controller
@@ -44,7 +40,7 @@ class AxeController{
 		 *
 		 * atualiza a View do machado com base no model
 		 * */
-        void updateView();
-	    std::shared_ptr<AxeView> getView();
         std::shared_ptr<AxeModel> get_axeModel();
+	nlohmann::json getStateJson();
+	void readStateJson(nlohmann::json state);
 };

@@ -1,27 +1,17 @@
 #include "characterController.hpp"
 
 PersonagemController::PersonagemController(int x, int y, int h, int w, float teta){
-	this->view = std::shared_ptr<PersonagemView>(new PersonagemView(h, w, teta, "../assets/tree-character.png"));
 	this->model = std::shared_ptr<PersonagemModel>(new PersonagemModel(x, y, h, w, teta));
-}
-
-void PersonagemController::updateView(){
-	this->view->update(this->model->get_x(), this->model->get_y(), this->model->get_teta());
-	this->view->draw();
-	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
-		axeController->updateView();
-	}
+	this->playerInput = Default;
 }
 
 void PersonagemController::updateModel(){
-	RetornoHandle ret = this->model->handle_keyboard(this->keyboardHandler.getInput());
-						
+			
 	if (this->model->get_health() <= 0) {
 		//return;
 	}
-	if (ret == CriaMachado){
+	if (this->playerInput == CriaMachado){
 		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
-		axeController.getView()->set_render(this->getView()->get_render());
 		this->axeControllers.push_back(axeController);
 	}
 	for (int i=0; i < axeControllers.size(); i++){
@@ -33,9 +23,6 @@ void PersonagemController::updateModel(){
 	}
 }
 
-std::shared_ptr<PersonagemView> PersonagemController::getView(){
-	return this->view;
-}
 
 std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
@@ -44,7 +31,6 @@ std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 
 void PersonagemController::iterate(){
 	this->updateModel();
-	this->updateView();
 }
 
 std::vector<AxeController> PersonagemController::get_axeControllers(){
@@ -68,7 +54,6 @@ void PersonagemController::readStateJson(nlohmann::json state) {
 	this->axeControllers.clear();
 	for (int i_json = 0; i_json < state["machados"].size(); i_json++){
 		AxeController axeController(0, 0, 0);		
-		axeController.getView()->set_render(this->getView()->get_render());
 		axeController.readStateJson(state["machados"][i_json]);
 		this->axeControllers.push_back(axeController);
 	}

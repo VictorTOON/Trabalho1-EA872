@@ -1,6 +1,5 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
 #include "sdl_keyboard_handler.hpp"
 #include <cmath>
@@ -24,4 +23,6 @@ class PersonagemModel: public CorpoModel{
 		PersonagemModel(int x, int y, int h, int w, float teta);
 		RetornoHandle handle_keyboard(int);
 		bool isDead();
+		nlohmann::json getStateJson();
+		void readStateJson(nlohmann::json state);
 };

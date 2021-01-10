@@ -1,6 +1,5 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
 #include "sdl_keyboard_handler.hpp"
 #include <cmath>
@@ -18,4 +17,6 @@ class AxeModel: public ProjectileModel{
             * \param speed velocidade do machado (constante)
             * */
         AxeModel(int x, int y, float teta, int h, int w, float speed);
+	nlohmann::json getStateJson();
+	void readStateJson(nlohmann::json state);
 };

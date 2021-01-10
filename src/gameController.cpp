@@ -5,13 +5,7 @@
 GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
 	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
 	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
-	this->keyboardHandler = SDL_Keyboard_Handler();
 	this->zumbis = zumbis;
-	this->gameView = std::unique_ptr<GameView>(new GameView());
-	this->gameView->addPersonagem(this->personagem->getView());
-	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
-		this->gameView->addZumbi(z->getView());
-	}
 	this->stop = false;
 }
 
@@ -38,10 +32,9 @@ void GameController::saveStateJson(){
 void GameController::readServerStateJson(nlohmann::json stateJson){
 	this->personagem->readStateJson(stateJson["jogador"]);
 	this->zumbis.clear();
-	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
+	for (int i_json = 0; i_json < stateJson["zumbis"].size(); i_json++){
 		ZumbiController z(150, 150, 100, 100, 0);
 		z.readStateJson(stateJson["zumbis"][i_json]);
-		this->gameView->addZumbi(z.getView());
 		this->zumbis.push_back(z);
 	}
 }
@@ -56,7 +49,6 @@ void GameController::readStateJson(){
 	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
 		ZumbiController z(150, 150, 100, 100, 0);
 		z.readStateJson(stateJson["zumbis"][i_json]);
-		this->gameView->addZumbi(z.getView());
 		this->zumbis.push_back(z);
 	}
 	this->stateReadFile.close();
@@ -69,18 +61,6 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
-    int ret = this->keyboardHandler.getInput();
-    if (ret & (1 << KEYBOARD_ZERO)){
-        return -1;
-    }
-    if (ret & (1 << KEYBOARD_P)){
-        this->saveStateJson();
-    }
-    if (ret & (1 << KEYBOARD_O)){
-	    this->readStateJson();
-        
-    }
-	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
 	for (int k = 0; k < this->zumbis.size(); k++){
@@ -94,7 +74,7 @@ int GameController::iterate(){
 			}
 		}
 	}
-	this->gameView->finishDraw();
+	int returnDraw = 0;
 	return returnDraw;
 }
 
@@ -105,7 +85,6 @@ void GameController::spawnZombie(){
 			int randomY = rand() % 900 + 0;
 			if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
 				ZumbiController zumbi_novo(randomX, randomY,100,100, 0);
-				this->gameView->addZumbi(zumbi_novo.getView());
 				this->zumbis.push_back(zumbi_novo);
 			}
 			else{

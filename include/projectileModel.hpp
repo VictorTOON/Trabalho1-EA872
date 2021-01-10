@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
+#include "json.hpp"
 #include "sdl_keyboard_handler.hpp"
 #include <cmath>
 
@@ -33,6 +33,9 @@ class ProjectileModel{
         void set_teta(float);
         float get_speed();
         void set_speed(float);
+	nlohmann::json baseJson();
+	void readBaseJson(nlohmann::json base);
+
         /* \brief Contrutor do model
             *
             * atualiza a posicao do projetil com base no tempo que passou

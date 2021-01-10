@@ -1,4 +1,3 @@
-#include "gameView.hpp"
 #include "characterController.hpp"
 #include "gameController.hpp"
 #include "zombieController.hpp"
