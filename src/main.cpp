@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 		t = std::thread(receiver, 9001, &gameController);
 	}
 	else{
-		t = std::thread(sender, "25.59.229.209", 9001, &gameController);
+		t = std::thread(sender, "25.86.17.137", 9001, &gameController);
 	}
 	gameController.start();
 	t.join();

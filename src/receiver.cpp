@@ -7,7 +7,8 @@ void receiver(int port, GameController *gameController) {
 		clean[i] = '\0';
 	}
 	char v[10000];
-	while (!gameController->stop){
+	while (!(gameController->stop)){
+		std::cout<<"Estou recebendo coisas ainda"<<std::endl;
 		memcpy(v, clean, 10000);
 
 		boost::asio::io_service my_io_service; // Conecta com o SO
@@ -25,8 +26,8 @@ void receiver(int port, GameController *gameController) {
 		my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
 			      remote_endpoint); // Confs. do Cliente
 
-		gameController->readServerStateJson(nlohmann::json::parse(v));
 		std::cout << v << std::endl;
+		gameController->readServerStateJson(nlohmann::json::parse(v));
 		std::cout << "Fim de mensagem!" << std::endl;
 
 		// Respondendo a mensagem
