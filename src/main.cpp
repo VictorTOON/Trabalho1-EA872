@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
 	for (int i = 6; i < 9; i++){
 		zs.push_back(ZumbiController(i*100, i*100,100,100, 0));
 	}
-	
+
 	GameController gameController(p,zs);
 	std::thread t;
 	std::cout << argv[0] << std::endl;
