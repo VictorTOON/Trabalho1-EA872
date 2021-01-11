@@ -20,5 +20,5 @@ class ZumbiController {
 		nlohmann::json getStateJson();
 		void readStateJson(nlohmann::json state);
 		void saveStateJson();
-		std::string get_id();
+		std::string get_id(); 
 };

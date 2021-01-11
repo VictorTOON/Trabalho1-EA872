@@ -27,7 +27,9 @@ void receiver(int port, GameController *gameController) {
 			      remote_endpoint); // Confs. do Cliente
 
 		std::cout << v << std::endl;
-		gameController->readServerStateJson(nlohmann::json::parse(v));
+		nlohmann::json clientJson = nlohmann::json::parse(v);
+
+		
 		std::cout << "Fim de mensagem!" << std::endl;
 
 		// Respondendo a mensagem

@@ -6,7 +6,6 @@ GameController::GameController(std::string filename){
 	this->readInitFile(filename);
 	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->stop = false;
-	this->getStateJson();
 }
 
 nlohmann::json GameController::getStateJson(){
@@ -16,17 +15,15 @@ nlohmann::json GameController::getStateJson(){
 		zombieJsons[zumbi.first] = zumbi.second.getStateJson();
 	}
 	std::cout<<zombieJsons<<std::endl;
-	/*
+
 	nlohmann::json personagensJson;
 	for (auto& personagem : this->personagens){
 		personagensJson[personagem.first] = personagem.second.getStateJson();
 	}
-
 	std::cout<<zombieJsons<<std::endl;
 	stateJson[MAP_KEY_ZOMBIES] = zombieJsons;
 	stateJson[MAP_KEY_PLAYERS] = personagensJson;
 	std::cout<<stateJson<<std::endl;
-*/
 	return stateJson;
 
 }

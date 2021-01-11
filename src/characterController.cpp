@@ -3,6 +3,7 @@
 PersonagemController::PersonagemController(int x, int y, int h, int w, float teta){
 	this->model = std::shared_ptr<PersonagemModel>(new PersonagemModel(x, y, h, w, teta));
 	this->playerInput = Default;
+	this->id = ID_PERSONAGEM++;
 }
 
 void PersonagemController::updateModel(){
@@ -57,5 +58,9 @@ void PersonagemController::readStateJson(nlohmann::json state) {
 		axeController.readStateJson(state["machados"][i_json]);
 		this->axeControllers.push_back(axeController);
 	}
+}
+
+std::string PersonagemController::get_id(){
+	return std::to_string(this->id);
 }
 
