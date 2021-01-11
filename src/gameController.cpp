@@ -17,9 +17,9 @@ GameController::GameController(PersonagemController personagem, std::vector<Zumb
 
 nlohmann::json GameController::getStateJson(){
 	nlohmann::json stateJson;	
-	std::vector<nlohmann::json> zombieJsons;
+	nlohmann::json zombieJsons;
 	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
-		zombieJsons.push_back(z->getStateJson());
+		zombieJsons[z->get_id()] = z->getStateJson();
 	}
 	stateJson["zumbis"] = zombieJsons;
 	stateJson["jogador"] = this->personagem->getStateJson();
@@ -35,14 +35,11 @@ void GameController::saveStateJson(){
 	stateWriteFile.close();
 }
 
+
 void GameController::readServerStateJson(nlohmann::json stateJson){
 	this->personagem->readStateJson(stateJson["jogador"]);
-	this->zumbis.clear();
-	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
-		ZumbiController z(150, 150, 100, 100, 0);
-		z.readStateJson(stateJson["zumbis"][i_json]);
-		this->gameView->addZumbi(z.getView());
-		this->zumbis.push_back(z);
+	for (int i = 0; i < this->zumbis.size(); i++){
+		this->zumbis[i].readStateJson(stateJson["zumbis"]);
 	}
 }
 void GameController::readStateJson(){
@@ -69,17 +66,16 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
-    int ret = this->keyboardHandler.getInput();
-    if (ret & (1 << KEYBOARD_ZERO)){
-        return -1;
-    }
-    if (ret & (1 << KEYBOARD_P)){
-        this->saveStateJson();
-    }
-    if (ret & (1 << KEYBOARD_O)){
-	    this->readStateJson();
-        
-    }
+	int ret = this->keyboardHandler.getInput();
+	if (ret & (1 << KEYBOARD_ZERO)){
+		return -1;
+	}
+	if (ret & (1 << KEYBOARD_P)){
+		this->saveStateJson();
+	}
+	if (ret & (1 << KEYBOARD_O)){
+		this->readStateJson();
+	}
 	int returnDraw = this->gameView->draw();
 	this->personagem->iterate();
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){

@@ -39,7 +39,7 @@ ZumbiModel ZumbiController::getModel(){
 
 
 void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
-	this->updateModel(p);
+	//this->updateModel(p);
 	this->updateView(p);
 }
 
@@ -54,7 +54,9 @@ nlohmann::json ZumbiController::getStateJson(){
 
 }
 void ZumbiController::readStateJson(nlohmann::json state){
+	std::cout<<"ZOMBIE STATE"<<std::endl;
 	std::cout<<state<<std::endl;
-	this->id = state["id"];
-	this->model.readStateJson(state["model"]);
+	std::cout<<state[std::to_string(this->id)];
+	this->model.readStateJson(state[std::to_string(this->id)]["model"]);
+
 }

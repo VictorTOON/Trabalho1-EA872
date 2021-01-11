@@ -3,6 +3,7 @@
 #include "zombieView.hpp"
 #include "characterModel.hpp"
 #include "json.hpp"
+#include <string>
 
 static int ID_CONTROLLER = 0;
 
