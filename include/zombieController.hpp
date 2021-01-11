@@ -1,7 +1,9 @@
 #pragma once
 #include "zombieModel.hpp"
 #include "characterModel.hpp"
+
 #include "json.hpp"
+#include <string>
 
 static int ID_CONTROLLER = 0;
 
@@ -18,5 +20,5 @@ class ZumbiController {
 		nlohmann::json getStateJson();
 		void readStateJson(nlohmann::json state);
 		void saveStateJson();
-		int get_id();
+		std::string get_id();
 };

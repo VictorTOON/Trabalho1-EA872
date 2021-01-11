@@ -14,24 +14,26 @@
 #include <fstream>
 #include <sstream>
 #include <boost/asio.hpp>
+#include <thread>
+#include <chrono>
+#include <map>
 
 class GameController {
 	private:
 		std::unique_ptr<GameModel> gameModel;
-		std::unique_ptr<PersonagemController> personagem;
-		std::vector<ZumbiController> zumbis;
+		std::map<std::string, PersonagemController> personagens;
+		std::map <std::string, ZumbiController> zumbis;
 		std::ofstream stateWriteFile;
-		std::ifstream stateReadFile;
-		std::stringstream stateReadFile_s;
+		std::stringstream stateReadFile;
 	public:
-		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
+		GameController(std::string filename);
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
 		void start();
 		int iterate();
 		void spawnZombie();
 		nlohmann::json getStateJson();
-		void readStateJson();
+		void readInitFile(std::string filename);
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
 		bool stop;

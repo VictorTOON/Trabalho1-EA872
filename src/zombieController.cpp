@@ -4,8 +4,8 @@ ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(
 	this->id = ID_CONTROLLER++;
 }
 
-int ZumbiController::get_id(){
-	return this->id;
+std::string ZumbiController::get_id(){
+	return std::to_string(this->id);
 }
 
 void ZumbiController::updateModel(std::shared_ptr<PersonagemModel> p){

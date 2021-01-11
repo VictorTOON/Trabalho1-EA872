@@ -15,6 +15,6 @@ void sender(std::string ip, int port, GameController *gameController){
 	std::string message = gameController->getStateJson().dump();
     	my_socket.send_to(boost::asio::buffer( message), remote_endpoint);
 	std::cout<<"Mandando..."<<std::endl;
-	std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	std::this_thread::sleep_for(std::chrono::milliseconds(20));
 	}
 }
