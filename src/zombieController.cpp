@@ -1,11 +1,16 @@
 #include "zombieController.hpp"
 
-ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
+ZumbiController::ZumbiController(int x, int y, int h, int w, float teta, std::string player_id): model(x,y,h,w,teta) {
 	this->id = ID_CONTROLLER++;
+    this->player_id = player_id;
 }
 
 std::string ZumbiController::get_id(){
 	return std::to_string(this->id);
+}
+
+std::string ZumbiController::get_player_id(){
+    return this->player_id;
 }
 
 void ZumbiController::updateModel(std::shared_ptr<PersonagemModel> p){
@@ -19,10 +24,6 @@ ZumbiModel ZumbiController::getModel(){
 
 void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
 	this->updateModel(p);
-}
-
-ZumbiModel ZumbiController::get_model(){
-    return model;
 }
 
 nlohmann::json ZumbiController::getStateJson(){

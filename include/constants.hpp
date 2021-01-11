@@ -19,6 +19,7 @@
 #define ERR_FILE_NOT_FOUND "Arquivo nao encontrado!"
 #define ERR_INVALID_TYPE "Tipo invalido! (handshake, command, goodbye) [case-sensitive]"
 
+#define CHARACTER_INITIAL_ID "0"
 // INTEIROS
 
 #define INT_CHARACTER_X 200

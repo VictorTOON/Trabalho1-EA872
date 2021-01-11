@@ -11,8 +11,9 @@ class ZumbiController {
 	private:
 		ZumbiModel model;
 		int id;
+        std::string player_id;
 	public: 
-		ZumbiController(int x, int y, int h, int w, float teta);
+		ZumbiController(int x, int y, int h, int w, float teta, std::string player_id);
 		void updateModel(std::shared_ptr<PersonagemModel> p);
 		ZumbiModel getModel();
 		void iterate(std::shared_ptr<PersonagemModel> p);
@@ -21,4 +22,5 @@ class ZumbiController {
 		void readStateJson(nlohmann::json state);
 		void saveStateJson();
 		std::string get_id(); 
+        std::string get_player_id();
 };
