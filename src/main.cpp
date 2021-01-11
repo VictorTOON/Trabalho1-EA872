@@ -1,8 +1,10 @@
 #include "characterController.hpp"
 #include "gameController.hpp"
 #include "zombieController.hpp"
+#include "serverController.hpp"
 #include "sender.hpp"
 #include "receiver.hpp"
+#include "iterateQueue.hpp"
 #include <vector>
 #include <string>
 #include <boost/asio.hpp>
@@ -13,8 +15,10 @@ int main(int argc, char *argv[]){
 	gameController.addPersonagem();
 	
 	gameController.getStateJson();
-	/*
-	std::thread t;
+
+
+/*	
+	std::thread thread_iterate = std::thread(iterateQueue, ;
 	std::cout << argv[0] << std::endl;
 	if (argv[1][0] == 'r'){ 
 		t = std::thread(receiver, 9001, &gameController);
@@ -24,5 +28,5 @@ int main(int argc, char *argv[]){
 	}
 	gameController.start();
 	t.join();
-	*/return 0;
+*/	return 0;
 }

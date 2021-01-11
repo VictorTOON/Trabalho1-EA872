@@ -28,6 +28,7 @@ add_library(keyboard src/sdl_keyboard_handler.cpp)
 add_library(serverController src/serverController.cpp)
 add_library(sender src/sender.cpp)
 add_library(receiver src/receiver.cpp)
+add_library(iterateQueue src/iterateQueue.cpp)
 
 target_link_libraries(zombieModel bodyModel)
 target_link_libraries(zombieController zombieModel)
@@ -41,6 +42,7 @@ target_link_libraries(gameController gameModel)
 target_link_libraries(gameController characterController)
 
 target_link_libraries(receiver serverController)
+target_link_libraries(iterateQueue serverController)
 
 target_link_libraries(VingancasArvores axeController)
 target_link_libraries(VingancasArvores axeModel)
@@ -56,6 +58,7 @@ target_link_libraries(VingancasArvores zombieModel)
 target_link_libraries(VingancasArvores serverController)
 target_link_libraries(VingancasArvores sender)
 target_link_libraries(VingancasArvores receiver)
+target_link_libraries(VingancasArvores iterateQueue)
 
 set(BOOST_ROOT /usr/include/boost)
 set(Boost_USE_STATIC_LIBS ON)

@@ -46,6 +46,7 @@ std::string GameController::addPersonagem(){
 		INT_CHARACTER_W,
 		FLOAT_CHARACTER_THETA);
 	this->personagens.insert(std::make_pair(p.get_id(), p));
+	return p.get_id();
 }
 
 void GameController::readInitFile(std::string filename){

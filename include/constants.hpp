@@ -2,12 +2,21 @@
 
 // STRINGS
 
+#define JSON_KEY_TYPE "type"
+#define JSON_KEY_BODY "body"
+#define JSON_KEY_BODY_ID "id"
+
+#define JSON_TYPE_HANDSHAKE "handshake"
+#define JSON_TYPE_COMMAND "command"
+#define JSON_TYPE_GOODBYE "goodbye"
+
 #define MAP_KEY_ZOMBIES "zumbis"
 #define MAP_KEY_PLAYERS "jogadores"
 
 #define FILENAME_STATE_JSON "state.json"
 
 #define ERR_FILE_NOT_FOUND "Arquivo nao encontrado!"
+#define ERR_INVALID_TYPE "Tipo invalido! (handshake, command, goodbye) [case-sensitive]"
 
 // INTEIROS
 
