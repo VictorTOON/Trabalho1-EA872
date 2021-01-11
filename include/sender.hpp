@@ -7,4 +7,4 @@
 
 #include "serverController.hpp"
 
-void sender(std::string ip, int port, std::shared_ptr<ServerController> serverController);
+void sender( std::shared_ptr<ServerController> serverController, int port);

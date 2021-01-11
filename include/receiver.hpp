@@ -8,4 +8,4 @@
 #include <memory>
 #include <boost/bind.hpp>
 
-void receiver(int port, std::shared_ptr<ServerController> serverController);
+void receiver(std::shared_ptr<ServerController> serverController, int port);

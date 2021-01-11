@@ -18,6 +18,18 @@ bool ServerController::isQueueEmpty(){
 	return this->clientCommandStack.empty();
 }
 
+bool ServerController::isEndpointVectorEmpty(){
+	return this->endpointVector.empty();
+}
+
+std::vector<boost::asio::ip::udp::endpoint> ServerController::get_endpointVector(){
+	return this->endpointVector;
+}
+
+void ServerController::addEndpoint(boost::asio::ip::udp::endpoint new_endpoint){
+	this->endpointVector.push_back(new_endpoint);
+}
+
 std::shared_ptr<GameController> ServerController::get_gameController(){
 	return this->gameController;
 }

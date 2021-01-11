@@ -11,22 +11,19 @@
 
 int main(int argc, char *argv[]){
 
-	GameController gameController("./state.ini");
-	gameController.addPersonagem();
-	
-	gameController.getStateJson();
 
+	std::shared_ptr<GameController> gameController = std::make_shared<GameController>(FILENAME_STATE_INIT);
 
-/*	
-	std::thread thread_iterate = std::thread(iterateQueue, ;
-	std::cout << argv[0] << std::endl;
-	if (argv[1][0] == 'r'){ 
-		t = std::thread(receiver, 9001, &gameController);
-	}
-	else{
-		t = std::thread(sender, "25.6.123.125", 9001, &gameController);
-	}
-	gameController.start();
-	t.join();
-*/	return 0;
+	std::shared_ptr<ServerController> serverController = std::make_shared<ServerController>(gameController);
+
+	std::thread thread_iterate = std::thread(iterateQueue, serverController);
+	std::thread thread_sender = std::thread(sender, serverController, UDP_PORT);
+	std::thread thread_receiver = std::thread(receiver, serverController, UDP_PORT);
+
+	gameController->start();
+
+	thread_iterate.join();
+	thread_sender.join();
+	thread_receiver.join();
+	return 0;
 }

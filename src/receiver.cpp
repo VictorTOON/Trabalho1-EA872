@@ -1,6 +1,6 @@
 #include "receiver.hpp"
 
-void receiver(int port, std::shared_ptr<ServerController> serverController) {
+void receiver(std::shared_ptr<ServerController> serverController, int port) {
 	char clean[10000];
 	int i;
 	for (i = 0; i < 10000; i++){

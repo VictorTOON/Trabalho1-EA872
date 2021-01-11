@@ -14,6 +14,7 @@
 #define MAP_KEY_PLAYERS "jogadores"
 
 #define FILENAME_STATE_JSON "state.json"
+#define FILENAME_STATE_INIT "state.ini"
 
 #define ERR_FILE_NOT_FOUND "Arquivo nao encontrado!"
 #define ERR_INVALID_TYPE "Tipo invalido! (handshake, command, goodbye) [case-sensitive]"
@@ -24,6 +25,8 @@
 #define INT_CHARACTER_Y 200
 #define INT_CHARACTER_H 150
 #define INT_CHARACTER_W 150
+
+#define UDP_PORT 9001
 
 // FLOATS
 

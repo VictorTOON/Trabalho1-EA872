@@ -18,7 +18,7 @@ void iterateQueue(std::shared_ptr<ServerController> serverController){
 				std::string new_player_id = serverController->get_gameController()->addPersonagem();	
 				response[JSON_KEY_TYPE] = JSON_TYPE_HANDSHAKE;
 				response[JSON_KEY_BODY][JSON_KEY_BODY_ID] = new_player_id;
-
+				serverController->addEndpoint(remote_endpoint);
 			} else if (request_type.compare(JSON_TYPE_COMMAND) == 0){
 					
 			} else if (request_type.compare(JSON_TYPE_GOODBYE) == 0){
