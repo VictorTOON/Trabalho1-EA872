@@ -1,5 +1,6 @@
 #pragma once
 
+#include "constants.hpp"
 #include "characterController.hpp"
 #include "zombieController.hpp"
 #include "sdl_keyboard_handler.hpp"
