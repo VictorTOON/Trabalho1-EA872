@@ -79,3 +79,4 @@ void CorpoModel::readBaseJson(nlohmann::json base){
 	this->teta = base["teta"];
 	this->lastHealthChange = base["lastHealthChange"];
 }
+

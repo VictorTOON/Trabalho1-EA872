@@ -10,6 +10,9 @@
 int main(int argc, char *argv[]){
 
 	GameController gameController("./state.ini");
+	gameController.addPersonagem();
+	
+	gameController.getStateJson();
 	/*
 	std::thread t;
 	std::cout << argv[0] << std::endl;

@@ -30,6 +30,7 @@ class GameController {
 		GameController(std::string filename);
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
+		std::string addPersonagem();
 		void start();
 		int iterate();
 		void spawnZombie();

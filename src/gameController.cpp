@@ -36,14 +36,18 @@ void GameController::saveStateJson(){
 
 void GameController::readServerStateJson(nlohmann::json stateJson){
 	
-	//this->personagem->readStateJson(stateJson[MAP_KEY_PLAYERS]);
-	/*this->zumbis.clear();
-	for (int i_json = 0; i_json < stateJson[MAP_KEY_ZOMBIES].size(); i_json++){
-		ZumbiController z(150, 150, 100, 100, 0);
-		z.readStateJson(stateJson[MAP_KEY_ZOMBIES][i_json]);
-		this->zumbis.push_back(z);
-	}*/
 }
+
+std::string GameController::addPersonagem(){
+	PersonagemController p(
+		INT_CHARACTER_X, 
+		INT_CHARACTER_Y,
+		INT_CHARACTER_H,
+		INT_CHARACTER_W,
+		FLOAT_CHARACTER_THETA);
+	this->personagens.insert(std::make_pair(p.get_id(), p));
+}
+
 void GameController::readInitFile(std::string filename){
 	int h, w, x, y;
 	std::fstream stateReadFile(filename, std::ios_base::in);
@@ -51,16 +55,14 @@ void GameController::readInitFile(std::string filename){
 	if (stateReadFile.is_open()){
 		stateReadFile >> h >> w;
 		while (stateReadFile >> x >> y){
-			ZumbiController z(h, w, x, y, INT_THETA_ZOMBIE);
+			ZumbiController z(x, y, h, w, FLOAT_ZOMBIE_THETA);
 			this->zumbis.insert(std::make_pair(z.get_id(), z));
 
 		}
 
-	
-		std::cout<<"hmmm"<<std::endl;
 		stateReadFile.close();
 	} else {
-		std::cout<<"eita"<<std::endl;
+		std::cout << ERR_FILE_NOT_FOUND << std::endl;
 		return;
 	}
 }
