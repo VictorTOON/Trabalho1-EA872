@@ -33,7 +33,7 @@ class GameController {
 		std::string addPersonagem();
 		void start();
 		int iterate();
-		void spawnZombie();
+		void spawnZombie(PersonagemController p);
 		nlohmann::json getStateJson();
 		void readInitFile(std::string filename);
 		void saveStateJson();

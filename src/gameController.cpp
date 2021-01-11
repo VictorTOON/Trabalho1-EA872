@@ -56,7 +56,7 @@ void GameController::readInitFile(std::string filename){
 	if (stateReadFile.is_open()){
 		stateReadFile >> h >> w;
 		while (stateReadFile >> x >> y){
-			ZumbiController z(x, y, h, w, FLOAT_ZOMBIE_THETA);
+			ZumbiController z(x, y, h, w, FLOAT_ZOMBIE_THETA, CHARACTER_INITIAL_ID);
 			this->zumbis.insert(std::make_pair(z.get_id(), z));
 		}
 
@@ -76,35 +76,40 @@ void GameController::start(){
 }
 
 int GameController::iterate(){
-	for (auto personagem = this->personagens.begin(); personagem != this->personagens.end(); ++personagem){
-		this->personagens[personagem->first].iterate();
-	}
+	// for (auto personagem = this->personagens.begin(); personagem != this->personagens.end(); ++personagem){
+	// 	this->personagens[personagem->first].iterate();
+	// }
+    for (auto& personagem_atual: personagens){
+        personagem_atual.second.iterate();
+    }
 	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
-	for (int k = 0; k < this->zumbis.size(); k++){
-		zumbis[k].iterate(this->personagens.find(zumbis[k].get_player_id())->get_model());
-		for (int i=0; i < this->personagem->get_axeControllers().size(); i++){
-			if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
-				this->zumbis.erase(zumbis.begin() + k);
-				k--;
-				spawnZombie();
-				break;
-			}
+    if (this->personagens.empty()){
+        return 0;
+    }
+	for (auto& zumbi_atual: zumbis){
+		zumbi_atual.second.iterate(this->personagens.find(zumbi_atual.second.get_player_id())->second.getModel());
+        for (auto& jogador_atual: personagens){
+            for (int i=0; i < jogador_atual.second.get_axeControllers().size(); i++){
+                if (gameModel->checkIntersection(*jogador_atual.second.get_axeControllers()[i].get_axeModel(), zumbi_atual.second.get_model()) == Mata){
+                    this->zumbis.erase(zumbi_atual.first);
+                    spawnZombie(jogador_atual.second);
+                    break;
+                }
 		}
+        }
 	}
 	int returnDraw = 0;
 	return returnDraw;
 }
 
-void GameController::spawnZombie(){
+void GameController::spawnZombie(PersonagemController p){
 	for (int a = 0; a < rand() % 3 + 1; a++){
 		if(this->zumbis.size() < 20){
 			int randomX = rand() % 1600 + 0;
 			int randomY = rand() % 900 + 0;
-			if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
-				iterator item = personagens.begin();
-                std::advance(item, random_0_to_n(personagens.size()));
-                ZumbiController zumbi_novo(randomX, randomY,100,100, 0, std::to_string(item));
-				this->zumbis.push_back(zumbi_novo);
+			if ((abs(randomX - p.getModel()->get_x()) > 150) && (abs(randomY - p.getModel()->get_y()) > 150)){
+                ZumbiController zumbi_novo(randomX, randomY,100,100, 0, p.get_id());
+				this->zumbis.insert(std::make_pair(zumbi_novo.get_id(), zumbi_novo));
 			}
 			else{
 				a--;
