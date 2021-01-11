@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
 
 	std::shared_ptr<GameController> gameController = std::make_shared<GameController>(FILENAME_STATE_INIT);
 
-	std::shared_ptr<ServerController> serverController = std::make_shared<ServerController>(gameController);
+	std::shared_ptr<ServerController> serverController = std::make_shared<ServerController>(gameController, UDP_PORT);
 
 	std::thread thread_iterate = std::thread(iterateQueue, serverController);
 	std::thread thread_sender = std::thread(sender, serverController, UDP_PORT);

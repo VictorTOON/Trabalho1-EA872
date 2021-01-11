@@ -4,6 +4,7 @@ PersonagemController::PersonagemController(int x, int y, int h, int w, float tet
 	this->model = std::shared_ptr<PersonagemModel>(new PersonagemModel(x, y, h, w, teta));
 	this->playerInput = Default;
 	this->id = ID_PERSONAGEM++;
+	std::cout<<"Novo personagem criado"<<std::endl;
 }
 
 void PersonagemController::updateModel(){

@@ -14,13 +14,11 @@ nlohmann::json GameController::getStateJson(){
 	for (auto& zumbi :  this->zumbis){
 		zombieJsons[zumbi.first] = zumbi.second.getStateJson();
 	}
-	std::cout<<zombieJsons<<std::endl;
 
 	nlohmann::json personagensJson;
 	for (auto& personagem : this->personagens){
 		personagensJson[personagem.first] = personagem.second.getStateJson();
 	}
-	std::cout<<zombieJsons<<std::endl;
 	stateJson[MAP_KEY_ZOMBIES] = zombieJsons;
 	stateJson[MAP_KEY_PLAYERS] = personagensJson;
 	std::cout<<stateJson<<std::endl;
@@ -70,6 +68,7 @@ void GameController::readInitFile(std::string filename){
 
 void GameController::start(){
 	while (!(this->iterate())){
+		this->getStateJson();
 		std::this_thread::sleep_for(std::chrono::milliseconds(80));	
 	}
 	this->stop = true;
@@ -90,7 +89,7 @@ int GameController::iterate(){
 		zumbi_atual.second.iterate(this->personagens.find(zumbi_atual.second.get_player_id())->second.getModel());
         for (auto& jogador_atual: personagens){
             for (int i=0; i < jogador_atual.second.get_axeControllers().size(); i++){
-                if (gameModel->checkIntersection(*jogador_atual.second.get_axeControllers()[i].get_axeModel(), zumbi_atual.second.get_model()) == Mata){
+                if (gameModel->checkIntersection(*jogador_atual.second.get_axeControllers()[i].get_axeModel(), zumbi_atual.second.getModel()) == Mata){
                     this->zumbis.erase(zumbi_atual.first);
                     spawnZombie(jogador_atual.second);
                     break;
