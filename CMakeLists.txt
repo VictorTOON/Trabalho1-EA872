@@ -47,6 +47,15 @@ target_link_libraries(VingancasArvores zombieModel)
 target_link_libraries(VingancasArvores sender)
 target_link_libraries(VingancasArvores receiver)
 
+set(BOOST_ROOT /usr/include/boost)
+set(Boost_USE_STATIC_LIBS ON)
+find_package(Boost COMPONENTS system)
+
+include_directories(${Boost_INCLUDE_DIR})
+target_link_libraries(VingancasArvores ${Boost_LIBRARIES})
+target_link_libraries(sender ${Boost_LIBRARIES})
+target_link_libraries(receiver ${Boost_LIBRARIES})
+
 # Garantir que usaremos C++11 (ou superior, se preciso)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -62,6 +71,7 @@ target_link_libraries(VingancasArvores ${SDL2_LIBRARIES})#${SDL2_IMAGE_LIBRARIES
 
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
+
 
 # Bibliotecas linkadas externamente
 #target_link_libraries(VingancasArvores ${SDL2_LIBRARIES})
