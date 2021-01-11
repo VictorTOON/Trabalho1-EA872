@@ -17,6 +17,7 @@
 #include <thread>
 #include <chrono>
 #include <map>
+#include <string>
 
 class GameController {
 	private:

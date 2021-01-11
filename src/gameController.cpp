@@ -6,14 +6,17 @@ GameController::GameController(std::string filename){
 	this->readInitFile(filename);
 	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->stop = false;
+	this->getStateJson();
 }
 
 nlohmann::json GameController::getStateJson(){
 	nlohmann::json stateJson;	
-	/*nlohmann::json zombieJsons;
+	nlohmann::json zombieJsons;
 	for (auto& zumbi :  this->zumbis){
 		zombieJsons[zumbi.first] = zumbi.second.getStateJson();
 	}
+	std::cout<<zombieJsons<<std::endl;
+	/*
 	nlohmann::json personagensJson;
 	for (auto& personagem : this->personagens){
 		personagensJson[personagem.first] = personagem.second.getStateJson();
@@ -51,8 +54,11 @@ void GameController::readInitFile(std::string filename){
 	if (stateReadFile.is_open()){
 		stateReadFile >> h >> w;
 		while (stateReadFile >> x >> y){
-			std::cout<<x<< " " <<y<<std::endl;
+			ZumbiController z(h, w, x, y, INT_THETA_ZOMBIE);
+			this->zumbis.insert(std::make_pair(z.get_id(), z));
+
 		}
+
 	
 		std::cout<<"hmmm"<<std::endl;
 		stateReadFile.close();
