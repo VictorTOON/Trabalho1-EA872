@@ -27,9 +27,12 @@ void iterateQueue(std::shared_ptr<ServerController> serverController){
 
 				serverController->get_gameController()->updateMovement(id, action);
 
-					
 			} else if (request_type.compare(JSON_TYPE_GOODBYE) == 0){
-				
+				std::string id = remote_endpoint.address().to_string();
+				int retRemove = serverController->get_gameController()->removePersonagem(id);
+				if (retRemove <= 0){
+					serverController->get_gameController()->stopGame();
+				}
 			} else {
 				std::cout<<ERR_INVALID_TYPE<<std::endl;
 			}

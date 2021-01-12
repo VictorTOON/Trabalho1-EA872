@@ -30,6 +30,8 @@
 
 #define UDP_PORT 9001
 
+#define MAX_BUFFER_SIZE 10000
+
 // FLOATS
 
 #define FLOAT_CHARACTER_THETA 0

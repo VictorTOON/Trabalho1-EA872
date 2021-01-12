@@ -1,21 +1,20 @@
 #include "receiver.hpp"
 
 void receiver(std::shared_ptr<ServerController> serverController, int port) {
-	char clean[10000];
+	char clean[MAX_BUFFER_SIZE];
 	int i;
-	for (i = 0; i < 10000; i++){
+	for (i = 0; i < MAX_BUFFER_SIZE; i++){
 		clean[i] = '\0';
 	}
-	char v[10000];
+	char v[MAX_BUFFER_SIZE];
 	while (!(serverController->get_gameController()->stop)){
-		std::cout<<"Estou recebendo coisas ainda"<<std::endl;
-		memcpy(v, clean, 10000);
+		memcpy(v, clean, MAX_BUFFER_SIZE);
 
 		boost::asio::ip::udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
 
 		std::cout << "Esperando mensagem!" << std::endl;
 
-		serverController->get_socket()->receive_from(boost::asio::buffer(v,10000), // Local do buffer
+		serverController->get_socket()->receive_from(boost::asio::buffer(v,MAX_BUFFER_SIZE), // Local do buffer
 			      remote_endpoint); // Confs. do Cliente
 
 		std::cout << v << std::endl;
@@ -24,9 +23,6 @@ void receiver(std::shared_ptr<ServerController> serverController, int port) {
 
 		serverController->pushToQueue(clientJson, remote_endpoint);
 		
-		std::cout << "Fim de mensagem!" << std::endl;
-
-	
 	}
 
 } 

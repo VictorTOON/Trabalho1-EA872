@@ -33,6 +33,7 @@ class GameController {
 		void addZumbi(ZumbiModel zumbi);
 		void updateMovement(std::string id, int acao);
 		std::string addPersonagem(std::string id);
+		int removePersonagem(std::string id);
 		void start();
 		int iterate();
 		void spawnZombie(PersonagemController p);
@@ -40,5 +41,6 @@ class GameController {
 		void readInitFile(std::string filename);
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
+		void stopGame();
 		bool stop;
 };

@@ -21,9 +21,12 @@ nlohmann::json GameController::getStateJson(){
 	}
 	stateJson[MAP_KEY_ZOMBIES] = zombieJsons;
 	stateJson[MAP_KEY_PLAYERS] = personagensJson;
-	std::cout<<stateJson<<std::endl;
 	return stateJson;
 
+}
+
+void GameController::stopGame(){
+	this->stop = true;
 }
 
 void GameController::saveStateJson(){
@@ -48,6 +51,11 @@ std::string GameController::addPersonagem(std::string id){
 	return p.get_id();
 }
 
+int GameController::removePersonagem(std::string id){
+	this->personagens.erase(id);		
+	return this->personagens.size();
+}
+
 void GameController::readInitFile(std::string filename){
 	int h, w, x, y;
 	std::fstream stateReadFile(filename, std::ios_base::in);
@@ -69,7 +77,6 @@ void GameController::readInitFile(std::string filename){
 
 void GameController::start(){
 	while (!(this->iterate())){
-		this->getStateJson();
 		std::this_thread::sleep_for(std::chrono::milliseconds(80));	
 	}
 	this->stop = true;
@@ -98,8 +105,7 @@ int GameController::iterate(){
 		    }
         }
 	}
-	int returnDraw = 0;
-	return returnDraw;
+	return this->stop;
 }
 
 void GameController::spawnZombie(PersonagemController p){
