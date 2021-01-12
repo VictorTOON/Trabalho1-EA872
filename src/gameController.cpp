@@ -75,8 +75,8 @@ void GameController::start(){
 	this->stop = true;
 }
 
-void updateMovementJson(){
-    
+void GameController::updateMovement(std::string id, int acao){ 
+	this->personagens.find(id)->second.addTo_fila_acoes(acao);
 }
 
 int GameController::iterate(){

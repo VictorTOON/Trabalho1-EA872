@@ -70,3 +70,7 @@ std::string PersonagemController::get_id(){
 void PersonagemController::set_id(std::string id){
 	this->id = id;
 }
+
+void PersonagemController::addTo_fila_acoes(int acao){
+	this->fila_acoes.push(acao);
+}

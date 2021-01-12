@@ -21,7 +21,11 @@ void iterateQueue(std::shared_ptr<ServerController> serverController){
 				serverController->addEndpoint(remote_endpoint);
 				std::cout<<"Temos um handshake"<<std::endl;
 			} else if (request_type.compare(JSON_TYPE_COMMAND) == 0){
-							
+				
+				std::string id = remote_endpoint.address().to_string();
+				int action = clientJson[JSON_KEY_BODY][JSON_KEY_BODY_COMMAND];
+
+				serverController->get_gameController()->updateMovement(id, action);
 
 					
 			} else if (request_type.compare(JSON_TYPE_GOODBYE) == 0){

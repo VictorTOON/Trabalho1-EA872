@@ -10,7 +10,7 @@ class PersonagemController {
 		std::vector<AxeController> axeControllers;
 		RetornoHandle playerInput;
 		std::string id;
-        std::queue<int> fila_acoes;
+		std::queue<int> fila_acoes;
 	public: 
 		PersonagemController(int x, int y, int h, int w, float teta);
 		void updateModel();
@@ -21,4 +21,5 @@ class PersonagemController {
 		void readStateJson(nlohmann::json state);
 		std::string get_id();
 		void set_id(std::string id);
+		void addTo_fila_acoes(int acao);
 };
