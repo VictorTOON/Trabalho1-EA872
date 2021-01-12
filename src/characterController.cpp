@@ -13,26 +13,6 @@ void PersonagemController::updateView(){
 	}
 }
 
-void PersonagemController::updateModel(){
-	RetornoHandle ret = this->model->handle_keyboard(this->keyboardHandler.getInput());
-						
-	if (this->model->get_health() <= 0) {
-		//return;
-	}
-	if (ret == CriaMachado){
-		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
-		axeController.getView()->set_render(this->getView()->get_render());
-		this->axeControllers.push_back(axeController);
-	}
-	for (int i=0; i < axeControllers.size(); i++){
-		retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
-		if (retornoUpdate == Destruir){
-		    this->axeControllers.erase(axeControllers.begin() + i);
-		    i--;
-		}
-	}
-}
-
 std::shared_ptr<PersonagemView> PersonagemController::getView(){
 	return this->view;
 }
@@ -41,9 +21,11 @@ std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
 }
 
+int PersonagemController::get_action_by_button(){
+    return this->model->keyboardHandler.getInput();
+}
 
 void PersonagemController::iterate(){
-	this->updateModel();
 	this->updateView();
 }
 
