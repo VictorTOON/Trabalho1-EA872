@@ -29,7 +29,8 @@ int main(int argc, char *argv[]){
 	}
 	gameController.start();
 	t.join();*/
-	ClientController c("state.ini");
+	std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
+	ClientController c(gameController, "state.ini");
 	c.makeHandshake();
 	return 0;
 }

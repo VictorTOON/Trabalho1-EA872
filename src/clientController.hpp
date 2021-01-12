@@ -10,7 +10,11 @@ class ClientController {
 	private:
 		std::shared_ptr<boost::asio::ip::udp::socket> socket;
 		std::shared_ptr<boost::asio::ip::udp::endpoint> serverEndpoint;
+		std::shared_ptr<GameController> gameController;
 	public: 
-		ClientController(std::string filename);
+		ClientController(std::shared_ptr<GameController> gameController, std::string filename);
 		void makeHandshake();
+		std::shared_ptr<GameController> get_gameController(); 
+		std::shared_ptr<boost::asio::ip::udp::socket> get_socket();
+		std::shared_ptr<boost::asio::ip::udp::endpoint> get_serverEndpoint();
 };
