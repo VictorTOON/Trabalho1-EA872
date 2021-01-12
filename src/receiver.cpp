@@ -15,23 +15,17 @@ void receiver(std::shared_ptr<ServerController> serverController, int port) {
 
 		std::cout << "Esperando mensagem!" << std::endl;
 
-		serverController->receive_from(v,10000, // Local do buffer
+		serverController->get_socket()->receive_from(boost::asio::buffer(v,10000), // Local do buffer
 			      remote_endpoint); // Confs. do Cliente
 
 		std::cout << v << std::endl;
-		std::cout << "ARROMBADO "<<remote_endpoint.address().to_string()<<std::endl;
+
 		nlohmann::json clientJson = nlohmann::json::parse(v);
 
 		serverController->pushToQueue(clientJson, remote_endpoint);
-
 		
 		std::cout << "Fim de mensagem!" << std::endl;
 
-		// Respondendo a mensagem
-		std::string msg("Recebido! Obrigado, cambio e desligo!");
-		serverController->get_socket()->send_to(boost::asio::buffer(msg), remote_endpoint);
-
-		std::cout << "Mensagem de retorno enviada" << std::endl;
 	
 	}
 

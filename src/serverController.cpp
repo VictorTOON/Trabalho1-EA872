@@ -29,11 +29,11 @@ bool ServerController::isEndpointVectorEmpty(){
 	return this->endpointVector.empty();
 }
 
-std::vector<std::string> ServerController::get_endpointVector(){
+std::vector<boost::asio::ip::udp::endpoint> ServerController::get_endpointVector(){
 	return this->endpointVector;
 }
 
-void ServerController::addEndpoint(std::string new_endpoint){//std::shared_ptr<boost::asio::ip::udp::endpoint> new_endpoint){
+void ServerController::addEndpoint(boost::asio::ip::udp::endpoint new_endpoint){
 	std::cout<<"Adicionando endpoint"<<std::endl;
 	this->endpointVector.push_back(new_endpoint);
 }
@@ -46,13 +46,3 @@ std::shared_ptr<boost::asio::ip::udp::socket> ServerController::get_socket(){
 	return this->socket;
 }
 
-void ServerController::send_to(std::string message, boost::asio::ip::udp::endpoint remote_endpoint){
-	this->socket->send_to(
-			boost::asio::buffer(message),
-			remote_endpoint
-			);
-}
-
-void ServerController::receive_from(char message[], int size, boost::asio::ip::udp::endpoint remote_endpoint){
-	this->socket->receive_from(boost::asio::buffer(message, size), remote_endpoint);
-}
