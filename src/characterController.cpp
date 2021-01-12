@@ -5,26 +5,29 @@ PersonagemController::PersonagemController(int x, int y, int h, int w, float tet
 	this->playerInput = Default;
 	this->id = ID_PERSONAGEM++;
 	std::cout<<"Novo personagem criado"<<std::endl;
+    std::queue<int> fila_acoes;
 }
 
 void PersonagemController::updateModel(){
-			
-	if (this->model->get_health() <= 0) {
+    for(while fila_acoes.size()) > 0){
+	    RetornoHandle ret = this->model->handle_keyboard(fila_acoes.front());
+        if (this->model->get_health() <= 0) {
 		//return;
-	}
-	if (this->playerInput == CriaMachado){
-		AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
-		this->axeControllers.push_back(axeController);
-	}
-	for (int i=0; i < axeControllers.size(); i++){
-		retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
-		if (retornoUpdate == Destruir){
-		    this->axeControllers.erase(axeControllers.begin() + i);
-		    i--;
-		}
-	}
+        }
+        if (this->playerInput == CriaMachado){
+            AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
+            this->axeControllers.push_back(axeController);
+        }
+        for (int i=0; i < axeControllers.size(); i++){
+            retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
+            if (retornoUpdate == Destruir){
+                this->axeControllers.erase(axeControllers.begin() + i);
+                i--;
+		    }
+	    }
+        fila_acoes.pop()
+    }
 }
-
 
 std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
