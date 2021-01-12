@@ -31,7 +31,7 @@ class GameController {
 		GameController(std::string filename);
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
-        void updateMovementJson();
+		void updateMovement(std::string id, int acao);
 		std::string addPersonagem(std::string id);
 		void start();
 		int iterate();
