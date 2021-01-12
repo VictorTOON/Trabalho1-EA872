@@ -3,7 +3,6 @@
 PersonagemController::PersonagemController(int x, int y, int h, int w, float teta){
 	this->model = std::shared_ptr<PersonagemModel>(new PersonagemModel(x, y, h, w, teta));
 	this->playerInput = Default;
-	this->id = ID_PERSONAGEM++;
 	std::cout<<"Novo personagem criado"<<std::endl;
     std::queue<int> fila_acoes;
 }
@@ -65,6 +64,9 @@ void PersonagemController::readStateJson(nlohmann::json state) {
 }
 
 std::string PersonagemController::get_id(){
-	return std::to_string(this->id);
+	return this->id;
 }
 
+void PersonagemController::set_id(std::string id){
+	this->id = id;
+}

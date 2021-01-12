@@ -4,14 +4,12 @@
 #include "json.hpp"
 #include <queue>
 
-static int ID_PERSONAGEM = 0;
-
 class PersonagemController {
 	private:
 		std::shared_ptr<PersonagemModel> model;
 		std::vector<AxeController> axeControllers;
 		RetornoHandle playerInput;
-		int id;
+		std::string id;
         std::queue<int> fila_acoes;
 	public: 
 		PersonagemController(int x, int y, int h, int w, float teta);
@@ -22,4 +20,5 @@ class PersonagemController {
 		nlohmann::json getStateJson();
 		void readStateJson(nlohmann::json state);
 		std::string get_id();
+		void set_id(std::string id);
 };

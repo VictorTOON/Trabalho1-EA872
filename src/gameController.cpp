@@ -36,13 +36,14 @@ void GameController::readServerStateJson(nlohmann::json stateJson){
 	
 }
 
-std::string GameController::addPersonagem(){
+std::string GameController::addPersonagem(std::string id){
 	PersonagemController p(
 		INT_CHARACTER_X, 
 		INT_CHARACTER_Y,
 		INT_CHARACTER_H,
 		INT_CHARACTER_W,
 		FLOAT_CHARACTER_THETA);
+	p.set_id(id);
 	this->personagens.insert(std::make_pair(p.get_id(), p));
 	return p.get_id();
 }

@@ -15,15 +15,14 @@ void iterateQueue(std::shared_ptr<ServerController> serverController){
 			std::string request_type = clientJson[JSON_KEY_TYPE];
 			
 			if (request_type.compare(JSON_TYPE_HANDSHAKE) == 0) {
-				std::string new_player_id = serverController->get_gameController()->addPersonagem();	
+				std::string new_player_id = serverController->get_gameController()->addPersonagem(remote_endpoint.address().to_string());	
 				response[JSON_KEY_TYPE] = JSON_TYPE_HANDSHAKE;
 				response[JSON_KEY_BODY][JSON_KEY_BODY_ID] = new_player_id;
-
 				serverController->addEndpoint(remote_endpoint);
-
 				std::cout<<"Temos um handshake"<<std::endl;
-				serverController->get_gameController()->getStateJson();
 			} else if (request_type.compare(JSON_TYPE_COMMAND) == 0){
+							
+
 					
 			} else if (request_type.compare(JSON_TYPE_GOODBYE) == 0){
 				
