@@ -94,7 +94,7 @@ int GameController::iterate(){
                     spawnZombie(jogador_atual.second);
                     break;
                 }
-		}
+		    }
         }
 	}
 	int returnDraw = 0;
