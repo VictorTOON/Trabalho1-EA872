@@ -34,7 +34,6 @@ nlohmann::json ZumbiController::getStateJson(){
 
 }
 void ZumbiController::readStateJson(nlohmann::json state){
-	std::cout<<state<<std::endl;
 	this->id = state["id"];
 	this->model.readStateJson(state["model"]);
 }

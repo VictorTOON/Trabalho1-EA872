@@ -1,0 +1,19 @@
+#pragma once
+
+#include <queue>
+#include <json>
+#include <memory>
+#include <pair>
+#include "gameController.hpp"
+#include <boost/asio.hpp>
+
+class ServerController{
+	private:
+		std::stack<
+			std::pair<nlohmann::json, boost::asio::ip::udp::endpoint>
+		> clientCommandStack;
+		shared_ptr<GameController> gameController;
+	public:
+		ServerController(std::shared_ptr<GameController> gameController);
+		
+}; 
