@@ -5,7 +5,6 @@
 #include "axeController.hpp"
 #include "json.hpp"
 
-
 class PersonagemController {
 	private:
 		std::shared_ptr<PersonagemModel> model;
@@ -22,4 +21,5 @@ class PersonagemController {
 		std::vector<AxeController> get_axeControllers();
 		nlohmann::json getStateJson();
 		void readStateJson(nlohmann::json state);
+        int get_action();
 };
