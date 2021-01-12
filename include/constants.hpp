@@ -5,6 +5,7 @@
 #define JSON_KEY_TYPE "type"
 #define JSON_KEY_BODY "body"
 #define JSON_KEY_BODY_ID "id"
+#define JSON_KEY_BODY_COMMAND "comando"
 
 #define JSON_TYPE_HANDSHAKE "handshake"
 #define JSON_TYPE_COMMAND "command"
