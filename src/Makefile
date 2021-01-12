@@ -10,7 +10,7 @@ body=bodyView.o bodyModel.o
 projectile=projectileView.o projectileModel.o
 axe=axeController.o axeModel.o axeView.o
 keyboard=sdl_keyboard_handler.o
-network=sender.o receiver.o
+network=sender.o receiver.o clientController.o
 
 all : main
 
@@ -70,6 +70,8 @@ gameController.o : gameController.cpp gameController.hpp
 	$(COMPILER) -c gameController.cpp -ogameController.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
 receiver.o: receiver.cpp receiver.hpp
 	$(COMPILER) -c receiver.cpp -oreceiver.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
+clientController.o: clientController.cpp clientController.hpp
+	$(COMPILER) -c clientController.cpp -oclientController.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
 sender.o: sender.cpp sender.hpp
 	$(COMPILER) -c sender.cpp -osender.o $(CFLAGS) #-i/usr/local/include  -l/usr/local/lib -lsdl2 -lsdl2_image -std=c++11
 

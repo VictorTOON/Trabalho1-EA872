@@ -5,10 +5,12 @@
 #include "sender.hpp"
 #include "receiver.hpp"
 #include <vector>
+#include "clientController.hpp"
 #include <string>
 #include <boost/asio.hpp>
 
 int main(int argc, char *argv[]){
+	/*
 	PersonagemController p(300,300,130, 130, 0);
 	AxeController n(10,12,0.5);
 	std::vector<ZumbiController> zs; 
@@ -26,6 +28,8 @@ int main(int argc, char *argv[]){
 		t = std::thread(sender, "25.86.17.137", 9001, &gameController);
 	}
 	gameController.start();
-	t.join();
+	t.join();*/
+	ClientController c("state.ini");
+	c.makeHandshake();
 	return 0;
 }
