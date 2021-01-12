@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcharacterView.a CMakeFiles/characterView.dir/src/characterView.cpp.o
+/usr/bin/ranlib libcharacterView.a

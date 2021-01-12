@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprojectileView.a CMakeFiles/projectileView.dir/src/projectileView.cpp.o
+/usr/bin/ranlib libprojectileView.a

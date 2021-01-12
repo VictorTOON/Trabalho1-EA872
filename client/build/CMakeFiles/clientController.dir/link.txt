@@ -1,0 +1,2 @@
+/usr/bin/ar qc libclientController.a CMakeFiles/clientController.dir/src/clientController.cpp.o
+/usr/bin/ranlib libclientController.a
