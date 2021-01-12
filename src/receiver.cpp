@@ -29,7 +29,8 @@ void receiver(int port, GameController *gameController) {
 		std::cout << v << std::endl;
 		gameController->readServerStateJson(nlohmann::json::parse(v));
 		std::cout << "Fim de mensagem!" << std::endl;
-
+        gameController->readServerStateJson(nlohmann::json::parse(v));
+        
 		// Respondendo a mensagem
 		std::string msg("Recebido! Obrigado, cambio e desligo!");
 		my_socket.send_to(boost::asio::buffer(msg), remote_endpoint);
