@@ -56,6 +56,12 @@ int GameController::removePersonagem(std::string id){
 	return this->personagens.size();
 }
 
+void GameController::AllToOne(std::string player_id){
+	for (auto &z : this->zumbis){
+		z.second.set_player_id(player_id);
+	}
+}
+
 void GameController::readInitFile(std::string filename){
 	int h, w, x, y;
 	std::fstream stateReadFile(filename, std::ios_base::in);
@@ -76,8 +82,19 @@ void GameController::readInitFile(std::string filename){
 
 
 void GameController::start(){
+	static auto t_start = std::chrono::high_resolution_clock::now();
+	static auto t_end = std::chrono::high_resolution_clock::now();
+
 	while (!(this->iterate())){
-		std::this_thread::sleep_for(std::chrono::milliseconds(80));	
+
+		t_end = std::chrono::high_resolution_clock::now();
+		auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start).count();
+		
+		if (elapsed < INT_DELAY_MS){
+			std::this_thread::sleep_for(std::chrono::milliseconds(INT_DELAY_MS-elapsed));
+		} 
+		t_start = t_end;
+
 	}
 	this->stop = true;
 }
