@@ -19,5 +19,5 @@ class PersonagemController {
 		std::shared_ptr<PersonagemModel> getModel();
 		void iterate();
         std::vector<AxeController> get_axeControllers();
-        int get_action_by_button();
+        ints get_action();
 };

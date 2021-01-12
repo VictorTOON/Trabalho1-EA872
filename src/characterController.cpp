@@ -21,8 +21,8 @@ std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
 }
 
-int PersonagemController::get_action_by_button(){
-    return this->model->keyboardHandler.getInput();
+int PersonagemController::get_action(){
+    return (this->keyboardHandler.getInput());
 }
 
 void PersonagemController::iterate(){
