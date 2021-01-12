@@ -1,6 +1,7 @@
 #include "iterateQueue.hpp"
 
 void iterateQueue(std::shared_ptr<ServerController> serverController){
+	static bool firstPlayer = true;
 	std::pair<nlohmann::json, boost::asio::ip::udp::endpoint> currentPair;
 	nlohmann::json clientJson;
 	boost::asio::ip::udp::endpoint remote_endpoint;
@@ -20,6 +21,10 @@ void iterateQueue(std::shared_ptr<ServerController> serverController){
 				response[JSON_KEY_BODY][JSON_KEY_BODY_ID] = new_player_id;
 				serverController->addEndpoint(remote_endpoint);
 				std::cout<<"Temos um handshake"<<std::endl;
+				if (firstPlayer){
+					firstPlayer = false;
+					serverController->get_gameController()->AllToOne(new_player_id);
+				}
 			} else if (request_type.compare(JSON_TYPE_COMMAND) == 0){
 				
 				std::string id = remote_endpoint.address().to_string();

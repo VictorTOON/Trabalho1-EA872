@@ -41,6 +41,7 @@ class GameController {
 		void readInitFile(std::string filename);
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
+		void AllToOne(std::string player_id);
 		void stopGame();
 		bool stop;
 };
