@@ -1,16 +1,10 @@
-#include "gameController.hpp"
 #include <thread>
 #include <string>
 #include <boost/asio.hpp>
 #include <thread>
 #include <chrono>
+#include <memory>
 
-/*class Sender {
-	public:
-		static void send(std::string ip, int port, nlohmann::json gameJson);
-};*/
+#include "serverController.hpp"
 
-void sender(std::string ip, int port, GameController *gameController);
-
-
-
+void sender( std::shared_ptr<ServerController> serverController, int port);

@@ -4,6 +4,7 @@
 #include "json.hpp"
 #include <cmath>
 #include <memory>
+#include <string>
 
 #define GRAD_TO_RAD (3.14159265/180)
 #define PASSO 10
@@ -15,6 +16,7 @@ class CorpoModel{
 		float teta;
 		unsigned int lastHealthChange;
 		SDL_Rect rect;
+		int id;
 	public:
 		CorpoModel(int x, int y, int h, int w, float teta);
 		int get_x();

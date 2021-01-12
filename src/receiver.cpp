@@ -1,40 +1,28 @@
 #include "receiver.hpp"
 
-void receiver(int port, GameController *gameController) {
-	char clean[10000];
+void receiver(std::shared_ptr<ServerController> serverController, int port) {
+	char clean[MAX_BUFFER_SIZE];
 	int i;
-	for (i = 0; i < 10000; i++){
+	for (i = 0; i < MAX_BUFFER_SIZE; i++){
 		clean[i] = '\0';
 	}
-	char v[10000];
-	while (!(gameController->stop)){
-		std::cout<<"Estou recebendo coisas ainda"<<std::endl;
-		memcpy(v, clean, 10000);
-
-		boost::asio::io_service my_io_service; // Conecta com o SO
-
-		boost::asio::ip::udp::endpoint local_endpoint(boost::asio::ip::udp::v4(), port); // endpoint: contem
-							// conf. da conexao (ip/port)
-
-		boost::asio::ip::udp::socket my_socket(my_io_service, // io service
-				local_endpoint); // endpoint
+	char v[MAX_BUFFER_SIZE];
+	while (!(serverController->get_gameController()->stop)){
+		memcpy(v, clean, MAX_BUFFER_SIZE);
 
 		boost::asio::ip::udp::endpoint remote_endpoint; // vai conter informacoes de quem conectar
 
 		std::cout << "Esperando mensagem!" << std::endl;
 
-		my_socket.receive_from(boost::asio::buffer(v,10000), // Local do buffer
+		serverController->get_socket()->receive_from(boost::asio::buffer(v,MAX_BUFFER_SIZE), // Local do buffer
 			      remote_endpoint); // Confs. do Cliente
 
 		std::cout << v << std::endl;
-		gameController->readServerStateJson(nlohmann::json::parse(v));
-		std::cout << "Fim de mensagem!" << std::endl;
 
-		// Respondendo a mensagem
-		std::string msg("Recebido! Obrigado, cambio e desligo!");
-		my_socket.send_to(boost::asio::buffer(msg), remote_endpoint);
+		nlohmann::json clientJson = nlohmann::json::parse(v);
 
-		std::cout << "Mensagem de retorno enviada" << std::endl;
+		serverController->pushToQueue(clientJson, remote_endpoint);
+		
 	}
 
 } 

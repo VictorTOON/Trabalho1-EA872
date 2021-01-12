@@ -25,13 +25,24 @@ add_library(projectileModel src/projectileModel.cpp)
 add_library(zombieController src/zombieController.cpp)
 add_library(zombieModel src/zombieModel.cpp)
 add_library(keyboard src/sdl_keyboard_handler.cpp)
+add_library(serverController src/serverController.cpp)
 add_library(sender src/sender.cpp)
 add_library(receiver src/receiver.cpp)
+add_library(iterateQueue src/iterateQueue.cpp)
 
 target_link_libraries(zombieModel bodyModel)
-target_link_libraries(zombieModel zombieController)
+target_link_libraries(zombieController zombieModel)
+target_link_libraries(axeModel projectileModel)
+target_link_libraries(axeController axeModel)
+target_link_libraries(characterModel axeModel)
+target_link_libraries(characterModel axeController)
 target_link_libraries(characterModel bodyModel)
-target_link_libraries(characterModel characterController)
+target_link_libraries(characterController characterModel)
+target_link_libraries(gameController gameModel)
+target_link_libraries(gameController characterController)
+
+target_link_libraries(receiver serverController)
+target_link_libraries(iterateQueue serverController)
 
 target_link_libraries(VingancasArvores axeController)
 target_link_libraries(VingancasArvores axeModel)
@@ -44,8 +55,19 @@ target_link_libraries(VingancasArvores projectileModel)
 target_link_libraries(VingancasArvores keyboard)
 target_link_libraries(VingancasArvores zombieController)
 target_link_libraries(VingancasArvores zombieModel)
+target_link_libraries(VingancasArvores serverController)
 target_link_libraries(VingancasArvores sender)
 target_link_libraries(VingancasArvores receiver)
+target_link_libraries(VingancasArvores iterateQueue)
+
+set(BOOST_ROOT /usr/include/boost)
+set(Boost_USE_STATIC_LIBS ON)
+find_package(Boost COMPONENTS system)
+
+include_directories(${Boost_INCLUDE_DIR})
+target_link_libraries(VingancasArvores ${Boost_LIBRARIES})
+target_link_libraries(sender ${Boost_LIBRARIES})
+target_link_libraries(receiver ${Boost_LIBRARIES})
 
 # Garantir que usaremos C++11 (ou superior, se preciso)
 set(CMAKE_CXX_STANDARD 11)
@@ -62,6 +84,7 @@ target_link_libraries(VingancasArvores ${SDL2_LIBRARIES})#${SDL2_IMAGE_LIBRARIES
 
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
+
 
 # Bibliotecas linkadas externamente
 #target_link_libraries(VingancasArvores ${SDL2_LIBRARIES})
