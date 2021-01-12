@@ -5,7 +5,6 @@
 #include "axeController.hpp"
 #include "json.hpp"
 
-
 class PersonagemController {
 	private:
 		std::shared_ptr<PersonagemModel> model;
