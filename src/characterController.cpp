@@ -17,15 +17,15 @@ void PersonagemController::updateModel(){
             AxeController axeController(this->model->get_x(), this->model->get_y(), this->model->get_teta());
             this->axeControllers.push_back(axeController);
         }
-        for (int i=0; i < axeControllers.size(); i++){
+        fila_acoes.pop();
+    }
+    for (int i=0; i < axeControllers.size(); i++){
             retornoUpdateAxeController retornoUpdate = axeControllers[i].updateModel(0, .5);
             if (retornoUpdate == Destruir){
                 this->axeControllers.erase(axeControllers.begin() + i);
                 i--;
 		    }
 	    }
-        fila_acoes.pop();
-    }
 }
 
 std::shared_ptr<PersonagemModel> PersonagemController::getModel(){

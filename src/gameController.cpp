@@ -80,14 +80,9 @@ void updateMovementJson(){
 }
 
 int GameController::iterate(){
-	// for (auto personagem = this->personagens.begin(); personagem != this->personagens.end(); ++personagem){
-	// 	this->personagens[personagem->first].iterate();
-	// }
-
     for (auto& personagem_atual: personagens){
         personagem_atual.second.iterate();
     }
-	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
     if (this->personagens.empty()){
         return 0;
     }
