@@ -22,15 +22,9 @@ int main() {
 
   meu_socket.send_to(boost::asio::buffer(v), remote_endpoint);
 
-  std::cout << v << std::endl;
-  std::cout << "Fim" << std::endl;
-
   // Recebendo mensagem de retorno
   char recv[122];
   meu_socket.receive_from(boost::asio::buffer(recv, 122), remote_endpoint);
-
-  std::cout << "Recebeu retorno: " << std::endl;
-  std::cout << recv << std::endl;
 
   return 0;
 }

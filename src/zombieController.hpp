@@ -12,7 +12,8 @@ class ZumbiController {
 		ZumbiModel model;
 		std::shared_ptr<ZumbiView> view;
 		SDL_Keyboard_Handler keyboardHandler;
-		int id;
+		std::string id;
+		std::string player_id;
 	public: 
 		ZumbiController(int x, int y, int h, int w, float teta);
 		void updateView(std::shared_ptr<PersonagemModel> p);
@@ -25,4 +26,7 @@ class ZumbiController {
 		void readStateJson(nlohmann::json state);
 		void saveStateJson();
 		std::string get_id();
+		void set_id(std::string id);
+		void set_player_id(std::string id);
+		std::string get_player_id();
 };

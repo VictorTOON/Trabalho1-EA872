@@ -8,9 +8,9 @@ PersonagemController::PersonagemController(int x, int y, int h, int w, float tet
 void PersonagemController::updateView(){
 	this->view->update(this->model->get_x(), this->model->get_y(), this->model->get_teta());
 	this->view->draw();
-	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
+/*	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
 		axeController->updateView();
-	}
+	}*/
 }
 
 std::shared_ptr<PersonagemView> PersonagemController::getView(){
@@ -21,9 +21,6 @@ std::shared_ptr<PersonagemModel> PersonagemController::getModel(){
 	return this->model;
 }
 
-int PersonagemController::get_action(){
-    return (this->keyboardHandler.getInput());
-}
 
 void PersonagemController::iterate(){
 	this->updateView();

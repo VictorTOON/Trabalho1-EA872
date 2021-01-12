@@ -12,8 +12,6 @@ ClientController::ClientController(std::shared_ptr<GameController> gameControlle
 
 	stateReadFile >> port;
 
-	std::cout<<ip<<std::endl;
-	std::cout<<port<<std::endl;
 	boost::asio::io_service io_service;
 	boost::asio::ip::udp::endpoint local_endpoint(
 			boost::asio::ip::udp::v4(),

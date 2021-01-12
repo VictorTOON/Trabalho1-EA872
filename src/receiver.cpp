@@ -12,14 +12,13 @@ void receiver(std::shared_ptr<ClientController> clientController) {
 
 		std::cout << "Esperando mensagem!" << std::endl;
 
-		clientController->get_socket()->receive_from(boost::asio::buffer(v,MAX_BUFFER_SIZE), // Local do buffer
-			      *clientController->get_serverEndpoint()); // Confs. do Server
-
-		std::cout << v << std::endl;
-		clientController->get_gameController()->readServerStateJson(nlohmann::json::parse(v));
-		std::cout << "Fim de mensagem!" << std::endl;
-		clientController->get_gameController()->readServerStateJson(nlohmann::json::parse(v));
-
+		if (!(clientController->get_gameController()->stop)){
+			clientController->get_socket()->receive_from(boost::asio::buffer(v,MAX_BUFFER_SIZE), // Local do buffer
+				      *clientController->get_serverEndpoint()); // Confs. do Server
+			
+			std::cout << "Fim de mensagem!" << std::endl;
+			clientController->get_gameController()->readServerStateJson(nlohmann::json::parse(v));
+		}
 		memcpy(v, clean, MAX_BUFFER_SIZE);
         
 	}

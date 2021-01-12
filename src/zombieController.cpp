@@ -2,11 +2,22 @@
 
 ZumbiController::ZumbiController(int x, int y, int h, int w, float teta): model(x,y,h,w,teta) {
 	this->view = std::shared_ptr<ZumbiView>(new ZumbiView(h, w, teta, "../assets/zombie.png"));
-	this->id = ID_CONTROLLER++;
+}
+
+void ZumbiController::set_player_id(std::string player_id){
+	this->player_id = player_id;
+}
+
+std::string ZumbiController::get_player_id(){
+	return this->player_id;
+}
+
+void ZumbiController::set_id(std::string id){
+	this->id = id;
 }
 
 std::string ZumbiController::get_id(){
-	return std::to_string(this->id);
+	return this->id;
 }
 
 void ZumbiController::updateView(std::shared_ptr<PersonagemModel> p){
@@ -54,9 +65,6 @@ nlohmann::json ZumbiController::getStateJson(){
 
 }
 void ZumbiController::readStateJson(nlohmann::json state){
-	std::cout<<"ZOMBIE STATE"<<std::endl;
-	std::cout<<state<<std::endl;
-	std::cout<<state[std::to_string(this->id)];
-	this->model.readStateJson(state[std::to_string(this->id)]["model"]);
+	this->model.readStateJson(state[this->id]["model"]);
 
 }

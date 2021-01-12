@@ -32,6 +32,8 @@ class GameController {
 		std::vector<ZumbiView> zumbiViews;
 
 		void updatePersonagemView();
+
+		int action;
 	public:
 		GameController();
 
@@ -45,6 +47,7 @@ class GameController {
 		void readStateJson();
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
+		int get_action();
 		
 		bool stop;
 };
