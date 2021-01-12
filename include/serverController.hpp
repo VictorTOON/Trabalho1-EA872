@@ -19,8 +19,21 @@ class ServerController{
 		std::shared_ptr<boost::asio::ip::udp::socket> socket;
 
 	public:
+        /* \brief ServerController
+            * Função recebe um gameController para gerenciar e uma porta de rede
+            * 
+            * */
 		ServerController(std::shared_ptr<GameController> gameController, int port);
+        /* \brief removeFromQueue
+            * Salva a requisição no json e o cliente endpoint que fez a requisição
+            * da ação
+            * 
+            * */
 		std::pair<nlohmann::json, boost::asio::ip::udp::endpoint> removeFromQueue();
+        /* \brief removeFromQueue
+            * Usa a requisição anterior e o endpoint para adicionar na fila de ações
+            * 
+            * */
 		void pushToQueue(nlohmann::json requisition, boost::asio::ip::udp::endpoint client_endpoint);
 		bool isQueueEmpty();
 		bool isEndpointMapEmpty();

@@ -16,7 +16,10 @@ typedef enum {
 
 class ZumbiModel: public CorpoModel{
     public:
-        ZumbiModel(int x, int y, int h, int w, float teta);
+    ZumbiModel(int x, int y, int h, int w, float teta);
+    /* \brief follow
+            * \param: PersonagemModel orienta o zumbi que siga o personagem escolhido
+            * */
 	ZumbiFollowReturn follow(std::shared_ptr<PersonagemModel> p);
 	nlohmann::json getStateJson();
 	void readStateJson(nlohmann::json state);
