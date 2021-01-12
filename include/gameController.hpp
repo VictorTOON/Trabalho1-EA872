@@ -18,6 +18,7 @@
 #include <chrono>
 #include <map>
 #include <string>
+#include <queue>
 
 class GameController {
 	private:
@@ -31,6 +32,7 @@ class GameController {
 		~GameController();
 		void addZumbi(ZumbiModel zumbi);
 		std::string addPersonagem();
+        void updateMovementJson();
 		void start();
 		int iterate();
 		void spawnZombie(PersonagemController p);

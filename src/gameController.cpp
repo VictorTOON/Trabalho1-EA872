@@ -74,10 +74,15 @@ void GameController::start(){
 	this->stop = true;
 }
 
+void updateMovementJson(){
+    
+}
+
 int GameController::iterate(){
 	// for (auto personagem = this->personagens.begin(); personagem != this->personagens.end(); ++personagem){
 	// 	this->personagens[personagem->first].iterate();
 	// }
+
     for (auto& personagem_atual: personagens){
         personagem_atual.second.iterate();
     }

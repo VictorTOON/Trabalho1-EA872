@@ -2,6 +2,7 @@
 #include "characterModel.hpp"
 #include "axeController.hpp"
 #include "json.hpp"
+#include <queue>
 
 static int ID_PERSONAGEM = 0;
 
