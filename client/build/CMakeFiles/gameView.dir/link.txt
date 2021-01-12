@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgameView.a CMakeFiles/gameView.dir/src/gameView.cpp.o
+/usr/bin/ranlib libgameView.a
