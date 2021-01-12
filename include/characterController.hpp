@@ -11,6 +11,7 @@ class PersonagemController {
 		std::vector<AxeController> axeControllers;
 		RetornoHandle playerInput;
 		int id;
+        std::queue<int> fila_acoes;
 	public: 
 		PersonagemController(int x, int y, int h, int w, float teta);
 		void updateModel();
