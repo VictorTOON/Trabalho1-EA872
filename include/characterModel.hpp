@@ -24,4 +24,6 @@ class PersonagemModel: public CorpoModel{
 		PersonagemModel(int x, int y, int h, int w, float teta);
 		RetornoHandle handle_keyboard(int);
 		bool isDead();
+		nlohmann::json getStateJson();
+		void readStateJson(nlohmann::json state);
 };
