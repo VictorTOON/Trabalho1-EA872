@@ -25,17 +25,18 @@ bool ServerController::isQueueEmpty(){
 	return this->clientCommandStack.empty();
 }
 
-bool ServerController::isEndpointVectorEmpty(){
-	return this->endpointVector.empty();
+bool ServerController::isEndpointMapEmpty(){
+	return this->endpointMap.empty();
 }
 
-std::vector<boost::asio::ip::udp::endpoint> ServerController::get_endpointVector(){
-	return this->endpointVector;
+std::unordered_map<std::string, boost::asio::ip::udp::endpoint> ServerController::get_endpointMap(){
+	return this->endpointMap;
 }
 
 void ServerController::addEndpoint(boost::asio::ip::udp::endpoint new_endpoint){
 	std::cout<<"Adicionando endpoint"<<std::endl;
-	this->endpointVector.push_back(new_endpoint);
+
+	this->endpointMap.insert(std::make_pair(new_endpoint.address().to_string(), new_endpoint));
 }
 
 std::shared_ptr<GameController> ServerController::get_gameController(){
