@@ -1,2 +1,0 @@
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libaxeView.a CMakeFiles/axeView.dir/src/axeView.cpp.o
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libaxeView.a

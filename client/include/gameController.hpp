@@ -6,8 +6,9 @@
 #include "sdl_keyboard_handler.hpp"
 #include "gameModel.hpp"
 #include "json.hpp"
+#include "constants.hpp"
 
-
+#include <map>
 #include <iomanip>
 #include <iostream>
 #include <memory>
@@ -15,22 +16,31 @@
 #include <fstream>
 #include <sstream>
 #include <boost/asio.hpp>
+#include <chrono> 
+#include <thread>
 
 class GameController {
 	private:
 		std::unique_ptr<GameModel> gameModel;
-		std::unique_ptr<PersonagemController> personagem;
-		std::vector<ZumbiController> zumbis;
+
+		std::unordered_map<std::string, PersonagemController> personagens;
+		
+		std::unordered_map<std::string, ZumbiController> zumbis;
+		
 		std::unique_ptr<GameView> gameView;
+		
 		SDL_Keyboard_Handler keyboardHandler;
+
 		std::vector<ZumbiView> zumbiViews;
-		std::ofstream stateWriteFile;
-		std::ifstream stateReadFile;
-		std::stringstream stateReadFile_s;
+
 		void updatePersonagemView();
+
+		int action;
 	public:
-		GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis);
+		GameController();
+
 		~GameController();
+
 		void addZumbi(ZumbiModel zumbi);
 		void start();
 		int iterate();
@@ -39,5 +49,7 @@ class GameController {
 		void readStateJson();
 		void saveStateJson();
 		void readServerStateJson(nlohmann::json stateJson);
+		int get_action();
+		
 		bool stop;
 };

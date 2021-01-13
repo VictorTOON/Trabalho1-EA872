@@ -19,17 +19,17 @@ int SDL_Keyboard_Handler::getInput(){
 	if (this->state[SDL_SCANCODE_W]){
 		ret |= (1<<KEYBOARD_UP);
 	}
-    if (this->state[SDL_SCANCODE_SPACE]){
+	if (this->state[SDL_SCANCODE_SPACE]){
 		ret |= (1<<KEYBOARD_SPACE);
 	}
-    if (this->state[SDL_SCANCODE_0]){
+	if (this->state[SDL_SCANCODE_0]){
 		ret |= (1<<KEYBOARD_ZERO);
 	}
-    if (this-> state[SDL_SCANCODE_P]){
-        ret |= (1<<KEYBOARD_P);
-    }
-    if (this-> state[SDL_SCANCODE_O]){
-        ret |= (1<<KEYBOARD_O);
-    }
+	if (this-> state[SDL_SCANCODE_P]){
+	ret |= (1<<KEYBOARD_P);
+	}
+	if (this-> state[SDL_SCANCODE_O]){
+	ret |= (1<<KEYBOARD_O);
+	}
 	return ret;
 }

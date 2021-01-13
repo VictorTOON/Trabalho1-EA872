@@ -2,100 +2,100 @@
 
 #include <iostream>
 
-GameController::GameController(PersonagemController personagem, std::vector<ZumbiController> zumbis){
-	this->personagem = std::unique_ptr<PersonagemController>(new PersonagemController(personagem));
+GameController::GameController(){
 	this->gameModel = std::unique_ptr<GameModel> (new GameModel());
 	this->keyboardHandler = SDL_Keyboard_Handler();
-	this->zumbis = zumbis;
+
 	this->gameView = std::unique_ptr<GameView>(new GameView());
-	this->gameView->addPersonagem(this->personagem->getView());
-	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
-		this->gameView->addZumbi(z->getView());
-	}
 	this->stop = false;
-}
-
-nlohmann::json GameController::getStateJson(){
-	nlohmann::json stateJson;	
-	nlohmann::json zombieJsons;
-	for (auto z = zumbis.begin(); z != zumbis.end(); ++z){
-		zombieJsons[z->get_id()] = z->getStateJson();
-	}
-	stateJson["zumbis"] = zombieJsons;
-	stateJson["jogador"] = this->personagem->getStateJson();
-	std::cout<<stateJson<<std::endl;
-
-	return stateJson;
-
-}
-
-void GameController::saveStateJson(){
-	this->stateWriteFile.open("state.json");
-	stateWriteFile << this->getStateJson();
-	stateWriteFile.close();
 }
 
 
 void GameController::readServerStateJson(nlohmann::json stateJson){
-	this->personagem->readStateJson(stateJson["jogador"]);
-	for (int i = 0; i < this->zumbis.size(); i++){
-		this->zumbis[i].readStateJson(stateJson["zumbis"]);
-	}
-}
-void GameController::readStateJson(){
-	nlohmann::json stateJson;
-	this->stateReadFile.open("state.json");
-	std::stringstream s;
-	stateReadFile >> stateJson;		
-	std::cout<<stateJson["jogador"]<<std::endl;
-	this->personagem->readStateJson(stateJson["jogador"]);
-	this->zumbis.clear();
-	for (int i_json=0; i_json < stateJson["zumbis"].size(); i_json++){
-		ZumbiController z(150, 150, 100, 100, 0);
-		z.readStateJson(stateJson["zumbis"][i_json]);
-		this->gameView->addZumbi(z.getView());
-		this->zumbis.push_back(z);
-	}
-	this->stateReadFile.close();
-}
 
+	for (auto &personagem : this->personagens){
+		if (stateJson[MAP_KEY_PLAYERS].count(personagem.first) > 0){
+			this->personagens.find(personagem.first)->second.readStateJson(stateJson[MAP_KEY_PLAYERS][personagem.first]);	
+		} else {
+			this->personagens.erase(personagem.first);
+			continue;
+		}
+		stateJson[MAP_KEY_PLAYERS].erase(personagem.first);
+	}
+	for (auto &zumbi : this->zumbis){
+		if (stateJson[MAP_KEY_ZOMBIES].count(zumbi.first) > 0){
+			this->zumbis.find(zumbi.first)->second.readStateJson(stateJson[MAP_KEY_ZOMBIES]);	
+		} else {
+			this->zumbis.erase(zumbi.first);
+			continue;
+		}
+		stateJson[MAP_KEY_ZOMBIES].erase(zumbi.first);
+	}
+	std::unordered_map<std::string, nlohmann::json> zumbisJson = stateJson[MAP_KEY_ZOMBIES];
+	for (auto &zumbiJson : zumbisJson){
+		ZumbiController z(zumbiJson.second["model"]["base"]["x"], zumbiJson.second["model"]["base"]["y"], zumbiJson.second["model"]["base"]["h"], zumbiJson.second["model"]["base"]["w"], zumbiJson.second["model"]["base"]["teta"]);
+
+		z.set_id(zumbiJson.first);
+		z.readStateJson(zumbisJson);
+		z.set_player_id(zumbiJson.second["player_id"]);
+
+		this->gameView->addZumbi(z.getView());
+		this->zumbis.insert(std::make_pair(zumbiJson.first, z));
+	}
+	std::unordered_map<std::string, nlohmann::json> personagensJson = stateJson[MAP_KEY_PLAYERS];
+	for (auto &personagemJson : personagensJson){
+		PersonagemController p(personagemJson.second["model"]["base"]["x"], personagemJson.second["model"]["base"]["y"], personagemJson.second["model"]["base"]["h"], personagemJson.second["model"]["base"]["w"], personagemJson.second["model"]["base"]["teta"]);
+		p.readStateJson(personagemJson.second);
+		this->gameView->addPersonagem(p.getView());
+		this->personagens.insert(std::make_pair(personagemJson.first, p));
+	}
+}
 
 void GameController::start(){
-	while (!(this->iterate()));
+	static auto t_start = std::chrono::high_resolution_clock::now();
+	static auto t_end = std::chrono::high_resolution_clock::now();
+
+	while (!(this->iterate())){
+
+		t_end = std::chrono::high_resolution_clock::now();
+		auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start).count();
+
+		if (elapsed < INT_DELAY_MS){
+			std::this_thread::sleep_for(std::chrono::milliseconds(INT_DELAY_MS-elapsed));
+		}
+		t_start = t_end;
+
+	}
 	this->stop = true;
 }
 
 int GameController::iterate(){
-	int ret = this->keyboardHandler.getInput();
-	if (ret & (1 << KEYBOARD_ZERO)){
-		return -1;
-	}
-	if (ret & (1 << KEYBOARD_P)){
-		this->saveStateJson();
-	}
-	if (ret & (1 << KEYBOARD_O)){
-		this->readStateJson();
-	}
 	int returnDraw = this->gameView->draw();
-	this->personagem->iterate();
-	//for (auto z = this->zumbis.begin(); z != this->zumbis.end(); ++z){
-	for (int k = 0; k < this->zumbis.size(); k++){
-		zumbis[k].iterate(this->personagem->getModel());
-		for (int i=0; i < this->personagem->get_axeControllers().size(); i++){
-			if (gameModel->checkIntersection(*this->personagem->get_axeControllers()[i].get_axeModel(), zumbis[k].get_model()) == Mata){
-				this->zumbis.erase(zumbis.begin() + k);
-				k--;
-				spawnZombie();
-				break;
-			}
+	
+	for (auto &personagem: this->personagens){
+		personagem.second.updateView();
+	}
+	
+	for (auto &zumbi: this->zumbis){
+		if (this->personagens.find(zumbi.second.get_player_id()) == this->personagens.end()){
+
+		}else{
+			zumbi.second.updateView(this->personagens.at(zumbi.second.get_player_id()).getModel());
 		}
 	}
+
+
+
 	this->gameView->finishDraw();
+	this->action = this->keyboardHandler.getInput();
+	if (this->action & (1 << KEYBOARD_ZERO) ){
+		return -1;		
+	}
 	return returnDraw;
 }
 
 void GameController::spawnZombie(){
-	for (int a = 0; a < rand() % 3 + 1; a++){
+/*	for (int a = 0; a < rand() % 3 + 1; a++){
 		if(this->zumbis.size() < 20){
 			int randomX = rand() % 1600 + 0;
 			int randomY = rand() % 900 + 0;
@@ -109,5 +109,11 @@ void GameController::spawnZombie(){
 			}
 		}
 	}
+*/
 }
+
+int GameController::get_action(){
+    return this->action;
+}
+
 GameController::~GameController(){}

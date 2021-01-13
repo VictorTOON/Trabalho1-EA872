@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaxeModel.a CMakeFiles/axeModel.dir/src/axeModel.cpp.o
+/usr/bin/ranlib libaxeModel.a

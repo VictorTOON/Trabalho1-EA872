@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprojectileModel.a CMakeFiles/projectileModel.dir/src/projectileModel.cpp.o
+/usr/bin/ranlib libprojectileModel.a

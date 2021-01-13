@@ -10,26 +10,19 @@
 #include <boost/asio.hpp>
 
 int main(int argc, char *argv[]){
-	/*
-	PersonagemController p(300,300,130, 130, 0);
-	AxeController n(10,12,0.5);
-	std::vector<ZumbiController> zs; 
-	for (int i = 6; i < 9; i++){
-		zs.push_back(ZumbiController(i*100, i*100,100,100, 0));
-	}
 	
-	GameController gameController(p,zs);
-	std::thread t;
-	std::cout << argv[0] << std::endl;
-	if (argv[1][0] == 'r'){ 
-		t = std::thread(receiver, 9001, &gameController);
-	}
-	else{
-		t = std::thread(sender, "25.86.17.137", 9001, &gameController);
-	}
-	gameController.start();
-	t.join();*/
-	ClientController c("state.ini");
-	c.makeHandshake();
+	std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
+	std::shared_ptr<ClientController> clientController = std::make_shared<ClientController>(gameController, FILENAME_STATE_INIT);
+
+	clientController->makeHandshake();
+
+	std::thread thread_receiver = std::thread(receiver, clientController);
+	std::thread thread_sender = std::thread(sender, clientController);
+
+	gameController->start();
+
+	thread_receiver.join();
+	thread_sender.join();
+
 	return 0;
 }

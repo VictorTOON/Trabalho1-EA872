@@ -1,2 +1,0 @@
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libgameModel.a CMakeFiles/gameModel.dir/src/gameModel.cpp.o
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libgameModel.a

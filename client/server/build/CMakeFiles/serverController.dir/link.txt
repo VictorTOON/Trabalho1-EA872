@@ -1,0 +1,2 @@
+/usr/bin/ar qc libserverController.a CMakeFiles/serverController.dir/src/serverController.cpp.o
+/usr/bin/ranlib libserverController.a

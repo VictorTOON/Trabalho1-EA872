@@ -1,6 +1,7 @@
 #include "clientController.hpp"
 
-ClientController::ClientController(std::string filename){
+ClientController::ClientController(std::shared_ptr<GameController> gameController, std::string filename){
+	this->gameController = gameController;
 	std::fstream stateReadFile(filename, std::ios_base::in);
 
 	std::string ip;
@@ -11,8 +12,6 @@ ClientController::ClientController(std::string filename){
 
 	stateReadFile >> port;
 
-	std::cout<<ip<<std::endl;
-	std::cout<<port<<std::endl;
 	boost::asio::io_service io_service;
 	boost::asio::ip::udp::endpoint local_endpoint(
 			boost::asio::ip::udp::v4(),
@@ -30,3 +29,15 @@ void ClientController::makeHandshake(){
 	request[JSON_KEY_TYPE] = JSON_TYPE_HANDSHAKE;
 	this->socket->send_to(boost::asio::buffer(request.dump()), *this->serverEndpoint);
 }
+
+std::shared_ptr<GameController> ClientController::get_gameController(){
+	return this->gameController;
+}
+
+std::shared_ptr<boost::asio::ip::udp::socket> ClientController::get_socket(){
+	return this->socket;
+} 
+
+std::shared_ptr<boost::asio::ip::udp::endpoint> ClientController::get_serverEndpoint(){
+	return this->serverEndpoint;
+} 

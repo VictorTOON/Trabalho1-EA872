@@ -5,5 +5,8 @@
 #include <string>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
+#include "clientController.hpp"
+#include "constants.hpp"
+#include <memory>
 
-void receiver(int port, GameController *gameController);
+void receiver(std::shared_ptr<ClientController> clientController);
