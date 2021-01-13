@@ -10,7 +10,6 @@
 #include <boost/asio.hpp>
 
 int main(int argc, char *argv[]){
-	
 	std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
 	std::shared_ptr<ClientController> clientController = std::make_shared<ClientController>(gameController, FILENAME_STATE_INIT);
 
