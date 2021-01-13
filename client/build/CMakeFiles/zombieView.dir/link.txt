@@ -1,2 +1,0 @@
-/usr/bin/ar qc libzombieView.a CMakeFiles/zombieView.dir/src/zombieView.cpp.o
-/usr/bin/ranlib libzombieView.a

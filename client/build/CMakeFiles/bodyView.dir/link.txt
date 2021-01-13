@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbodyView.a CMakeFiles/bodyView.dir/src/bodyView.cpp.o
-/usr/bin/ranlib libbodyView.a

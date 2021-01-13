@@ -1,2 +1,0 @@
-/usr/bin/ar qc libzombieModel.a CMakeFiles/zombieModel.dir/src/zombieModel.cpp.o
-/usr/bin/ranlib libzombieModel.a

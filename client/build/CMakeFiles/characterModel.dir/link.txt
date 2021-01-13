@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcharacterModel.a CMakeFiles/characterModel.dir/src/characterModel.cpp.o
-/usr/bin/ranlib libcharacterModel.a

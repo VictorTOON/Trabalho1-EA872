@@ -1,2 +1,0 @@
-/usr/bin/ar qc libzombieController.a CMakeFiles/zombieController.dir/src/zombieController.cpp.o
-/usr/bin/ranlib libzombieController.a

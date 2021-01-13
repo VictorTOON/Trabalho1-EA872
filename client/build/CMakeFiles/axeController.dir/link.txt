@@ -1,2 +1,0 @@
-/usr/bin/ar qc libaxeController.a CMakeFiles/axeController.dir/src/axeController.cpp.o
-/usr/bin/ranlib libaxeController.a

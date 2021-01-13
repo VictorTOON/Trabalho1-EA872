@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbodyModel.a CMakeFiles/bodyModel.dir/src/bodyModel.cpp.o
-/usr/bin/ranlib libbodyModel.a

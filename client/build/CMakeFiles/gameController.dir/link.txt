@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgameController.a CMakeFiles/gameController.dir/src/gameController.cpp.o
-/usr/bin/ranlib libgameController.a

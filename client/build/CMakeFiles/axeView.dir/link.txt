@@ -1,2 +1,0 @@
-/usr/bin/ar qc libaxeView.a CMakeFiles/axeView.dir/src/axeView.cpp.o
-/usr/bin/ranlib libaxeView.a
