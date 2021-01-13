@@ -1,2 +1,0 @@
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libsender.a CMakeFiles/sender.dir/src/sender.cpp.o
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libsender.a

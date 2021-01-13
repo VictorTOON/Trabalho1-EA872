@@ -1,0 +1,2 @@
+/usr/bin/ar qc libiterateQueue.a CMakeFiles/iterateQueue.dir/src/iterateQueue.cpp.o
+/usr/bin/ranlib libiterateQueue.a

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/sdl_keyboard_handler.hpp
+SDL2/SDL.h
+-
+iostream
+-
+
+/home/ubuntu/git/Vinganca-das-Arvores-Part2-EA872/server/src/sdl_keyboard_handler.cpp
+sdl_keyboard_handler.hpp
+/home/ubuntu/git/Vinganca-das-Arvores-Part2-EA872/server/src/sdl_keyboard_handler.hpp
+

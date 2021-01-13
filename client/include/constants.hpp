@@ -28,6 +28,8 @@
 #define INT_CHARACTER_H 150
 #define INT_CHARACTER_W 150
 
+#define INT_DELAY_MS 32 // (60fps)
+
 #define UDP_PORT 9001
 
 #define MAX_BUFFER_SIZE 10000

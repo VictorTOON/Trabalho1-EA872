@@ -1,2 +1,0 @@
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libclientController.a CMakeFiles/clientController.dir/src/clientController.cpp.o
-/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libclientController.a
