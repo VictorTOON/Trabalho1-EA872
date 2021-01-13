@@ -3,7 +3,7 @@
 #include "characterView.hpp"
 #include "sdl_keyboard_handler.hpp"
 #include "axeController.hpp"
-
+#include "json.hpp"
 
 class PersonagemController {
 	private:
@@ -18,6 +18,7 @@ class PersonagemController {
 		std::shared_ptr<PersonagemView> getView();
 		std::shared_ptr<PersonagemModel> getModel();
 		void iterate();
-        std::vector<AxeController> get_axeControllers();
-        ints get_action();
+		std::vector<AxeController> get_axeControllers();
+		nlohmann::json getStateJson();
+		void readStateJson(nlohmann::json state);
 };

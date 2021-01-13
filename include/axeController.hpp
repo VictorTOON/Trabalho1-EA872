@@ -6,6 +6,7 @@
 #include <cmath>
 #include "axeModel.hpp"
 #include "axeView.hpp"
+#include "json.hpp"
 
 #include <iomanip>
 #include <iostream>
@@ -45,6 +46,8 @@ class AxeController{
 		 * atualiza a View do machado com base no model
 		 * */
         void updateView();
-	    std::shared_ptr<AxeView> getView();
+	std::shared_ptr<AxeView> getView();
         std::shared_ptr<AxeModel> get_axeModel();
+	nlohmann::json getStateJson();
+	void readStateJson(nlohmann::json state);
 };

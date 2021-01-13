@@ -18,4 +18,6 @@ class AxeModel: public ProjectileModel{
             * \param speed velocidade do machado (constante)
             * */
         AxeModel(int x, int y, float teta, int h, int w, float speed);
+	nlohmann::json getStateJson();
+	void readStateJson(nlohmann::json state);
 };
