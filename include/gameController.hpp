@@ -16,6 +16,8 @@
 #include <fstream>
 #include <sstream>
 #include <boost/asio.hpp>
+#include <chrono> 
+#include <thread>
 
 class GameController {
 	private:
