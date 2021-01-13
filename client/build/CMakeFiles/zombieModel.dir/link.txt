@@ -1,0 +1,2 @@
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libzombieModel.a CMakeFiles/zombieModel.dir/src/zombieModel.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libzombieModel.a

@@ -1,0 +1,2 @@
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libzombieView.a CMakeFiles/zombieView.dir/src/zombieView.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libzombieView.a

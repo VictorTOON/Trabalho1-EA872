@@ -1,0 +1,2 @@
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libprojectileModel.a CMakeFiles/projectileModel.dir/src/projectileModel.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libprojectileModel.a

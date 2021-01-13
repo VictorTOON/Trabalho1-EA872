@@ -1,0 +1,2 @@
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libgameController.a CMakeFiles/gameController.dir/src/gameController.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libgameController.a

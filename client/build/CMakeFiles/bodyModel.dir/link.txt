@@ -1,0 +1,2 @@
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ar qc libbodyModel.a CMakeFiles/bodyModel.dir/src/bodyModel.cpp.o
+/Users/victortoon/miniconda3/bin/x86_64-apple-darwin13.4.0-ranlib libbodyModel.a
