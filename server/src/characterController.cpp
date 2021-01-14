@@ -19,11 +19,15 @@ void PersonagemController::updateModel(){
         }
         fila_acoes.pop();
     }
-    for (auto &axeController : this->axeControllers){
-            retornoUpdateAxeController retornoUpdate = axeController.second.updateModel(0, .5);
+    std::vector<std::string> destroyKeys;
+    for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
+            retornoUpdateAxeController retornoUpdate = axeController->second.updateModel(0, .5);
             if (retornoUpdate == Destruir){
-                this->axeControllers.erase(axeController.first);
+                destroyKeys.push_back(axeController->first);
 	    }
+    }
+    for (auto destroyKey : destroyKeys){
+    	this->axeControllers.erase(destroyKey);
     }
 }
 
