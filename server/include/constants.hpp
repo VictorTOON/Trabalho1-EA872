@@ -28,7 +28,7 @@
 #define INT_CHARACTER_H 150
 #define INT_CHARACTER_W 150
 
-#define INT_DELAY_MS 17 // (60fps)
+#define INT_DELAY_MS 64 // (60fps)
 
 #define UDP_PORT 9001
 

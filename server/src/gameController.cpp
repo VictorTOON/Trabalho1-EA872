@@ -104,23 +104,24 @@ void GameController::updateMovement(std::string id, int acao){
 }
 
 int GameController::iterate(){
-    for (auto& personagem_atual: personagens){
-        personagem_atual.second.iterate();
-    }
-    if (this->personagens.empty()){
-        return 0;
-    }
+	for (auto& personagem_atual: personagens){
+		personagem_atual.second.iterate();
+	}
+	if (this->personagens.empty()){
+		return 0;
+	}
 	for (auto& zumbi_atual: zumbis){
 		zumbi_atual.second.iterate(this->personagens.find(zumbi_atual.second.get_player_id())->second.getModel());
-        for (auto& jogador_atual: personagens){
-            for (int i=0; i < jogador_atual.second.get_axeControllers().size(); i++){
-                if (gameModel->checkIntersection(*jogador_atual.second.get_axeControllers()[i].get_axeModel(), zumbi_atual.second.getModel()) == Mata){
-                    this->zumbis.erase(zumbi_atual.first);
-                    spawnZombie(jogador_atual.second);
-                    break;
-                }
-		    }
-        }
+		for (auto& jogador_atual: personagens){
+			for (auto &pair_machado : jogador_atual.second.get_axeControllers()){
+				AxeController machado = pair_machado.second;
+				if (gameModel->checkIntersection(*machado.get_axeModel(), zumbi_atual.second.getModel()) == Mata){
+					this->zumbis.erase(zumbi_atual.first);
+					spawnZombie(jogador_atual.second);
+					break;
+				}
+			}
+		}
 	}
 	return this->stop;
 }
@@ -131,7 +132,7 @@ void GameController::spawnZombie(PersonagemController p){
 			int randomX = rand() % 1600 + 0;
 			int randomY = rand() % 900 + 0;
 			if ((abs(randomX - p.getModel()->get_x()) > 150) && (abs(randomY - p.getModel()->get_y()) > 150)){
-                ZumbiController zumbi_novo(randomX, randomY,100,100, 0, p.get_id());
+				ZumbiController zumbi_novo(randomX, randomY,100,100, 0, p.get_id());
 				this->zumbis.insert(std::make_pair(zumbi_novo.get_id(), zumbi_novo));
 			}
 			else{
