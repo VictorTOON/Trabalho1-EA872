@@ -94,24 +94,6 @@ int GameController::iterate(){
 	return returnDraw;
 }
 
-void GameController::spawnZombie(){
-/*	for (int a = 0; a < rand() % 3 + 1; a++){
-		if(this->zumbis.size() < 20){
-			int randomX = rand() % 1600 + 0;
-			int randomY = rand() % 900 + 0;
-			if ((abs(randomX - this->personagem->getModel()->get_x()) > 150) && (abs(randomY - this->personagem->getModel()->get_y()) > 150)){
-				ZumbiController zumbi_novo(randomX, randomY,100,100, 0);
-				this->gameView->addZumbi(zumbi_novo.getView());
-				this->zumbis.push_back(zumbi_novo);
-			}
-			else{
-				a--;
-			}
-		}
-	}
-*/
-}
-
 int GameController::get_action(){
     return this->action;
 }
