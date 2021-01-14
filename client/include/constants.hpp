@@ -13,6 +13,7 @@
 
 #define MAP_KEY_ZOMBIES "zumbis"
 #define MAP_KEY_PLAYERS "jogadores"
+#define MAP_KEY_AXES "machados"
 
 #define FILENAME_STATE_JSON "state.json"
 #define FILENAME_STATE_INIT "state.ini"

@@ -8,9 +8,12 @@ PersonagemController::PersonagemController(int x, int y, int h, int w, float tet
 void PersonagemController::updateView(){
 	this->view->update(this->model->get_x(), this->model->get_y(), this->model->get_teta());
 	this->view->draw();
-/*	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
+	for (auto axeController = this->axeControllers.begin(); axeController != this->axeControllers.end(); ++axeController){
 		axeController->updateView();
-	}*/
+	}
+    // if (this->axeControllers.size() > 0){
+    //     this->axeControllers[0].updateView();
+    // }
 }
 
 std::shared_ptr<PersonagemView> PersonagemController::getView(){
@@ -42,14 +45,16 @@ nlohmann::json PersonagemController::getStateJson(){
 
 }
 
-void PersonagemController::readStateJson(nlohmann::json state) {
-	this->model->readStateJson(state["model"]);
-	this->axeControllers.clear();
-	for (int i_json = 0; i_json < state["machados"].size(); i_json++){
-		AxeController axeController(0, 0, 0);		
-		axeController.getView()->set_render(this->getView()->get_render());
-		axeController.readStateJson(state["machados"][i_json]);
-		this->axeControllers.push_back(axeController);
+void PersonagemController::readStateJson(nlohmann::json stateJson) {
+	this->model->readStateJson(stateJson["model"]);
+	for (auto& machado: this->axeControllers){
+		if (stateJson[MAP_KEY_AXES].count(machado.first) > 0){
+			this->axeControllers.find(machado.first)->second.readStateJson(stateJson[MAP_KEY_AXES]);	
+		} else {
+			this->axeControllers.erase(machado.first);
+			continue;
+		}
+		stateJson[MAP_KEY_AXES].erase(machado.first);
 	}
 }
 

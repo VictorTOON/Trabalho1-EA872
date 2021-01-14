@@ -4,6 +4,7 @@
 #include "sdl_keyboard_handler.hpp"
 #include "axeController.hpp"
 #include "json.hpp"
+#include "constants.hpp"
 
 class PersonagemController {
 	private:
