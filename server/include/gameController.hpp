@@ -27,6 +27,7 @@ class GameController {
 		std::map <std::string, ZumbiController> zumbis;
 		std::ofstream stateWriteFile;
 		std::stringstream stateReadFile;
+		std::string dumpedJson;
 	public:
 		GameController(std::string filename);
 		~GameController();
@@ -44,4 +45,5 @@ class GameController {
 		void AllToOne(std::string player_id);
 		void stopGame();
 		bool stop;
+		std::string get_dumpedJson();
 };

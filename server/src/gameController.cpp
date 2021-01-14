@@ -110,20 +110,32 @@ int GameController::iterate(){
 	if (this->personagens.empty()){
 		return 0;
 	}
+	std::vector<std::string> deadZombiesId;
+
 	for (auto& zumbi_atual: zumbis){
 		zumbi_atual.second.iterate(this->personagens.find(zumbi_atual.second.get_player_id())->second.getModel());
 		for (auto& jogador_atual: personagens){
 			for (auto &pair_machado : jogador_atual.second.get_axeControllers()){
 				AxeController machado = pair_machado.second;
 				if (gameModel->checkIntersection(*machado.get_axeModel(), zumbi_atual.second.getModel()) == Mata){
-					this->zumbis.erase(zumbi_atual.first);
+					deadZombiesId.push_back(zumbi_atual.first);
 					spawnZombie(jogador_atual.second);
 					break;
 				}
 			}
 		}
 	}
+
+	for (int i = 0; i < deadZombiesId.size(); i++){
+		this->zumbis.erase(deadZombiesId[i]);
+	}
+
+	this->dumpedJson = this->getStateJson().dump();
 	return this->stop;
+}
+
+std::string GameController::get_dumpedJson(){
+	return this->dumpedJson;
 }
 
 void GameController::spawnZombie(PersonagemController p){
