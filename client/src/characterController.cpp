@@ -39,21 +39,25 @@ nlohmann::json PersonagemController::getStateJson(){
 void PersonagemController::readStateJson(nlohmann::json stateJson) {
 	this->model->readStateJson(stateJson["model"]);
 	for (auto& machado: this->axeControllers){
-		if (stateJson[MAP_KEY_AXES].count(machado.first) > 0){
-			this->axeControllers.find(machado.first)->second.readStateJson(stateJson[MAP_KEY_AXES]);	
-		} else {
-			this->axeControllers.erase(machado.first);
-			continue;
-		}
-		stateJson[MAP_KEY_AXES].erase(machado.first);
+        if (!stateJson[MAP_KEY_AXES].is_null()){
+            if (stateJson[MAP_KEY_AXES].count(machado.first) > 0){
+			    this->axeControllers.find(machado.first)->second.readStateJson(stateJson[MAP_KEY_AXES][machado.first]);	
+		    } else {
+			    this->axeControllers.erase(machado.first);
+			    continue;
+		        }
+		    stateJson[MAP_KEY_AXES].erase(machado.first);
+            }
 	}
-	std::unordered_map<std::string, nlohmann::json> axesJson = stateJson[MAP_KEY_AXES];
-	for (auto& pair_machadoJson: axesJson){
-		nlohmann::json machadoJson = (nlohmann::json) pair_machadoJson.second;
-		std::string machadoId = pair_machadoJson.first;
-		//AxeController axeControllerr(pair_machadoJson.second["x"], pair_machadoJson.second["y"], pair_machadoJson.second["teta"]);
-		AxeController axeController(machadoJson["x"], machadoJson["y"], machadoJson["teta"]);
-		this->axeControllers.insert(std::make_pair(machadoId, axeController));
-	}
+    if (!stateJson[MAP_KEY_AXES].is_null()){
+        std::unordered_map<std::string, nlohmann::json> axesJson = stateJson[MAP_KEY_AXES];
+        for (auto& pair_machadoJson: axesJson){
+            nlohmann::json machadoJson = (nlohmann::json) pair_machadoJson.second;
+            std::string machadoId = pair_machadoJson.first;
+            AxeController axeController(machadoJson["model"]["base"]["x"], machadoJson["model"]["base"]["y"], machadoJson["model"]["base"]["teta"]);
+            axeController.getView()->set_render(this->view->get_render());
+            this->axeControllers.insert(std::make_pair(machadoId, axeController));
+	    }
+    }
 }
 
