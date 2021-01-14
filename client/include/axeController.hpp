@@ -45,9 +45,9 @@ class AxeController{
 		 *
 		 * atualiza a View do machado com base no model
 		 * */
-        void updateView();
+	void updateView();
 	    std::shared_ptr<AxeView> getView();
-        std::shared_ptr<AxeModel> get_axeModel();
+	    std::shared_ptr<AxeModel> get_axeModel();
 	    nlohmann::json getStateJson();
 	    void readStateJson(nlohmann::json state);
 };

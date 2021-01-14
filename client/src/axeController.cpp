@@ -41,3 +41,4 @@ nlohmann::json AxeController::getStateJson() {
 void AxeController::readStateJson(nlohmann::json state){
 	this->axeModel->readStateJson(state["model"]);
 }
+
