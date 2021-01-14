@@ -7,6 +7,7 @@
 AxeController::AxeController(int x, int y, float teta){
     this->axeModel = std::shared_ptr<AxeModel>(new AxeModel(x, y, teta, 50, 50, speed));
     this->tempoVida = 0;
+    this->id = ID_AXE++;
 }
 
 retornoUpdateAxeController AxeController::updateModel(float tempo_pass, float tempo_atual){
@@ -29,4 +30,8 @@ nlohmann::json AxeController::getStateJson() {
 
 void AxeController::readStateJson(nlohmann::json state){
 	this->axeModel->readStateJson(state["model"]);
+}
+
+std::string AxeController::get_id(){
+	return std::to_string(this->id);
 }

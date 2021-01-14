@@ -8,6 +8,7 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <string>
 
 typedef enum{
     Destruir,
@@ -17,10 +18,12 @@ typedef enum{
 		 *
 		 * Tem acesso ao view e ao model do machado
 		 */
+static int ID_AXE = 0;
 class AxeController{
     private:
         std::shared_ptr<AxeModel> axeModel;
         float tempoVida;
+	int id;
     public:
         /* \brief Contrutor do controller
             *
@@ -42,5 +45,6 @@ class AxeController{
 		 * */
         std::shared_ptr<AxeModel> get_axeModel();
 	nlohmann::json getStateJson();
-	void readStateJson(nlohmann::json state);
+	void readStateJson(nlohmann::json state);	
+	std::string get_id();
 };

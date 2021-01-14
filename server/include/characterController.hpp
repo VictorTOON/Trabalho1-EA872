@@ -3,6 +3,8 @@
 #include "axeController.hpp"
 #include "json.hpp"
 #include <queue>
+#include <map>
+#include <utility>
 
 class PersonagemController {
     /* \brief Explicando a classe
@@ -12,7 +14,7 @@ class PersonagemController {
             * */
 	private:
 		std::shared_ptr<PersonagemModel> model;
-		std::vector<AxeController> axeControllers;
+		std::unordered_map<std::string, AxeController> axeControllers;
 		RetornoHandle playerInput;
 		std::string id;
 		std::queue<int> fila_acoes;
@@ -25,7 +27,7 @@ class PersonagemController {
             * que atualiza os jogadores e seus machados um por um
             * */
 		void iterate();
-		std::vector<AxeController> get_axeControllers();
+		std::unordered_map<std::string, AxeController> get_axeControllers();
 		nlohmann::json getStateJson();
 		void readStateJson(nlohmann::json state);
 		std::string get_id();
