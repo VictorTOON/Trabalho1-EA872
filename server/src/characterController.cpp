@@ -27,7 +27,8 @@ void PersonagemController::updateModel(){
 	    }
     }
     for (auto destroyKey : destroyKeys){
-    	this->axeControllers.erase(destroyKey);
+	//std::cout<<"Foi aqui?"<<std::endl;
+//    	this->axeControllers.erase(destroyKey);
     }
 }
 
