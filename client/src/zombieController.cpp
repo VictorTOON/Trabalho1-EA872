@@ -50,7 +50,6 @@ ZumbiModel ZumbiController::getModel(){
 
 
 void ZumbiController::iterate(std::shared_ptr<PersonagemModel> p){
-	//this->updateModel(p);
 	this->updateView(p);
 }
 

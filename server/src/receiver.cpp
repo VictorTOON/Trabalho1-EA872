@@ -18,12 +18,6 @@ void receiver(std::shared_ptr<ServerController> serverController, int port) {
 
 		nlohmann::json clientJson = nlohmann::json::parse(v);
 
-		/*serverController->pushToQueue(clientJson, remote_endpoint);
-
-
-		clientJson = currentPair.first;
-		remote_endpoint = currentPair.second;
-*/
 		std::string request_type = clientJson[JSON_KEY_TYPE];
 		
 		if (request_type.compare(JSON_TYPE_HANDSHAKE) == 0) {

@@ -27,10 +27,8 @@ void PersonagemController::updateModel(){
 	    }
     }
     for (auto destroyKey : destroyKeys){
-	//std::cout<<"Foi aqui?"<<std::endl;
     	this->axeControllers.erase(destroyKey);
     }
-    //std::cout<<"Chegamos ao fim"<<std::endl;
 }
 
 std::shared_ptr<PersonagemModel> PersonagemController::getModel(){

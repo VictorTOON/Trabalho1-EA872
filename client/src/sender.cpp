@@ -10,7 +10,6 @@ void sender(std::shared_ptr<ClientController> clientController){
 		request[JSON_KEY_BODY][JSON_KEY_BODY_COMMAND] = action;
 		clientController->get_socket()->send_to(boost::asio::buffer(request.dump()), *clientController->get_serverEndpoint());
 		std::cout<<"Mandando..."<<std::endl;
-		//std::this_thread::sleep_for(std::chrono::milliseconds(5));
 		t_end = std::chrono::high_resolution_clock::now();
 		auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start).count();
 
