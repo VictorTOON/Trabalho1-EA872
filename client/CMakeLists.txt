@@ -108,8 +108,3 @@ target_link_libraries(VingancasArvores ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES}
 
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
-
-# Bibliotecas linkadas externamente
-#target_link_libraries(VingancasArvores ${SDL2_LIBRARIES})
-#target_link_libraries(VingancasArvores ${SDL2_IMAGE_LIBRARIES})
-

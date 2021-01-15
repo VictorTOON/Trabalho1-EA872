@@ -16,7 +16,7 @@
 #define MAP_KEY_AXES "machados"
 
 #define FILENAME_STATE_JSON "state.json"
-#define FILENAME_STATE_INIT "state.ini"
+#define FILENAME_STATE_INIT "../state.ini"
 
 #define ERR_FILE_NOT_FOUND "Arquivo nao encontrado!"
 #define ERR_INVALID_TYPE "Tipo invalido! (handshake, command, goodbye) [case-sensitive]"
